@@ -246,6 +246,7 @@ Partial Class frm_principal
         '
         'btn_ChangeMdp
         '
+        Me.btn_ChangeMdp.Cursor = System.Windows.Forms.Cursors.PanEast
         Me.btn_ChangeMdp.Location = New System.Drawing.Point(732, 12)
         Me.btn_ChangeMdp.Name = "btn_ChangeMdp"
         Me.btn_ChangeMdp.Size = New System.Drawing.Size(26, 23)

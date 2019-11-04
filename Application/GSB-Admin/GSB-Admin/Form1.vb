@@ -8,6 +8,8 @@
         If btn_ChangeMdp.Text = ">" Then
 
             btn_ChangeMdp.Text = "<"
+            btn_ChangeMdp.Cursor = Cursors.PanWest
+
 
             grpB_reset.Visible = True
             rb_Reset.Visible = True
@@ -20,6 +22,7 @@
         Else
 
             btn_ChangeMdp.Text = ">"
+            btn_ChangeMdp.Cursor = Cursors.PanEast
 
             grpB_reset.Visible = False
             rb_Reset.Visible = False
@@ -37,5 +40,14 @@
     Private Sub btn_CreateUser_Click(sender As Object, e As EventArgs) Handles btn_CreateUser.Click
         Me.Close()
         creatUser.Show()
+    End Sub
+
+    Private Sub btn_deco_Click(sender As Object, e As EventArgs) Handles btn_deco.Click
+        Dim Reponse As DialogResult 'Déclaration de la variavle "Reponse" en local
+        Reponse = MessageBox.Show("Se déconnecter?", "Quitter", _
+        MessageBoxButtons.YesNo, MessageBoxIcon.Question) 'Affichage de la message box avec le choix de quitter ou de rester
+        If Reponse = DialogResult.Yes Then
+            Me.Close()
+        End If
     End Sub
 End Class
