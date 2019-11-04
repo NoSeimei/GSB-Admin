@@ -1,0 +1,12 @@
+c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
+c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe
+c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.pdb
+c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.xml
+c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.frm_principal.resources
+c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
+c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
+c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
+c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
+c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.creatUser.resources
+c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.connexion.resources
