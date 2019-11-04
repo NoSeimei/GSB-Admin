@@ -10,3 +10,15 @@ c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\obj
 c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
 c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.creatUser.resources
 c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.connexion.resources
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.pdb
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.xml
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.connexion.resources
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.creatUser.resources
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.frm_principal.resources
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
