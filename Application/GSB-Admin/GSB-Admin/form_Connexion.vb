@@ -1,4 +1,4 @@
-﻿Public Class connexion
+﻿Public Class form_Connexion
 
 
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -12,7 +12,7 @@
     'Bouton de connexion
     Private Sub btn_Submit_Click(sender As Object, e As EventArgs) Handles btn_Submit.Click
         If txtB_Login.Text = "test" And txtB_MDP.Text = "test" Then
-            frm_principal.Show()
+            form_MDIContainer.Show()
             Me.Hide()
         Else
             txtB_MDP.Text = ""
@@ -41,6 +41,6 @@
         txtB_MDP.Text = ""
     End Sub
 
-    
-    
+
+
 End Class

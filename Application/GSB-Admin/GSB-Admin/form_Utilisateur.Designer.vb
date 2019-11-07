@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class creatUser
+Partial Class form_Utilisateur
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
@@ -45,14 +45,22 @@ Partial Class creatUser
         Me.date_DateEmbauche = New System.Windows.Forms.DateTimePicker()
         Me.lstV_Voitures = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lbl_InfoMdp = New System.Windows.Forms.Label()
         Me.progressBar_Mdp = New System.Windows.Forms.ProgressBar()
         Me.lbl_Voitures = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.gb_login = New System.Windows.Forms.GroupBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.grpb_TypeUser.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
+        Me.gb_login.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'btn_Submit
@@ -198,7 +206,7 @@ Partial Class creatUser
         '
         Me.grpb_TypeUser.Controls.Add(Me.rb_Visiteur)
         Me.grpb_TypeUser.Controls.Add(Me.rb_Comptable)
-        Me.grpb_TypeUser.Location = New System.Drawing.Point(89, 419)
+        Me.grpb_TypeUser.Location = New System.Drawing.Point(85, 277)
         Me.grpb_TypeUser.Name = "grpb_TypeUser"
         Me.grpb_TypeUser.Size = New System.Drawing.Size(168, 58)
         Me.grpb_TypeUser.TabIndex = 18
@@ -234,17 +242,33 @@ Partial Class creatUser
         '
         'lstV_Voitures
         '
-        Me.lstV_Voitures.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1})
-        Me.lstV_Voitures.Location = New System.Drawing.Point(464, 84)
+        Me.lstV_Voitures.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
+        Me.lstV_Voitures.Location = New System.Drawing.Point(417, 86)
         Me.lstV_Voitures.Name = "lstV_Voitures"
-        Me.lstV_Voitures.Size = New System.Drawing.Size(310, 315)
+        Me.lstV_Voitures.Size = New System.Drawing.Size(272, 327)
         Me.lstV_Voitures.TabIndex = 21
         Me.lstV_Voitures.UseCompatibleStateImageBehavior = False
+        Me.lstV_Voitures.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Matricule"
+        Me.ColumnHeader1.Width = 91
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Puissance"
+        Me.ColumnHeader2.Width = 71
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "Marque"
+        Me.ColumnHeader3.Width = 106
         '
         'lbl_InfoMdp
         '
         Me.lbl_InfoMdp.AutoSize = True
-        Me.lbl_InfoMdp.Location = New System.Drawing.Point(42, 109)
+        Me.lbl_InfoMdp.Location = New System.Drawing.Point(9, 111)
         Me.lbl_InfoMdp.Name = "lbl_InfoMdp"
         Me.lbl_InfoMdp.Size = New System.Drawing.Size(0, 13)
         Me.lbl_InfoMdp.TabIndex = 23
@@ -255,12 +279,11 @@ Partial Class creatUser
         Me.progressBar_Mdp.Name = "progressBar_Mdp"
         Me.progressBar_Mdp.Size = New System.Drawing.Size(90, 11)
         Me.progressBar_Mdp.TabIndex = 22
-        Me.progressBar_Mdp.Value = 10
         '
         'lbl_Voitures
         '
         Me.lbl_Voitures.AutoSize = True
-        Me.lbl_Voitures.Location = New System.Drawing.Point(589, 58)
+        Me.lbl_Voitures.Location = New System.Drawing.Point(524, 70)
         Me.lbl_Voitures.Name = "lbl_Voitures"
         Me.lbl_Voitures.Size = New System.Drawing.Size(45, 13)
         Me.lbl_Voitures.TabIndex = 24
@@ -287,41 +310,91 @@ Partial Class creatUser
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Informations"
         '
-        'GroupBox2
+        'gb_login
         '
-        Me.GroupBox2.Controls.Add(Me.lbl_Login)
-        Me.GroupBox2.Controls.Add(Me.txtB_Login)
-        Me.GroupBox2.Controls.Add(Me.lbl_Mdp)
-        Me.GroupBox2.Controls.Add(Me.lbl_InfoMdp)
-        Me.GroupBox2.Controls.Add(Me.txtB_MDP)
-        Me.GroupBox2.Controls.Add(Me.progressBar_Mdp)
-        Me.GroupBox2.Location = New System.Drawing.Point(44, 277)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(256, 136)
-        Me.GroupBox2.TabIndex = 26
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Authentification"
+        Me.gb_login.Controls.Add(Me.lbl_Login)
+        Me.gb_login.Controls.Add(Me.txtB_Login)
+        Me.gb_login.Controls.Add(Me.lbl_Mdp)
+        Me.gb_login.Controls.Add(Me.lbl_InfoMdp)
+        Me.gb_login.Controls.Add(Me.txtB_MDP)
+        Me.gb_login.Controls.Add(Me.progressBar_Mdp)
+        Me.gb_login.Location = New System.Drawing.Point(44, 341)
+        Me.gb_login.Name = "gb_login"
+        Me.gb_login.Size = New System.Drawing.Size(256, 135)
+        Me.gb_login.TabIndex = 26
+        Me.gb_login.TabStop = False
+        Me.gb_login.Text = "Authentification"
         '
-        'creatUser
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(153, 21)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(177, 20)
+        Me.DateTimePicker1.TabIndex = 27
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Location = New System.Drawing.Point(153, 66)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(177, 20)
+        Me.DateTimePicker2.TabIndex = 28
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.Label2)
+        Me.GroupBox3.Controls.Add(Me.Label1)
+        Me.GroupBox3.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox3.Controls.Add(Me.DateTimePicker2)
+        Me.GroupBox3.Location = New System.Drawing.Point(389, 426)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(344, 107)
+        Me.GroupBox3.TabIndex = 29
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Location"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(6, 72)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(125, 13)
+        Me.Label2.TabIndex = 30
+        Me.Label2.Text = "Date de fin de la location"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 27)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(141, 13)
+        Me.Label1.TabIndex = 29
+        Me.Label1.Text = "Date de début de la location"
+        '
+        'form_Utilisateur
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(349, 593)
-        Me.Controls.Add(Me.GroupBox2)
+        Me.ClientSize = New System.Drawing.Size(351, 593)
+        Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.gb_login)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lbl_Voitures)
         Me.Controls.Add(Me.lstV_Voitures)
         Me.Controls.Add(Me.grpb_TypeUser)
         Me.Controls.Add(Me.btn_return)
         Me.Controls.Add(Me.btn_Submit)
-        Me.Name = "creatUser"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Name = "form_Utilisateur"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Création d'un nouvel utilisateur"
         Me.grpb_TypeUser.ResumeLayout(False)
         Me.grpb_TypeUser.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
+        Me.gb_login.ResumeLayout(False)
+        Me.gb_login.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -353,5 +426,12 @@ Partial Class creatUser
     Friend WithEvents progressBar_Mdp As System.Windows.Forms.ProgressBar
     Friend WithEvents lbl_Voitures As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents gb_login As System.Windows.Forms.GroupBox
+    Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class
