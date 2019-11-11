@@ -23,8 +23,8 @@ Partial Class form_Principal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Jean", "Oui", "Visteur"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.HighlightText, Nothing)
-        Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Benoit", "Patrick", "Comptable"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.Window, Nothing)
+        Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Jean", "Oui", "Visteur"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.HighlightText, Nothing)
+        Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Benoit", "Patrick", "Comptable"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.Window, Nothing)
         Me.lbl_InfoMdp = New System.Windows.Forms.Label()
         Me.rb_AllUser = New System.Windows.Forms.RadioButton()
         Me.rb_Visiteur = New System.Windows.Forms.RadioButton()
@@ -38,6 +38,7 @@ Partial Class form_Principal
         Me.ClicDroit = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.OUiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LacheMoiMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.ClicDroit.SuspendLayout()
         Me.SuspendLayout()
@@ -104,7 +105,7 @@ Partial Class form_Principal
         Me.lstV_visiteur.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnNom, Me.ColumnPrenom, Me.ColumnType})
         Me.lstV_visiteur.ContextMenuStrip = Me.ClicDroit
         Me.lstV_visiteur.FullRowSelect = True
-        Me.lstV_visiteur.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2})
+        Me.lstV_visiteur.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem3, ListViewItem4})
         Me.lstV_visiteur.Location = New System.Drawing.Point(25, 124)
         Me.lstV_visiteur.MultiSelect = False
         Me.lstV_visiteur.Name = "lstV_visiteur"
@@ -147,11 +148,21 @@ Partial Class form_Principal
         Me.LacheMoiMToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
         Me.LacheMoiMToolStripMenuItem.Text = "Supprimer"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(317, 462)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(145, 23)
+        Me.Button1.TabIndex = 23
+        Me.Button1.Text = "Réinitialiser le mot de passe"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'form_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(491, 483)
+        Me.ClientSize = New System.Drawing.Size(491, 516)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lstV_visiteur)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lbl_InfoMdp)
@@ -179,5 +190,6 @@ Partial Class form_Principal
     Friend WithEvents ClicDroit As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents OUiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LacheMoiMToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 
 End Class

@@ -38,4 +38,8 @@
     Private Sub progressBar_Mdp_Click(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Form_resetMDP.Show()
+    End Sub
 End Class
