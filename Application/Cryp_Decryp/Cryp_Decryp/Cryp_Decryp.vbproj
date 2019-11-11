@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{310848B0-2E3F-4C71-B8D9-1D6DD3CBE804}</ProjectGuid>
+    <ProjectGuid>{84B3D0F0-F770-4FDF-A8F5-AB085EBC4D73}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>GSB_Admin.My.MyApplication</StartupObject>
-    <RootNamespace>GSB_Admin</RootNamespace>
-    <AssemblyName>GSB-Admin</AssemblyName>
+    <StartupObject>Cryp_Decryp.My.MyApplication</StartupObject>
+    <RootNamespace>Cryp_Decryp</RootNamespace>
+    <AssemblyName>Cryp_Decryp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -20,7 +20,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>GSB-Admin.xml</DocumentationFile>
+    <DocumentationFile>Cryp_Decryp.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -30,7 +30,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>GSB-Admin.xml</DocumentationFile>
+    <DocumentationFile>Cryp_Decryp.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -70,43 +70,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connexion.vb" />
-    <Compile Include="fonction.vb" />
-    <Compile Include="form_aProposDe.Designer.vb">
-      <DependentUpon>form_aProposDe.vb</DependentUpon>
-    </Compile>
-    <Compile Include="form_aProposDe.vb">
+    <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_Connexion.Designer.vb">
-      <DependentUpon>form_Connexion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="form_Connexion.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_resetMDP.Designer.vb">
-      <DependentUpon>Form_resetMDP.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form_resetMDP.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form_Utilisateur.Designer.vb">
-      <DependentUpon>form_Utilisateur.vb</DependentUpon>
-    </Compile>
-    <Compile Include="form_Utilisateur.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form_Principal.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form_Principal.Designer.vb">
-      <DependentUpon>form_Principal.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form_MDIContainer.Designer.vb">
-      <DependentUpon>form_MDIContainer.vb</DependentUpon>
-    </Compile>
-    <Compile Include="form_MDIContainer.vb">
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -124,26 +92,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Read.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="form_aProposDe.resx">
-      <DependentUpon>form_aProposDe.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="form_Connexion.resx">
-      <DependentUpon>form_Connexion.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_resetMDP.resx">
-      <DependentUpon>Form_resetMDP.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="form_Utilisateur.resx">
-      <DependentUpon>form_Utilisateur.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="form_Principal.resx">
-      <DependentUpon>form_Principal.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="form_MDIContainer.resx">
-      <DependentUpon>form_MDIContainer.vb</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

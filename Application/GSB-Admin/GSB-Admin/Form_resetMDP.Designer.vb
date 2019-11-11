@@ -31,12 +31,13 @@ Partial Class Form_resetMDP
         Me.tb_mdpchange = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'cbx_showhide
         '
         Me.cbx_showhide.AutoSize = True
-        Me.cbx_showhide.Location = New System.Drawing.Point(215, 56)
+        Me.cbx_showhide.Location = New System.Drawing.Point(241, 56)
         Me.cbx_showhide.Name = "cbx_showhide"
         Me.cbx_showhide.Size = New System.Drawing.Size(108, 17)
         Me.cbx_showhide.TabIndex = 30
@@ -46,7 +47,7 @@ Partial Class Form_resetMDP
         'lbl_Mdp
         '
         Me.lbl_Mdp.AutoSize = True
-        Me.lbl_Mdp.Location = New System.Drawing.Point(80, 37)
+        Me.lbl_Mdp.Location = New System.Drawing.Point(106, 37)
         Me.lbl_Mdp.Name = "lbl_Mdp"
         Me.lbl_Mdp.Size = New System.Drawing.Size(71, 13)
         Me.lbl_Mdp.TabIndex = 29
@@ -87,7 +88,7 @@ Partial Class Form_resetMDP
         '
         'tb_mdpchange
         '
-        Me.tb_mdpchange.Location = New System.Drawing.Point(35, 53)
+        Me.tb_mdpchange.Location = New System.Drawing.Point(61, 53)
         Me.tb_mdpchange.Name = "tb_mdpchange"
         Me.tb_mdpchange.Size = New System.Drawing.Size(174, 20)
         Me.tb_mdpchange.TabIndex = 24
@@ -95,7 +96,7 @@ Partial Class Form_resetMDP
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(35, 97)
+        Me.TextBox1.Location = New System.Drawing.Point(61, 97)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(174, 20)
         Me.TextBox1.TabIndex = 31
@@ -104,17 +105,27 @@ Partial Class Form_resetMDP
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(36, 81)
+        Me.Label1.Location = New System.Drawing.Point(62, 81)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(173, 13)
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Confirmer le nouveau mot de passe"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(290, 219)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(59, 23)
+        Me.Button1.TabIndex = 33
+        Me.Button1.Text = "&Annuler"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form_resetMDP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(326, 220)
+        Me.ClientSize = New System.Drawing.Size(361, 254)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.cbx_showhide)
@@ -141,4 +152,5 @@ Partial Class Form_resetMDP
     Friend WithEvents tb_mdpchange As System.Windows.Forms.TextBox
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
