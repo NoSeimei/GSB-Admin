@@ -82,11 +82,37 @@
     <Compile Include="creatUser.vb">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< Updated upstream
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
+=======
+    <Compile Include="Form_resetMDP.Designer.vb">
+      <DependentUpon>Form_resetMDP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_resetMDP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_Utilisateur.Designer.vb">
+      <DependentUpon>form_Utilisateur.vb</DependentUpon>
+    </Compile>
+    <Compile Include="form_Utilisateur.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_ListeUtiliasteurs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_ListeUtiliasteurs.Designer.vb">
+      <DependentUpon>form_ListeUtiliasteurs.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_MDIContainer.Designer.vb">
+      <DependentUpon>form_MDIContainer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="form_MDIContainer.vb">
+>>>>>>> Stashed changes
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -109,8 +135,13 @@
     <EmbeddedResource Include="connexion.resx">
       <DependentUpon>connexion.vb</DependentUpon>
     </EmbeddedResource>
+<<<<<<< Updated upstream
     <EmbeddedResource Include="creatUser.resx">
       <DependentUpon>creatUser.vb</DependentUpon>
+=======
+    <EmbeddedResource Include="form_ListeUtiliasteurs.resx">
+      <DependentUpon>form_ListeUtiliasteurs.vb</DependentUpon>
+>>>>>>> Stashed changes
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>

@@ -8,5 +8,48 @@ c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\obj
 c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
 c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
 c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+<<<<<<< Updated upstream
 c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.creatUser.resources
 c:\users\treportel\documents\visual studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.connexion.resources
+=======
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.pdb
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.xml
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
+C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
+C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
+C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
+C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_aProposDe.resources
+C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Connexion.resources
+C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Utilisateur.resources
+C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Principal.resources
+C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
+C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Form_resetMDP.resources
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_aProposDe.resources
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Connexion.resources
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Form_resetMDP.resources
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Utilisateur.resources
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Principal.resources
+C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.pdb
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.xml
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_aProposDe.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Connexion.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Form_resetMDP.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Utilisateur.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_ListeUtiliasteurs.resources
+>>>>>>> Stashed changes
