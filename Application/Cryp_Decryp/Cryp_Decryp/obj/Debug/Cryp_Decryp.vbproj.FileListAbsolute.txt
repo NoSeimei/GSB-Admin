@@ -1,0 +1,10 @@
+c:\users\badbo\documents\visual studio 2013\Projects\Cryp_Decryp\Cryp_Decryp\bin\Debug\Cryp_Decryp.exe.config
+c:\users\badbo\documents\visual studio 2013\Projects\Cryp_Decryp\Cryp_Decryp\bin\Debug\Cryp_Decryp.exe
+c:\users\badbo\documents\visual studio 2013\Projects\Cryp_Decryp\Cryp_Decryp\bin\Debug\Cryp_Decryp.pdb
+c:\users\badbo\documents\visual studio 2013\Projects\Cryp_Decryp\Cryp_Decryp\bin\Debug\Cryp_Decryp.xml
+c:\users\badbo\documents\visual studio 2013\Projects\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.Form1.resources
+c:\users\badbo\documents\visual studio 2013\Projects\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.Resources.resources
+c:\users\badbo\documents\visual studio 2013\Projects\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.vbproj.GenerateResource.Cache
+c:\users\badbo\documents\visual studio 2013\Projects\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.exe
+c:\users\badbo\documents\visual studio 2013\Projects\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.xml
+c:\users\badbo\documents\visual studio 2013\Projects\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.pdb
