@@ -37,7 +37,7 @@ CREATE TABLE `comptable` (
 -- Déchargement des données de la table `comptable`
 --
 
-INSERT INTO `comptable` (`id`, `nbFicheRefusee`) VALUES
+INSERT INTO comptable (id, nbFicheRefusee) VALUES
 (5, '5'),
 (6, '4'),
 (7, '9');
