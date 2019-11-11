@@ -48,8 +48,15 @@ C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\De
 C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Connexion.resources
 C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Form_resetMDP.resources
 C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Utilisateur.resources
+<<<<<<< Updated upstream
 C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
 C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
 C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
 C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_ListeUtiliasteurs.resources
+>>>>>>> Stashed changes
+=======
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Principal.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
 >>>>>>> Stashed changes
