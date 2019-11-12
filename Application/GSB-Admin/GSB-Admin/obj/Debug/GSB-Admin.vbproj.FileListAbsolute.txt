@@ -47,3 +47,18 @@ C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Applic
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.pdb
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.xml
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_aProposDe.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Connexion.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Form_resetMDP.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_CreateUser.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_ListeUsers.resources

@@ -1,25 +1,15 @@
-﻿Public Class form_Principal
+﻿Imports System.Data.SqlClient
 
-
-    '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    'Bouton pour afficher et modifier le mot d passe d'un utilisateur
-   
-
-    '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    'Bouton d'ouverture du formulaire de création d'un nouvel utilisateur
-
-
-
-
+Public Class form_ListeUsers
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs)
-        form_Utilisateur.Show()
+        form_CreateUser.Show()
     End Sub
 
 
 
     Private Sub OUiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OUiToolStripMenuItem.Click
-        Dim formU As New form_Utilisateur
+        Dim formU As New form_CreateUser
         formU.Show()
         formU.gb_login.Hide()
     End Sub
@@ -34,16 +24,23 @@
         End If
     End Sub
 
-
-    Private Sub progressBar_Mdp_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Form_resetMDP.Show()
     End Sub
 
+    '-------------------------------------------------------------------------------------------------------------------------------------------
+    'Chargement du formulaire (remplissage de la liste des utilisateurs
     Private Sub form_Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        'On crée notre commande ici
+        Dim reqListeUsers As String = "SELECT * from utilisateur"
+        Dim Commande As New SqlCommand(reqListeUsers, MyConnexion)
+        'On crée notre Reader
+        Dim ReaderTableUsers As SqlDataReader = Commande.ExecuteReader()
+
+        While ReaderTableUsers.Read()
+
+        End While
 
     End Sub
 End Class

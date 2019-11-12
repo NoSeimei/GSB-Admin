@@ -12,3 +12,13 @@ C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Applic
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.exe
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.xml
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.pdb
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\Cryp_Decryp\Cryp_Decryp\bin\Debug\Cryp_Decryp.exe.config
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.exe
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.xml
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.pdb
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\Cryp_Decryp\Cryp_Decryp\bin\Debug\Cryp_Decryp.exe
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\Cryp_Decryp\Cryp_Decryp\bin\Debug\Cryp_Decryp.pdb
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\Cryp_Decryp\Cryp_Decryp\bin\Debug\Cryp_Decryp.xml
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.Form1.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.Resources.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.vbproj.GenerateResource.Cache

@@ -1,4 +1,4 @@
-﻿Public Class form_Utilisateur
+﻿Public Class form_CreateUser
 
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Bouton de retour au formulaire principal
@@ -8,7 +8,7 @@
         MessageBoxButtons.YesNo, MessageBoxIcon.Question) 'Affichage de la message box avec le choix de quitter ou de rester
         If Reponse = DialogResult.Yes Then
             Me.Close()
-            form_Principal.Show()
+            form_ListeUsers.Show()
         End If
     End Sub
 
@@ -42,5 +42,5 @@
 
     End Sub
 
-   
+
 End Class

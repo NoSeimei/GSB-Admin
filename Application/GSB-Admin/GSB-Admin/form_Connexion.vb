@@ -1,6 +1,4 @@
-﻿Imports System.IO
-Imports System.Security.Cryptography
-Imports System.Text
+﻿
 Public Class form_Connexion
 
 
@@ -15,8 +13,9 @@ Public Class form_Connexion
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Bouton de connexion
     Private Sub btn_Submit_Click(sender As Object, e As EventArgs) Handles btn_Submit.Click
+
         'Appel de la fonction qui charge nos Dictyonnary (connexion à la base de donées ainsi qu'à l'application)
-        lectureFichier()
+        lectureFichier_Config()
 
         'On vérifie ici les informations qui ont été rentrer par la personne
         If Auth.Item("login") = txtB_Login.Text And Auth.Item("motdepasse") = txtB_MDP.Text Then

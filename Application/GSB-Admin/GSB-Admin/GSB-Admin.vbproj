@@ -70,9 +70,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes Techniques\Collection.vb" />
+    <Compile Include="Autres\Collection.vb" />
+    <Compile Include="Autres\functionUse.vb" />
+    <Compile Include="Classes Techniques\comptable.vb" />
+    <Compile Include="Classes Techniques\user.vb" />
     <Compile Include="Classes Techniques\Vehicule.vb" />
-    <Compile Include="Classes Techniques\fonction.vb" />
+    <Compile Include="Classes Techniques\visiteur.vb" />
+    <Compile Include="Classes Techniques\voitureUtilise.vb" />
     <Compile Include="form_aProposDe.Designer.vb">
       <DependentUpon>form_aProposDe.vb</DependentUpon>
     </Compile>
@@ -91,17 +95,17 @@
     <Compile Include="Form_resetMDP.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_Utilisateur.Designer.vb">
-      <DependentUpon>form_Utilisateur.vb</DependentUpon>
+    <Compile Include="form_CreateUser.Designer.vb">
+      <DependentUpon>form_CreateUser.vb</DependentUpon>
     </Compile>
-    <Compile Include="form_Utilisateur.vb">
+    <Compile Include="form_CreateUser.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_Principal.vb">
+    <Compile Include="form_ListeUsers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_Principal.Designer.vb">
-      <DependentUpon>form_Principal.vb</DependentUpon>
+    <Compile Include="form_ListeUsers.Designer.vb">
+      <DependentUpon>form_ListeUsers.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form_MDIContainer.Designer.vb">
@@ -136,11 +140,11 @@
     <EmbeddedResource Include="Form_resetMDP.resx">
       <DependentUpon>Form_resetMDP.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_Utilisateur.resx">
-      <DependentUpon>form_Utilisateur.vb</DependentUpon>
+    <EmbeddedResource Include="form_CreateUser.resx">
+      <DependentUpon>form_CreateUser.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_Principal.resx">
-      <DependentUpon>form_Principal.vb</DependentUpon>
+    <EmbeddedResource Include="form_ListeUsers.resx">
+      <DependentUpon>form_ListeUsers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_MDIContainer.resx">
       <DependentUpon>form_MDIContainer.vb</DependentUpon>
