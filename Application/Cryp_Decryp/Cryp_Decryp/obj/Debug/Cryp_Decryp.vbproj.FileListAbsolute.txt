@@ -8,3 +8,7 @@ c:\users\badbo\documents\visual studio 2013\Projects\Cryp_Decryp\Cryp_Decryp\obj
 c:\users\badbo\documents\visual studio 2013\Projects\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.exe
 c:\users\badbo\documents\visual studio 2013\Projects\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.xml
 c:\users\badbo\documents\visual studio 2013\Projects\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.pdb
+C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\Cryp_Decryp\Cryp_Decryp\bin\Debug\Cryp_Decryp.exe.config
+C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.exe
+C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.xml
+C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.pdb

@@ -23,8 +23,6 @@ Partial Class form_Principal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Jean", "Oui", "Visteur"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.HighlightText, Nothing)
-        Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Benoit", "Patrick", "Comptable"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.Window, Nothing)
         Me.lbl_InfoMdp = New System.Windows.Forms.Label()
         Me.rb_AllUser = New System.Windows.Forms.RadioButton()
         Me.rb_Visiteur = New System.Windows.Forms.RadioButton()
@@ -105,7 +103,6 @@ Partial Class form_Principal
         Me.lstV_visiteur.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnNom, Me.ColumnPrenom, Me.ColumnType})
         Me.lstV_visiteur.ContextMenuStrip = Me.ClicDroit
         Me.lstV_visiteur.FullRowSelect = True
-        Me.lstV_visiteur.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem3, ListViewItem4})
         Me.lstV_visiteur.Location = New System.Drawing.Point(25, 124)
         Me.lstV_visiteur.MultiSelect = False
         Me.lstV_visiteur.Name = "lstV_visiteur"
