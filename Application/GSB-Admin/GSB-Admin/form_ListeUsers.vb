@@ -3,6 +3,17 @@
 Public Class form_ListeUsers
 
 
+    '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'Bouton pour afficher et modifier le mot d passe d'un utilisateur
+
+
+    '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'Bouton d'ouverture du formulaire de création d'un nouvel utilisateur
+
+
+
+
+
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs)
         form_CreateUser.Show()
     End Sub
@@ -28,23 +39,28 @@ Public Class form_ListeUsers
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Form_resetMDP.Show()
     End Sub
-<<<<<<< HEAD:Application/GSB-Admin/GSB-Admin/form_ListeUsers.vb
 
-    '-------------------------------------------------------------------------------------------------------------------------------------------
-    'Chargement du formulaire (remplissage de la liste des utilisateurs
     Private Sub form_Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'On crée notre commande ici
-        Dim reqListeUsers As String = "SELECT * from utilisateur"
-        Dim Commande As New SqlCommand(reqListeUsers, MyConnexion)
-        'On crée notre Reader
-        Dim ReaderTableUsers As SqlDataReader = Commande.ExecuteReader()
+        'On prépare notre requête SQL dans un objet Command
+        Dim Mycommand As SqlCommand = form_MDIContainer.MyConnexion.CreateCommand()
+        Mycommand.CommandText = "SELECT * FROM utilisateur"
 
-        While ReaderTableUsers.Read()
+        'On crée un DataReader
+        Dim myReader As SqlDataReader = Mycommand.ExecuteReader()
 
-        End While
+        'On parcourt l'ensemble pour remplir notre ListView
+        Do While myReader.Read()
+
+            Dim item As New ListViewItem
+            item = New ListViewItem({myReader.GetString(0), myReader.GetString(1), myReader.GetString(2)})
+            lstV_visiteur.Items.Add(item)
+
+        Loop
+
+        myReader.Close()
+        form_MDIContainer.MyConnexion.Close()
+
 
     End Sub
-=======
->>>>>>> parent of ce9ae01... Travail PPE (12 Novembre 2016):Application/GSB-Admin/GSB-Admin/form_Principal.vb
 End Class

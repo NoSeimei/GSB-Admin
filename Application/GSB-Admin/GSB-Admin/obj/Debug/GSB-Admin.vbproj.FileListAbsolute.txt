@@ -32,7 +32,6 @@ C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Deb
 C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Utilisateur.resources
 C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Principal.resources
 C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
-<<<<<<< HEAD
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
@@ -48,22 +47,33 @@ C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Applic
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
+D:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
+D:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
+D:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
+D:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+D:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe
+D:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.pdb
+D:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.xml
+D:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_aProposDe.resources
+D:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Connexion.resources
+D:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Form_resetMDP.resources
+D:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Utilisateur.resources
+D:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Principal.resources
+D:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
+D:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
+D:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
 C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
-C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe
-C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.pdb
-C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.xml
-C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.CodeAnalysisLog.xml
-C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.lastcodeanalysissucceeded
-C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_aProposDe.resources
-C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Connexion.resources
-C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Form_resetMDP.resources
-C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_CreateUser.resources
-C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_ListeUsers.resources
-C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
-C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
-C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
 C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
 C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
 C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
-=======
->>>>>>> parent of ce9ae01... Travail PPE (12 Novembre 2016)
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.pdb
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.xml
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_aProposDe.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Connexion.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Form_resetMDP.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_CreateUser.resources
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_ListeUsers.resources

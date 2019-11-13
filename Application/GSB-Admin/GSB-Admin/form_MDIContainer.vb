@@ -1,20 +1,16 @@
-﻿Public Class form_MDIContainer
+﻿Imports System.Data.SqlClient
 
-    Private Sub ListeDesUtilisateursToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListeDesUtilisateursToolStripMenuItem.Click
-        form_Principal.MdiParent = Me
-        form_Principal.Show()
-    End Sub
+Public Class form_MDIContainer
 
-<<<<<<< HEAD
+    'On ce connecte à la base de données BIBI
+    '   Public MyConnexion As New SqlConnection("Data Source=" + Database.Item("serveur") + ";Initial Catalog=" + Database.Item("baseDeDonnees") & _
+    ' ";User Id=" + Database.Item("user") + ";Password=" + Database.Item("mdpUser") + ";")
+
+    'LOCAL
+    Public  MyConnexion As SqlConnection = New SqlConnection("Data Source=" + Database.Item("serveur") + ";" & _
+                                                         "Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Bouton de déconnexion
-=======
-    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
-        form_Utilisateur.MdiParent = Me
-        form_Utilisateur.Show()
-    End Sub
-
->>>>>>> parent of ce9ae01... Travail PPE (12 Novembre 2016)
     Private Sub DéconnexionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DéconnexionToolStripMenuItem.Click
         Dim Reponse As DialogResult 'Déclaration de la variavle "Reponse" en local
         Reponse = MessageBox.Show("Voulez-vous vraiment vous déconnecter ?", "Quitter", _
@@ -22,27 +18,41 @@
         If Reponse = DialogResult.Yes Then
             form_Connexion.Close()
             form_Connexion.Show()
+            Auth.Clear()
+            Database.Clear()
             Me.Close()
         End If
     End Sub
+    '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+    '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'Chargement du formulaire (Authentification et connexion à la base de données)
     Private Sub MDIContainer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-<<<<<<< HEAD
-        'Connexion à la BDD en appelant notre méthode
-        ConnexionSQLServeur()
-        form_ListeUsers.MdiParent = Me
-        form_ListeUsers.Show() 
-=======
-        form_Principal.MdiParent = Me
-        form_Principal.Show()
->>>>>>> parent of ce9ae01... Travail PPE (12 Novembre 2016)
-    End Sub
 
+        Try
+
+            MyConnexion.Open()
+            form_ListeUsers.MdiParent = Me
+            form_ListeUsers.Show()
+
+        Catch ex As Exception
+
+            MsgBox("La connexion à la base de données a échouée")
+
+        End Try
+
+    End Sub
+    '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+    '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'Menu du formulaire MDI
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
         form_aProposDe.MdiParent = Me
         form_aProposDe.Show()
     End Sub
-<<<<<<< HEAD
     Private Sub ListeDesUtilisateursToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListeDesUtilisateursToolStripMenuItem.Click
         form_ListeUsers.MdiParent = Me
         form_ListeUsers.Show()
@@ -51,11 +61,9 @@
         form_CreateUser.MdiParent = Me
         form_CreateUser.Show()
     End Sub
-=======
-
->>>>>>> parent of ce9ae01... Travail PPE (12 Novembre 2016)
     Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
         Form_resetMDP.MdiParent = Me
         Form_resetMDP.Show()
     End Sub
+    '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 End Class

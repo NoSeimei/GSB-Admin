@@ -1,14 +1,9 @@
-<<<<<<< HEAD
-﻿Public Class form_Connexion
-=======
 ﻿Imports System.IO
 Imports System.Security.Cryptography
 Imports System.Text
-Imports GSB_Admin.Read
 Public Class form_Connexion
 
 
->>>>>>> parent of ce9ae01... Travail PPE (12 Novembre 2016)
 
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Boutton pour quitter l'application
@@ -19,20 +14,12 @@ Public Class form_Connexion
 
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Bouton de connexion
-<<<<<<< HEAD
-
-    '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-=======
     Private Sub btn_Submit_Click(sender As Object, e As EventArgs) Handles btn_Submit.Click
-        Dim user As New Read
+        'Appel de la fonction qui charge nos Dictyonnary (connexion à la base de donées ainsi qu'à l'application)
+        lectureFichier()
 
-        Dim autorise As Boolean
-
-        If user.lectureFichier(txtB_Login.Text, txtB_MDP.Text) Then
-            autorise = True
-        End If
-
-        If autorise Then
+        'On vérifie ici les informations qui ont été rentrer par la personne
+        If Auth.Item("login") = txtB_Login.Text And Auth.Item("motdepasse") = txtB_MDP.Text Then
             form_MDIContainer.Show()
             Me.Hide()
         Else
@@ -41,8 +28,11 @@ Public Class form_Connexion
         End If
 
     End Sub
->>>>>>> parent of ce9ae01... Travail PPE (12 Novembre 2016)
+    '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+    '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'Gestion des ENABLED
     Private Sub txtB_Login_TextChanged(sender As Object, e As EventArgs) Handles txtB_Login.TextChanged
         If txtB_Login.Text.Trim.Length > 0 Then
             txtB_MDP.Enabled = True
@@ -58,33 +48,13 @@ Public Class form_Connexion
             btn_Submit.Enabled = False
         End If
     End Sub
+    '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'Chargement de l'application
     Private Sub connexion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtB_Login.Text = ""
         txtB_MDP.Text = ""
     End Sub
-<<<<<<< HEAD
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    Private Sub btn_Submit_Click(sender As Object, e As EventArgs) Handles btn_Submit.Click
-        'Appel de la fonction qui charge nos Dictyonnary (connexion à la base de donées ainsi qu'à l'application)
-        lectureFichier_Config()
-
-        'On vérifie ici les informations qui ont été rentrer par la personne
-        If Auth.Item("login") = txtB_Login.Text And Auth.Item("motdepasse") = txtB_MDP.Text Then
-            form_MDIContainer.Show()
-            Me.Hide()
-        Else
-            txtB_MDP.Text = ""
-            lbl_Erreur.Text = " Login ou mot de passe incorrects..."
-        End If
-=======
-
-
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim Lignes() As String = File.ReadAllLines("test.txt")
-        MsgBox(Lignes(0))
->>>>>>> parent of ce9ae01... Travail PPE (12 Novembre 2016)
-    End Sub
 End Class

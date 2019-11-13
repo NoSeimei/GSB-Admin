@@ -1,6 +1,5 @@
 ﻿Public Class form_CreateUser
 
-
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Bouton de retour au formulaire principal
     Private Sub btn_return_Click(sender As Object, e As EventArgs) Handles btn_return.Click

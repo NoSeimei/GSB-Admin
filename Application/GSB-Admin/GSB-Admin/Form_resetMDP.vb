@@ -1,4 +1,5 @@
 ﻿Public Class Form_resetMDP
+
     
     Private Sub tb_mdpchange_TextChanged(sender As Object, e As EventArgs) Handles tb_mdpchange.TextChanged
         Dim valueProgressBar = ValidatePassword(tb_mdpchange.Text)
