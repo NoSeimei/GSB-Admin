@@ -28,6 +28,7 @@ Public Class form_ListeUsers
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Form_resetMDP.Show()
     End Sub
+<<<<<<< HEAD:Application/GSB-Admin/GSB-Admin/form_ListeUsers.vb
 
     '-------------------------------------------------------------------------------------------------------------------------------------------
     'Chargement du formulaire (remplissage de la liste des utilisateurs
@@ -44,4 +45,6 @@ Public Class form_ListeUsers
         End While
 
     End Sub
+=======
+>>>>>>> parent of ce9ae01... Travail PPE (12 Novembre 2016):Application/GSB-Admin/GSB-Admin/form_Principal.vb
 End Class

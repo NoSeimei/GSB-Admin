@@ -243,7 +243,7 @@ Partial Class form_CreateUser
         'lstV_Voitures
         '
         Me.lstV_Voitures.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
-        Me.lstV_Voitures.Location = New System.Drawing.Point(436, 206)
+        Me.lstV_Voitures.Location = New System.Drawing.Point(417, 86)
         Me.lstV_Voitures.Name = "lstV_Voitures"
         Me.lstV_Voitures.Size = New System.Drawing.Size(272, 327)
         Me.lstV_Voitures.TabIndex = 21
@@ -283,7 +283,7 @@ Partial Class form_CreateUser
         'lbl_Voitures
         '
         Me.lbl_Voitures.AutoSize = True
-        Me.lbl_Voitures.Location = New System.Drawing.Point(543, 190)
+        Me.lbl_Voitures.Location = New System.Drawing.Point(524, 70)
         Me.lbl_Voitures.Name = "lbl_Voitures"
         Me.lbl_Voitures.Size = New System.Drawing.Size(45, 13)
         Me.lbl_Voitures.TabIndex = 24
@@ -345,7 +345,7 @@ Partial Class form_CreateUser
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox3.Controls.Add(Me.DateTimePicker2)
-        Me.GroupBox3.Location = New System.Drawing.Point(419, 50)
+        Me.GroupBox3.Location = New System.Drawing.Point(389, 426)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(344, 107)
         Me.GroupBox3.TabIndex = 29
@@ -374,7 +374,7 @@ Partial Class form_CreateUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(795, 593)
+        Me.ClientSize = New System.Drawing.Size(351, 593)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.gb_login)
         Me.Controls.Add(Me.GroupBox1)

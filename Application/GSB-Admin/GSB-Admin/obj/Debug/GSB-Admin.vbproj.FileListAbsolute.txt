@@ -32,6 +32,7 @@ C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Deb
 C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Utilisateur.resources
 C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Principal.resources
 C:\Users\badbo\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
+<<<<<<< HEAD
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
@@ -64,3 +65,5 @@ C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\De
 C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
 C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
 C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+=======
+>>>>>>> parent of ce9ae01... Travail PPE (12 Novembre 2016)
