@@ -56,7 +56,7 @@
 
     Property loginUser
         Get
-            Return decryptValue(m_login)
+            Return m_login
         End Get
         Set(value)
             'Faire le cryptage de la value pour le SET
@@ -65,7 +65,7 @@
 
     Property mdpUser
         Get
-            Return decryptValue(m_mdp)
+            Return m_mdp
         End Get
         Set(value)
             'Idem ici

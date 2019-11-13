@@ -1,7 +1,4 @@
-﻿
-Public Class form_Connexion
-
-
+﻿Public Class form_Connexion
 
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Boutton pour quitter l'application
@@ -12,21 +9,7 @@ Public Class form_Connexion
 
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Bouton de connexion
-    Private Sub btn_Submit_Click(sender As Object, e As EventArgs) Handles btn_Submit.Click
 
-        'Appel de la fonction qui charge nos Dictyonnary (connexion à la base de donées ainsi qu'à l'application)
-        lectureFichier_Config()
-
-        'On vérifie ici les informations qui ont été rentrer par la personne
-        If Auth.Item("login") = txtB_Login.Text And Auth.Item("motdepasse") = txtB_MDP.Text Then
-            form_MDIContainer.Show()
-            Me.Hide()
-        Else
-            txtB_MDP.Text = ""
-            lbl_Erreur.Text = " Login ou mot de passe incorrects..."
-        End If
-
-    End Sub
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -56,4 +39,18 @@ Public Class form_Connexion
         txtB_MDP.Text = ""
     End Sub
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    Private Sub btn_Submit_Click(sender As Object, e As EventArgs) Handles btn_Submit.Click
+        'Appel de la fonction qui charge nos Dictyonnary (connexion à la base de donées ainsi qu'à l'application)
+        lectureFichier_Config()
+
+        'On vérifie ici les informations qui ont été rentrer par la personne
+        If Auth.Item("login") = txtB_Login.Text And Auth.Item("motdepasse") = txtB_MDP.Text Then
+            form_MDIContainer.Show()
+            Me.Hide()
+        Else
+            txtB_MDP.Text = ""
+            lbl_Erreur.Text = " Login ou mot de passe incorrects..."
+        End If
+    End Sub
 End Class
