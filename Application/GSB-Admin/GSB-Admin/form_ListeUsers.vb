@@ -1,19 +1,6 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class form_ListeUsers
-
-
-    '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    'Bouton pour afficher et modifier le mot d passe d'un utilisateur
-
-
-    '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    'Bouton d'ouverture du formulaire de création d'un nouvel utilisateur
-
-
-
-
-
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs)
         form_CreateUser.Show()
     End Sub
@@ -40,27 +27,34 @@ Public Class form_ListeUsers
         Form_resetMDP.Show()
     End Sub
 
-    Private Sub form_Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'On prépare notre requête SQL dans un objet Command
-        Dim Mycommand As SqlCommand = form_MDIContainer.MyConnexion.CreateCommand()
-        Mycommand.CommandText = "SELECT * FROM utilisateur"
 
-        'On crée un DataReader
-        Dim myReader As SqlDataReader = Mycommand.ExecuteReader()
+    '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'Bouton radio
+    Private Sub rb_AllUser_CheckedChanged(sender As Object, e As EventArgs) Handles rb_AllUser.CheckedChanged
 
-        'On parcourt l'ensemble pour remplir notre ListView
-        Do While myReader.Read()
+        'Vérifie que ce bouton est bien checké
+        If rb_AllUser.Checked = True Then
+            'On prépare un item de notre listView
+            Dim item As ListViewItem
 
-            Dim item As New ListViewItem
-            item = New ListViewItem({myReader.GetString(0), myReader.GetString(1), myReader.GetString(2)})
-            lstV_visiteur.Items.Add(item)
+            'On parcourt l'ensemble de notre collection d'utilisateurs
+            For Each unUser In CollectionUser
+                item = New ListViewItem({unUser.nomUser, unUser.prenomUSer, unUser.dateEmbaucheUser})
+                lstV_visiteur.Items.Add(item)
+            Next
 
-        Loop
-
-        myReader.Close()
-        form_MDIContainer.MyConnexion.Close()
-
+        End If
 
     End Sub
+
+    Private Sub rb_Visiteur_CheckedChanged(sender As Object, e As EventArgs) Handles rb_Visiteur.CheckedChanged
+
+    End Sub
+
+    Private Sub rb_Comptable_CheckedChanged(sender As Object, e As EventArgs) Handles rb_Comptable.CheckedChanged
+
+    End Sub
+
+    '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 End Class

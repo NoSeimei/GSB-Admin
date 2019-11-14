@@ -99,4 +99,41 @@ Module fonction
         Return text
     End Function
 
+
+
+
+    'Permet de retourner le visiteur s'il existe
+    Function trouverVisiteur(idVisiteur As Integer)
+        For Each unVisiteur In CollectionVisiteur
+            If unVisiteur.idUser = idVisiteur Then
+                Return unVisiteur
+            End If
+        Next
+
+        Throw New Exception("Ce visiteur n'existe pas")
+    End Function
+
+
+    'Permet de retourner le véhicule s'il existe
+    Function trouverVehicule(immat As String)
+        For Each unVehicule In CollectionVehicule
+            If unVehicule.LireImmat = immat Then
+                Return unVehicule
+            End If
+        Next
+
+        Throw New Exception("Cette immatriculation n'existe pas")
+    End Function
+
+
+    'Permet de retourner l'utilisateur s'il existe
+    Function trouverUtilisateur(id As Integer)
+        For Each unUser In CollectionUser
+            If unUser.idUser = id Then
+                Return unUser
+            End If
+        Next
+
+        Throw New Exception("Cette utilisateur n'existe pas")
+    End Function
 End Module

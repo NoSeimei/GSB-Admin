@@ -70,13 +70,14 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Utiles\Collection.vb" />
-    <Compile Include="Classes Techniques\comptable.vb" />
-    <Compile Include="Classes Techniques\user.vb" />
-    <Compile Include="Classes Techniques\Vehicule.vb" />
-    <Compile Include="Utiles\fonction.vb" />
-    <Compile Include="Classes Techniques\visiteur.vb" />
-    <Compile Include="Classes Techniques\voitureUtilise.vb" />
+    <Compile Include="Classes Techniques\VarProjet.vb" />
+    <Compile Include="Classes Métiers\comptable.vb" />
+    <Compile Include="Classes Métiers\user.vb" />
+    <Compile Include="Classes Métiers\Vehicule.vb" />
+    <Compile Include="Classes Techniques\Connexion.vb" />
+    <Compile Include="Classes Techniques\fonction.vb" />
+    <Compile Include="Classes Métiers\visiteur.vb" />
+    <Compile Include="Classes Métiers\voitureUtilise.vb" />
     <Compile Include="form_aProposDe.Designer.vb">
       <DependentUpon>form_aProposDe.vb</DependentUpon>
     </Compile>

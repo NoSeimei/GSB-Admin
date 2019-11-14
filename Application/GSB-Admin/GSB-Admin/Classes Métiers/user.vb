@@ -11,6 +11,7 @@
     Private m_ville As String
     Private m_dateEmbauche As Date
 
+
     'Constructeur de notre classe user
     Sub New(id As Integer, nom As String, prenom As String, login As String, mdp As String, adresse As String, cp As String, ville As String, dateEmbauche As Date)
         m_id = id
@@ -69,6 +70,7 @@
         End Get
         Set(value)
             'Idem ici
+
         End Set
     End Property
 

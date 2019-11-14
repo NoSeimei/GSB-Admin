@@ -2,13 +2,9 @@
 
 Public Class form_MDIContainer
 
-    'On ce connecte à la base de données BIBI
-    '   Public MyConnexion As New SqlConnection("Data Source=" + Database.Item("serveur") + ";Initial Catalog=" + Database.Item("baseDeDonnees") & _
-    ' ";User Id=" + Database.Item("user") + ";Password=" + Database.Item("mdpUser") + ";")
+    'Objet Connexion permettant d'accéder à la base de données
+    Dim ConnexionSQL As New Connexion
 
-    'LOCAL
-    Public  MyConnexion As SqlConnection = New SqlConnection("Data Source=" + Database.Item("serveur") + ";" & _
-                                                         "Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Bouton de déconnexion
     Private Sub DéconnexionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DéconnexionToolStripMenuItem.Click
@@ -29,19 +25,8 @@ Public Class form_MDIContainer
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Chargement du formulaire (Authentification et connexion à la base de données)
     Private Sub MDIContainer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        Try
-
-            MyConnexion.Open()
-            form_ListeUsers.MdiParent = Me
-            form_ListeUsers.Show()
-
-        Catch ex As Exception
-
-            MsgBox("La connexion à la base de données a échouée")
-
-        End Try
-
+        form_ListeUsers.MdiParent = Me
+        form_ListeUsers.Show()
     End Sub
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -32,7 +32,7 @@ Partial Class form_ListeUsers
         Me.lstV_visiteur = New System.Windows.Forms.ListView()
         Me.ColumnNom = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnPrenom = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnType = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnDateEmbauche = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ClicDroit = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.OUiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LacheMoiMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -100,8 +100,9 @@ Partial Class form_ListeUsers
         '
         'lstV_visiteur
         '
-        Me.lstV_visiteur.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnNom, Me.ColumnPrenom, Me.ColumnType})
+        Me.lstV_visiteur.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnNom, Me.ColumnPrenom, Me.ColumnDateEmbauche})
         Me.lstV_visiteur.ContextMenuStrip = Me.ClicDroit
+        Me.lstV_visiteur.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lstV_visiteur.FullRowSelect = True
         Me.lstV_visiteur.Location = New System.Drawing.Point(25, 124)
         Me.lstV_visiteur.MultiSelect = False
@@ -109,7 +110,6 @@ Partial Class form_ListeUsers
         Me.lstV_visiteur.Size = New System.Drawing.Size(437, 321)
         Me.lstV_visiteur.TabIndex = 22
         Me.lstV_visiteur.UseCompatibleStateImageBehavior = False
-        Me.lstV_visiteur.UseWaitCursor = True
         Me.lstV_visiteur.View = System.Windows.Forms.View.Details
         '
         'ColumnNom
@@ -122,10 +122,10 @@ Partial Class form_ListeUsers
         Me.ColumnPrenom.Text = "Prénom"
         Me.ColumnPrenom.Width = 153
         '
-        'ColumnType
+        'ColumnDateEmbauche
         '
-        Me.ColumnType.Text = "Type"
-        Me.ColumnType.Width = 132
+        Me.ColumnDateEmbauche.Text = "Date d'embauche"
+        Me.ColumnDateEmbauche.Width = 132
         '
         'ClicDroit
         '
@@ -154,7 +154,7 @@ Partial Class form_ListeUsers
         Me.Button1.Text = "Réinitialiser le mot de passe"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'form_Principal
+        'form_ListeUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -164,7 +164,7 @@ Partial Class form_ListeUsers
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lbl_InfoMdp)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Name = "form_Principal"
+        Me.Name = "form_ListeUsers"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "GSB-Admin"
         Me.GroupBox1.ResumeLayout(False)
@@ -183,7 +183,7 @@ Partial Class form_ListeUsers
     Friend WithEvents lstV_visiteur As System.Windows.Forms.ListView
     Friend WithEvents ColumnNom As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnPrenom As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnType As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnDateEmbauche As System.Windows.Forms.ColumnHeader
     Friend WithEvents ClicDroit As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents OUiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LacheMoiMToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

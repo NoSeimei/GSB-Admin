@@ -1,14 +1,14 @@
 ﻿Public Class Vehicule
-    Private m_immat As Integer
+
+    Private m_immat As String
     Private m_puiss As Integer
     Private m_modeleEtMarque As String
 
 
-    Sub New(immat As Integer, puiss As Integer, modeleEtMarque As String)
+    Sub New(immat As String, puiss As Integer, modeleEtMarque As String)
         m_immat = immat
         m_puiss = puiss
         m_modeleEtMarque = modeleEtMarque
-
     End Sub
 
     Property LireImmat
@@ -37,5 +37,8 @@
             m_modeleEtMarque = value
         End Set
     End Property
+
+
+
 
 End Class

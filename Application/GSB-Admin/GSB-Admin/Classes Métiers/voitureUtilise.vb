@@ -7,11 +7,11 @@
 
 
     'Constructeur de la classe qui permet de mettre en lien le visiteur ainsi que la voiture qu'il utilise
-    Sub New(vehicule As Vehicule, visiteur As visiteur, dateDebut As Date, dateFin As Date)
+    Sub New(vehicule As Vehicule, visiteur As visiteur, dateDebut As Date)
         m_Vehicule = vehicule
         m_Visiteur = visiteur
         m_dateDebutUtilisatation = dateDebut
-        m_dateFinUtilisatation = dateFin
+        m_dateFinUtilisatation = Nothing
     End Sub
 
 
