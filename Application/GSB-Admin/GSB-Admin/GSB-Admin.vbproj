@@ -70,49 +70,49 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="connexion.Designer.vb">
-      <DependentUpon>connexion.vb</DependentUpon>
+    <Compile Include="Classes Techniques\VarProjet.vb" />
+    <Compile Include="Classes Métiers\comptable.vb" />
+    <Compile Include="Classes Métiers\user.vb" />
+    <Compile Include="Classes Métiers\Vehicule.vb" />
+    <Compile Include="Classes Techniques\Connexion.vb" />
+    <Compile Include="Classes Techniques\fonction.vb" />
+    <Compile Include="Classes Métiers\visiteur.vb" />
+    <Compile Include="Classes Métiers\voitureUtilise.vb" />
+    <Compile Include="form_aProposDe.Designer.vb">
+      <DependentUpon>form_aProposDe.vb</DependentUpon>
     </Compile>
-    <Compile Include="connexion.vb">
+    <Compile Include="form_aProposDe.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="creatUser.Designer.vb">
-      <DependentUpon>creatUser.vb</DependentUpon>
+    <Compile Include="form_Connexion.Designer.vb">
+      <DependentUpon>form_Connexion.vb</DependentUpon>
     </Compile>
-    <Compile Include="creatUser.vb">
+    <Compile Include="form_Connexion.vb">
       <SubType>Form</SubType>
     </Compile>
-<<<<<<< Updated upstream
-    <Compile Include="Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-=======
     <Compile Include="Form_resetMDP.Designer.vb">
       <DependentUpon>Form_resetMDP.vb</DependentUpon>
     </Compile>
     <Compile Include="Form_resetMDP.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_Utilisateur.Designer.vb">
-      <DependentUpon>form_Utilisateur.vb</DependentUpon>
+    <Compile Include="form_CreateUser.Designer.vb">
+      <DependentUpon>form_CreateUser.vb</DependentUpon>
     </Compile>
-    <Compile Include="form_Utilisateur.vb">
+    <Compile Include="form_CreateUser.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_ListeUtiliasteurs.vb">
+    <Compile Include="form_ListeUsers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_ListeUtiliasteurs.Designer.vb">
-      <DependentUpon>form_ListeUtiliasteurs.vb</DependentUpon>
+    <Compile Include="form_ListeUsers.Designer.vb">
+      <DependentUpon>form_ListeUsers.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form_MDIContainer.Designer.vb">
       <DependentUpon>form_MDIContainer.vb</DependentUpon>
     </Compile>
     <Compile Include="form_MDIContainer.vb">
->>>>>>> Stashed changes
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -132,19 +132,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="connexion.resx">
-      <DependentUpon>connexion.vb</DependentUpon>
+    <EmbeddedResource Include="form_aProposDe.resx">
+      <DependentUpon>form_aProposDe.vb</DependentUpon>
     </EmbeddedResource>
-<<<<<<< Updated upstream
-    <EmbeddedResource Include="creatUser.resx">
-      <DependentUpon>creatUser.vb</DependentUpon>
-=======
-    <EmbeddedResource Include="form_ListeUtiliasteurs.resx">
-      <DependentUpon>form_ListeUtiliasteurs.vb</DependentUpon>
->>>>>>> Stashed changes
+    <EmbeddedResource Include="form_Connexion.resx">
+      <DependentUpon>form_Connexion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Form_resetMDP.resx">
+      <DependentUpon>Form_resetMDP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_CreateUser.resx">
+      <DependentUpon>form_CreateUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_ListeUsers.resx">
+      <DependentUpon>form_ListeUsers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_MDIContainer.resx">
+      <DependentUpon>form_MDIContainer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -165,6 +169,7 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

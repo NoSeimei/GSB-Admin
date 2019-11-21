@@ -22,61 +22,64 @@ Partial Class frm_principal
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.components = New System.ComponentModel.Container()
+        Dim ListViewItem5 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Jean", "Oui", "Visteur"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.MenuHighlight, Nothing)
+        Dim ListViewItem6 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Benoit", "Patrick", "Comptable"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.Window, Nothing)
+        Me.tb_mdpchange = New System.Windows.Forms.TextBox()
         Me.progressBar_Mdp = New System.Windows.Forms.ProgressBar()
         Me.lbl_InfoMdp = New System.Windows.Forms.Label()
         Me.rb_AllUser = New System.Windows.Forms.RadioButton()
         Me.rb_Visiteur = New System.Windows.Forms.RadioButton()
         Me.rb_Comptable = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.grpB_reset = New System.Windows.Forms.GroupBox()
-        Me.rb_ResetNo = New System.Windows.Forms.RadioButton()
-        Me.rb_resetYes = New System.Windows.Forms.RadioButton()
-        Me.rb_Reset = New System.Windows.Forms.RadioButton()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.btn_Valider = New System.Windows.Forms.Button()
         Me.btn_Default = New System.Windows.Forms.Button()
         Me.btn_deco = New System.Windows.Forms.Button()
-        Me.lstV_Users = New System.Windows.Forms.ListView()
-        Me.btn_CreateUser = New System.Windows.Forms.Button()
         Me.lbl_Mdp = New System.Windows.Forms.Label()
-        Me.btn_SeeMdp = New System.Windows.Forms.Button()
         Me.btn_ChangeMdp = New System.Windows.Forms.Button()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.lstV_visiteur = New System.Windows.Forms.ListView()
+        Me.ColumnNom = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnPrenom = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnType = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.cbx_showhide = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
-        Me.grpB_reset.SuspendLayout()
-        Me.ToolStrip1.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TextBox1
+        'tb_mdpchange
         '
-        Me.TextBox1.Location = New System.Drawing.Point(940, 256)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(174, 20)
-        Me.TextBox1.TabIndex = 2
-        Me.TextBox1.UseSystemPasswordChar = True
+        Me.tb_mdpchange.Location = New System.Drawing.Point(512, 231)
+        Me.tb_mdpchange.Name = "tb_mdpchange"
+        Me.tb_mdpchange.Size = New System.Drawing.Size(174, 20)
+        Me.tb_mdpchange.TabIndex = 2
+        Me.tb_mdpchange.UseSystemPasswordChar = True
         '
         'progressBar_Mdp
         '
-        Me.progressBar_Mdp.Location = New System.Drawing.Point(940, 282)
+        Me.progressBar_Mdp.Location = New System.Drawing.Point(590, 257)
         Me.progressBar_Mdp.Name = "progressBar_Mdp"
-        Me.progressBar_Mdp.Size = New System.Drawing.Size(174, 27)
+        Me.progressBar_Mdp.Size = New System.Drawing.Size(96, 10)
         Me.progressBar_Mdp.TabIndex = 4
         Me.progressBar_Mdp.Value = 10
         '
         'lbl_InfoMdp
         '
         Me.lbl_InfoMdp.AutoSize = True
-        Me.lbl_InfoMdp.Location = New System.Drawing.Point(937, 325)
+        Me.lbl_InfoMdp.Location = New System.Drawing.Point(562, 241)
         Me.lbl_InfoMdp.Name = "lbl_InfoMdp"
-        Me.lbl_InfoMdp.Size = New System.Drawing.Size(148, 13)
+        Me.lbl_InfoMdp.Size = New System.Drawing.Size(0, 13)
         Me.lbl_InfoMdp.TabIndex = 5
-        Me.lbl_InfoMdp.Text = "2 caractères Minimum ... (info)"
         '
         'rb_AllUser
         '
         Me.rb_AllUser.AutoSize = True
-        Me.rb_AllUser.Location = New System.Drawing.Point(23, 67)
+        Me.rb_AllUser.Checked = True
+        Me.rb_AllUser.Location = New System.Drawing.Point(16, 21)
         Me.rb_AllUser.Name = "rb_AllUser"
         Me.rb_AllUser.Size = New System.Drawing.Size(49, 17)
         Me.rb_AllUser.TabIndex = 6
@@ -87,22 +90,20 @@ Partial Class frm_principal
         'rb_Visiteur
         '
         Me.rb_Visiteur.AutoSize = True
-        Me.rb_Visiteur.Location = New System.Drawing.Point(23, 44)
+        Me.rb_Visiteur.Location = New System.Drawing.Point(86, 21)
         Me.rb_Visiteur.Name = "rb_Visiteur"
         Me.rb_Visiteur.Size = New System.Drawing.Size(59, 17)
         Me.rb_Visiteur.TabIndex = 7
-        Me.rb_Visiteur.TabStop = True
         Me.rb_Visiteur.Text = "Visiteur"
         Me.rb_Visiteur.UseVisualStyleBackColor = True
         '
         'rb_Comptable
         '
         Me.rb_Comptable.AutoSize = True
-        Me.rb_Comptable.Location = New System.Drawing.Point(23, 21)
+        Me.rb_Comptable.Location = New System.Drawing.Point(162, 21)
         Me.rb_Comptable.Name = "rb_Comptable"
         Me.rb_Comptable.Size = New System.Drawing.Size(75, 17)
         Me.rb_Comptable.TabIndex = 8
-        Me.rb_Comptable.TabStop = True
         Me.rb_Comptable.Text = "Comptable"
         Me.rb_Comptable.UseVisualStyleBackColor = True
         '
@@ -111,80 +112,16 @@ Partial Class frm_principal
         Me.GroupBox1.Controls.Add(Me.rb_Visiteur)
         Me.GroupBox1.Controls.Add(Me.rb_Comptable)
         Me.GroupBox1.Controls.Add(Me.rb_AllUser)
-        Me.GroupBox1.Location = New System.Drawing.Point(45, 52)
+        Me.GroupBox1.Location = New System.Drawing.Point(25, 74)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(200, 100)
+        Me.GroupBox1.Size = New System.Drawing.Size(246, 44)
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Utilisateur"
-        '
-        'grpB_reset
-        '
-        Me.grpB_reset.Controls.Add(Me.rb_ResetNo)
-        Me.grpB_reset.Controls.Add(Me.rb_resetYes)
-        Me.grpB_reset.Controls.Add(Me.rb_Reset)
-        Me.grpB_reset.Location = New System.Drawing.Point(558, 52)
-        Me.grpB_reset.Name = "grpB_reset"
-        Me.grpB_reset.Size = New System.Drawing.Size(200, 100)
-        Me.grpB_reset.TabIndex = 10
-        Me.grpB_reset.TabStop = False
-        Me.grpB_reset.Text = "Réinitialisation"
-        Me.grpB_reset.Visible = False
-        '
-        'rb_ResetNo
-        '
-        Me.rb_ResetNo.AutoSize = True
-        Me.rb_ResetNo.Location = New System.Drawing.Point(23, 44)
-        Me.rb_ResetNo.Name = "rb_ResetNo"
-        Me.rb_ResetNo.Size = New System.Drawing.Size(109, 17)
-        Me.rb_ResetNo.TabIndex = 7
-        Me.rb_ResetNo.TabStop = True
-        Me.rb_ResetNo.Text = "Aucune demande"
-        Me.rb_ResetNo.UseVisualStyleBackColor = True
-        Me.rb_ResetNo.Visible = False
-        '
-        'rb_resetYes
-        '
-        Me.rb_resetYes.AutoSize = True
-        Me.rb_resetYes.Location = New System.Drawing.Point(23, 21)
-        Me.rb_resetYes.Name = "rb_resetYes"
-        Me.rb_resetYes.Size = New System.Drawing.Size(71, 17)
-        Me.rb_resetYes.TabIndex = 8
-        Me.rb_resetYes.TabStop = True
-        Me.rb_resetYes.Text = "Demande"
-        Me.rb_resetYes.UseVisualStyleBackColor = True
-        Me.rb_resetYes.Visible = False
-        '
-        'rb_Reset
-        '
-        Me.rb_Reset.AutoSize = True
-        Me.rb_Reset.Location = New System.Drawing.Point(23, 67)
-        Me.rb_Reset.Name = "rb_Reset"
-        Me.rb_Reset.Size = New System.Drawing.Size(49, 17)
-        Me.rb_Reset.TabIndex = 6
-        Me.rb_Reset.TabStop = True
-        Me.rb_Reset.Text = "Tous"
-        Me.rb_Reset.UseVisualStyleBackColor = True
-        Me.rb_Reset.Visible = False
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(777, 25)
-        Me.ToolStrip1.TabIndex = 11
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripLabel1
-        '
-        Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(12, 22)
-        Me.ToolStripLabel1.Text = "?"
+        Me.GroupBox1.Text = "Les utilisateurs"
         '
         'btn_Valider
         '
-        Me.btn_Valider.Location = New System.Drawing.Point(940, 379)
+        Me.btn_Valider.Location = New System.Drawing.Point(537, 291)
         Me.btn_Valider.Name = "btn_Valider"
         Me.btn_Valider.Size = New System.Drawing.Size(75, 23)
         Me.btn_Valider.TabIndex = 12
@@ -193,7 +130,7 @@ Partial Class frm_principal
         '
         'btn_Default
         '
-        Me.btn_Default.Location = New System.Drawing.Point(1039, 379)
+        Me.btn_Default.Location = New System.Drawing.Point(618, 291)
         Me.btn_Default.Name = "btn_Default"
         Me.btn_Default.Size = New System.Drawing.Size(75, 23)
         Me.btn_Default.TabIndex = 13
@@ -202,109 +139,157 @@ Partial Class frm_principal
         '
         'btn_deco
         '
-        Me.btn_deco.Location = New System.Drawing.Point(675, 529)
+        Me.btn_deco.Location = New System.Drawing.Point(187, 501)
         Me.btn_deco.Name = "btn_deco"
-        Me.btn_deco.Size = New System.Drawing.Size(88, 23)
+        Me.btn_deco.Size = New System.Drawing.Size(109, 38)
         Me.btn_deco.TabIndex = 14
         Me.btn_deco.Text = "Déconnexion"
         Me.btn_deco.UseVisualStyleBackColor = True
         '
-        'lstV_Users
-        '
-        Me.lstV_Users.Location = New System.Drawing.Point(40, 158)
-        Me.lstV_Users.Name = "lstV_Users"
-        Me.lstV_Users.Size = New System.Drawing.Size(718, 321)
-        Me.lstV_Users.TabIndex = 15
-        Me.lstV_Users.UseCompatibleStateImageBehavior = False
-        '
-        'btn_CreateUser
-        '
-        Me.btn_CreateUser.Location = New System.Drawing.Point(40, 529)
-        Me.btn_CreateUser.Name = "btn_CreateUser"
-        Me.btn_CreateUser.Size = New System.Drawing.Size(181, 23)
-        Me.btn_CreateUser.TabIndex = 16
-        Me.btn_CreateUser.Text = "Créer un nouvel utilisateur"
-        Me.btn_CreateUser.UseVisualStyleBackColor = True
-        '
         'lbl_Mdp
         '
         Me.lbl_Mdp.AutoSize = True
-        Me.lbl_Mdp.Location = New System.Drawing.Point(937, 230)
+        Me.lbl_Mdp.Location = New System.Drawing.Point(509, 205)
         Me.lbl_Mdp.Name = "lbl_Mdp"
         Me.lbl_Mdp.Size = New System.Drawing.Size(71, 13)
         Me.lbl_Mdp.TabIndex = 17
         Me.lbl_Mdp.Text = "Mot de passe"
         '
-        'btn_SeeMdp
-        '
-        Me.btn_SeeMdp.Location = New System.Drawing.Point(1120, 256)
-        Me.btn_SeeMdp.Name = "btn_SeeMdp"
-        Me.btn_SeeMdp.Size = New System.Drawing.Size(18, 23)
-        Me.btn_SeeMdp.TabIndex = 18
-        Me.btn_SeeMdp.Text = "0"
-        Me.btn_SeeMdp.UseVisualStyleBackColor = True
-        '
         'btn_ChangeMdp
         '
-        Me.btn_ChangeMdp.Cursor = System.Windows.Forms.Cursors.PanEast
-        Me.btn_ChangeMdp.Location = New System.Drawing.Point(732, 12)
+        Me.btn_ChangeMdp.Location = New System.Drawing.Point(444, 48)
         Me.btn_ChangeMdp.Name = "btn_ChangeMdp"
         Me.btn_ChangeMdp.Size = New System.Drawing.Size(26, 23)
         Me.btn_ChangeMdp.TabIndex = 19
-        Me.btn_ChangeMdp.Text = ">"
+        Me.btn_ChangeMdp.Text = "&>"
         Me.btn_ChangeMdp.UseVisualStyleBackColor = True
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(483, 24)
+        Me.MenuStrip1.TabIndex = 21
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(158, 20)
+        Me.ToolStripMenuItem1.Text = "Créer un nouvel utilisateur"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Margin = New System.Windows.Forms.Padding(230, 0, 0, 0)
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(86, 20)
+        Me.ToolStripMenuItem2.Text = "À propos de "
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(302, 451)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(160, 17)
+        Me.CheckBox1.TabIndex = 9
+        Me.CheckBox1.Text = "Uniquement les demandeurs"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'lstV_visiteur
+        '
+        Me.lstV_visiteur.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnNom, Me.ColumnPrenom, Me.ColumnType})
+        Me.lstV_visiteur.FullRowSelect = True
+        Me.lstV_visiteur.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem5, ListViewItem6})
+        Me.lstV_visiteur.Location = New System.Drawing.Point(25, 124)
+        Me.lstV_visiteur.MultiSelect = False
+        Me.lstV_visiteur.Name = "lstV_visiteur"
+        Me.lstV_visiteur.Size = New System.Drawing.Size(437, 321)
+        Me.lstV_visiteur.TabIndex = 22
+        Me.lstV_visiteur.UseCompatibleStateImageBehavior = False
+        Me.lstV_visiteur.UseWaitCursor = True
+        Me.lstV_visiteur.View = System.Windows.Forms.View.Details
+        '
+        'ColumnNom
+        '
+        Me.ColumnNom.Text = "Nom"
+        Me.ColumnNom.Width = 148
+        '
+        'ColumnPrenom
+        '
+        Me.ColumnPrenom.Text = "Prénom"
+        Me.ColumnPrenom.Width = 153
+        '
+        'ColumnType
+        '
+        Me.ColumnType.Text = "Type"
+        Me.ColumnType.Width = 132
+        '
+        'cbx_showhide
+        '
+        Me.cbx_showhide.AutoSize = True
+        Me.cbx_showhide.Location = New System.Drawing.Point(692, 231)
+        Me.cbx_showhide.Name = "cbx_showhide"
+        Me.cbx_showhide.Size = New System.Drawing.Size(108, 17)
+        Me.cbx_showhide.TabIndex = 23
+        Me.cbx_showhide.Text = "Afficher/Masquer"
+        Me.cbx_showhide.UseVisualStyleBackColor = True
         '
         'frm_principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(777, 558)
+        Me.ClientSize = New System.Drawing.Size(483, 551)
+        Me.Controls.Add(Me.cbx_showhide)
+        Me.Controls.Add(Me.lstV_visiteur)
+        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.btn_ChangeMdp)
-        Me.Controls.Add(Me.btn_SeeMdp)
         Me.Controls.Add(Me.lbl_Mdp)
-        Me.Controls.Add(Me.btn_CreateUser)
-        Me.Controls.Add(Me.lstV_Users)
         Me.Controls.Add(Me.btn_deco)
         Me.Controls.Add(Me.btn_Default)
         Me.Controls.Add(Me.btn_Valider)
-        Me.Controls.Add(Me.ToolStrip1)
-        Me.Controls.Add(Me.grpB_reset)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lbl_InfoMdp)
         Me.Controls.Add(Me.progressBar_Mdp)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.tb_mdpchange)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frm_principal"
         Me.Text = "GSB-Admin"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.grpB_reset.ResumeLayout(False)
-        Me.grpB_reset.PerformLayout()
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents tb_mdpchange As System.Windows.Forms.TextBox
     Friend WithEvents progressBar_Mdp As System.Windows.Forms.ProgressBar
     Friend WithEvents lbl_InfoMdp As System.Windows.Forms.Label
     Friend WithEvents rb_AllUser As System.Windows.Forms.RadioButton
     Friend WithEvents rb_Visiteur As System.Windows.Forms.RadioButton
     Friend WithEvents rb_Comptable As System.Windows.Forms.RadioButton
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents grpB_reset As System.Windows.Forms.GroupBox
-    Friend WithEvents rb_ResetNo As System.Windows.Forms.RadioButton
-    Friend WithEvents rb_resetYes As System.Windows.Forms.RadioButton
-    Friend WithEvents rb_Reset As System.Windows.Forms.RadioButton
-    Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
-    Friend WithEvents ToolStripLabel1 As System.Windows.Forms.ToolStripLabel
     Friend WithEvents btn_Valider As System.Windows.Forms.Button
     Friend WithEvents btn_Default As System.Windows.Forms.Button
     Friend WithEvents btn_deco As System.Windows.Forms.Button
-    Friend WithEvents lstV_Users As System.Windows.Forms.ListView
-    Friend WithEvents btn_CreateUser As System.Windows.Forms.Button
     Friend WithEvents lbl_Mdp As System.Windows.Forms.Label
-    Friend WithEvents btn_SeeMdp As System.Windows.Forms.Button
     Friend WithEvents btn_ChangeMdp As System.Windows.Forms.Button
+    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents lstV_visiteur As System.Windows.Forms.ListView
+    Friend WithEvents ColumnNom As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnPrenom As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnType As System.Windows.Forms.ColumnHeader
+    Friend WithEvents cbx_showhide As System.Windows.Forms.CheckBox
 
 End Class

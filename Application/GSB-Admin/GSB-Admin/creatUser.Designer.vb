@@ -48,32 +48,35 @@ Partial Class creatUser
         Me.lbl_InfoMdp = New System.Windows.Forms.Label()
         Me.progressBar_Mdp = New System.Windows.Forms.ProgressBar()
         Me.lbl_Voitures = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.grpb_TypeUser.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'btn_Submit
         '
-        Me.btn_Submit.Enabled = False
-        Me.btn_Submit.Location = New System.Drawing.Point(356, 512)
+        Me.btn_Submit.Location = New System.Drawing.Point(120, 501)
         Me.btn_Submit.Name = "btn_Submit"
-        Me.btn_Submit.Size = New System.Drawing.Size(75, 23)
+        Me.btn_Submit.Size = New System.Drawing.Size(83, 32)
         Me.btn_Submit.TabIndex = 0
         Me.btn_Submit.Text = "Valider"
         Me.btn_Submit.UseVisualStyleBackColor = True
         '
         'btn_return
         '
-        Me.btn_return.Location = New System.Drawing.Point(12, 512)
+        Me.btn_return.Location = New System.Drawing.Point(12, 558)
         Me.btn_return.Name = "btn_return"
         Me.btn_return.Size = New System.Drawing.Size(75, 23)
         Me.btn_return.TabIndex = 1
-        Me.btn_return.Text = "Retour"
+        Me.btn_return.Text = "&Annuler"
         Me.btn_return.UseVisualStyleBackColor = True
         '
         'lbl_Name
         '
         Me.lbl_Name.AutoSize = True
-        Me.lbl_Name.Location = New System.Drawing.Point(91, 60)
+        Me.lbl_Name.Location = New System.Drawing.Point(67, 27)
         Me.lbl_Name.Name = "lbl_Name"
         Me.lbl_Name.Size = New System.Drawing.Size(29, 13)
         Me.lbl_Name.TabIndex = 2
@@ -81,22 +84,22 @@ Partial Class creatUser
         '
         'txtB_name
         '
-        Me.txtB_name.Location = New System.Drawing.Point(132, 60)
+        Me.txtB_name.Location = New System.Drawing.Point(102, 24)
         Me.txtB_name.Name = "txtB_name"
-        Me.txtB_name.Size = New System.Drawing.Size(242, 20)
+        Me.txtB_name.Size = New System.Drawing.Size(148, 20)
         Me.txtB_name.TabIndex = 3
         '
         'txt_Prenom
         '
-        Me.txt_Prenom.Location = New System.Drawing.Point(132, 104)
+        Me.txt_Prenom.Location = New System.Drawing.Point(102, 68)
         Me.txt_Prenom.Name = "txt_Prenom"
-        Me.txt_Prenom.Size = New System.Drawing.Size(242, 20)
+        Me.txt_Prenom.Size = New System.Drawing.Size(148, 20)
         Me.txt_Prenom.TabIndex = 5
         '
         'lbl_prenom
         '
         Me.lbl_prenom.AutoSize = True
-        Me.lbl_prenom.Location = New System.Drawing.Point(77, 111)
+        Me.lbl_prenom.Location = New System.Drawing.Point(53, 71)
         Me.lbl_prenom.Name = "lbl_prenom"
         Me.lbl_prenom.Size = New System.Drawing.Size(43, 13)
         Me.lbl_prenom.TabIndex = 4
@@ -104,15 +107,15 @@ Partial Class creatUser
         '
         'txtB_Login
         '
-        Me.txtB_Login.Location = New System.Drawing.Point(132, 147)
+        Me.txtB_Login.Location = New System.Drawing.Point(79, 25)
         Me.txtB_Login.Name = "txtB_Login"
-        Me.txtB_Login.Size = New System.Drawing.Size(242, 20)
+        Me.txtB_Login.Size = New System.Drawing.Size(148, 20)
         Me.txtB_Login.TabIndex = 7
         '
         'lbl_Login
         '
         Me.lbl_Login.AutoSize = True
-        Me.lbl_Login.Location = New System.Drawing.Point(86, 150)
+        Me.lbl_Login.Location = New System.Drawing.Point(37, 28)
         Me.lbl_Login.Name = "lbl_Login"
         Me.lbl_Login.Size = New System.Drawing.Size(36, 13)
         Me.lbl_Login.TabIndex = 6
@@ -120,15 +123,15 @@ Partial Class creatUser
         '
         'txtB_MDP
         '
-        Me.txtB_MDP.Location = New System.Drawing.Point(132, 191)
+        Me.txtB_MDP.Location = New System.Drawing.Point(79, 69)
         Me.txtB_MDP.Name = "txtB_MDP"
-        Me.txtB_MDP.Size = New System.Drawing.Size(242, 20)
+        Me.txtB_MDP.Size = New System.Drawing.Size(148, 20)
         Me.txtB_MDP.TabIndex = 9
         '
         'lbl_Mdp
         '
         Me.lbl_Mdp.AutoSize = True
-        Me.lbl_Mdp.Location = New System.Drawing.Point(51, 198)
+        Me.lbl_Mdp.Location = New System.Drawing.Point(5, 72)
         Me.lbl_Mdp.Name = "lbl_Mdp"
         Me.lbl_Mdp.Size = New System.Drawing.Size(71, 13)
         Me.lbl_Mdp.TabIndex = 8
@@ -136,15 +139,15 @@ Partial Class creatUser
         '
         'txtB_Adresse
         '
-        Me.txtB_Adresse.Location = New System.Drawing.Point(132, 279)
+        Me.txtB_Adresse.Location = New System.Drawing.Point(101, 107)
         Me.txtB_Adresse.Name = "txtB_Adresse"
-        Me.txtB_Adresse.Size = New System.Drawing.Size(242, 20)
+        Me.txtB_Adresse.Size = New System.Drawing.Size(148, 20)
         Me.txtB_Adresse.TabIndex = 11
         '
         'lbl_Adr
         '
         Me.lbl_Adr.AutoSize = True
-        Me.lbl_Adr.Location = New System.Drawing.Point(77, 279)
+        Me.lbl_Adr.Location = New System.Drawing.Point(53, 110)
         Me.lbl_Adr.Name = "lbl_Adr"
         Me.lbl_Adr.Size = New System.Drawing.Size(45, 13)
         Me.lbl_Adr.TabIndex = 10
@@ -152,15 +155,15 @@ Partial Class creatUser
         '
         'txtB_CodePostal
         '
-        Me.txtB_CodePostal.Location = New System.Drawing.Point(132, 318)
+        Me.txtB_CodePostal.Location = New System.Drawing.Point(101, 146)
         Me.txtB_CodePostal.Name = "txtB_CodePostal"
-        Me.txtB_CodePostal.Size = New System.Drawing.Size(242, 20)
+        Me.txtB_CodePostal.Size = New System.Drawing.Size(72, 20)
         Me.txtB_CodePostal.TabIndex = 13
         '
         'lbl_CodePostal
         '
         Me.lbl_CodePostal.AutoSize = True
-        Me.lbl_CodePostal.Location = New System.Drawing.Point(58, 318)
+        Me.lbl_CodePostal.Location = New System.Drawing.Point(34, 149)
         Me.lbl_CodePostal.Name = "lbl_CodePostal"
         Me.lbl_CodePostal.Size = New System.Drawing.Size(64, 13)
         Me.lbl_CodePostal.TabIndex = 12
@@ -168,15 +171,15 @@ Partial Class creatUser
         '
         'txtB_Ville
         '
-        Me.txtB_Ville.Location = New System.Drawing.Point(132, 358)
+        Me.txtB_Ville.Location = New System.Drawing.Point(101, 186)
         Me.txtB_Ville.Name = "txtB_Ville"
-        Me.txtB_Ville.Size = New System.Drawing.Size(242, 20)
+        Me.txtB_Ville.Size = New System.Drawing.Size(151, 20)
         Me.txtB_Ville.TabIndex = 15
         '
         'lbl_Ville
         '
         Me.lbl_Ville.AutoSize = True
-        Me.lbl_Ville.Location = New System.Drawing.Point(96, 358)
+        Me.lbl_Ville.Location = New System.Drawing.Point(72, 189)
         Me.lbl_Ville.Name = "lbl_Ville"
         Me.lbl_Ville.Size = New System.Drawing.Size(26, 13)
         Me.lbl_Ville.TabIndex = 14
@@ -185,7 +188,7 @@ Partial Class creatUser
         'lbl_DateEmbauche
         '
         Me.lbl_DateEmbauche.AutoSize = True
-        Me.lbl_DateEmbauche.Location = New System.Drawing.Point(31, 402)
+        Me.lbl_DateEmbauche.Location = New System.Drawing.Point(4, 230)
         Me.lbl_DateEmbauche.Name = "lbl_DateEmbauche"
         Me.lbl_DateEmbauche.Size = New System.Drawing.Size(91, 13)
         Me.lbl_DateEmbauche.TabIndex = 16
@@ -195,9 +198,9 @@ Partial Class creatUser
         '
         Me.grpb_TypeUser.Controls.Add(Me.rb_Visiteur)
         Me.grpb_TypeUser.Controls.Add(Me.rb_Comptable)
-        Me.grpb_TypeUser.Location = New System.Drawing.Point(138, 439)
+        Me.grpb_TypeUser.Location = New System.Drawing.Point(89, 419)
         Me.grpb_TypeUser.Name = "grpb_TypeUser"
-        Me.grpb_TypeUser.Size = New System.Drawing.Size(200, 100)
+        Me.grpb_TypeUser.Size = New System.Drawing.Size(168, 58)
         Me.grpb_TypeUser.TabIndex = 18
         Me.grpb_TypeUser.TabStop = False
         Me.grpb_TypeUser.Text = "Type d'utilisateur"
@@ -205,7 +208,7 @@ Partial Class creatUser
         'rb_Visiteur
         '
         Me.rb_Visiteur.AutoSize = True
-        Me.rb_Visiteur.Location = New System.Drawing.Point(31, 28)
+        Me.rb_Visiteur.Location = New System.Drawing.Point(13, 28)
         Me.rb_Visiteur.Name = "rb_Visiteur"
         Me.rb_Visiteur.Size = New System.Drawing.Size(59, 17)
         Me.rb_Visiteur.TabIndex = 9
@@ -215,26 +218,24 @@ Partial Class creatUser
         'rb_Comptable
         '
         Me.rb_Comptable.AutoSize = True
-        Me.rb_Comptable.Checked = True
-        Me.rb_Comptable.Location = New System.Drawing.Point(31, 51)
+        Me.rb_Comptable.Location = New System.Drawing.Point(89, 28)
         Me.rb_Comptable.Name = "rb_Comptable"
         Me.rb_Comptable.Size = New System.Drawing.Size(75, 17)
         Me.rb_Comptable.TabIndex = 8
-        Me.rb_Comptable.TabStop = True
         Me.rb_Comptable.Text = "Comptable"
         Me.rb_Comptable.UseVisualStyleBackColor = True
         '
         'date_DateEmbauche
         '
-        Me.date_DateEmbauche.Location = New System.Drawing.Point(132, 402)
+        Me.date_DateEmbauche.Location = New System.Drawing.Point(101, 224)
         Me.date_DateEmbauche.Name = "date_DateEmbauche"
-        Me.date_DateEmbauche.Size = New System.Drawing.Size(200, 20)
+        Me.date_DateEmbauche.Size = New System.Drawing.Size(192, 20)
         Me.date_DateEmbauche.TabIndex = 20
         '
         'lstV_Voitures
         '
         Me.lstV_Voitures.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1})
-        Me.lstV_Voitures.Location = New System.Drawing.Point(503, 89)
+        Me.lstV_Voitures.Location = New System.Drawing.Point(464, 84)
         Me.lstV_Voitures.Name = "lstV_Voitures"
         Me.lstV_Voitures.Size = New System.Drawing.Size(310, 315)
         Me.lstV_Voitures.TabIndex = 21
@@ -243,61 +244,84 @@ Partial Class creatUser
         'lbl_InfoMdp
         '
         Me.lbl_InfoMdp.AutoSize = True
-        Me.lbl_InfoMdp.Location = New System.Drawing.Point(184, 245)
+        Me.lbl_InfoMdp.Location = New System.Drawing.Point(42, 109)
         Me.lbl_InfoMdp.Name = "lbl_InfoMdp"
-        Me.lbl_InfoMdp.Size = New System.Drawing.Size(148, 13)
+        Me.lbl_InfoMdp.Size = New System.Drawing.Size(0, 13)
         Me.lbl_InfoMdp.TabIndex = 23
-        Me.lbl_InfoMdp.Text = "2 caractères Minimum ... (info)"
         '
         'progressBar_Mdp
         '
-        Me.progressBar_Mdp.Location = New System.Drawing.Point(132, 215)
+        Me.progressBar_Mdp.Location = New System.Drawing.Point(137, 95)
         Me.progressBar_Mdp.Name = "progressBar_Mdp"
-        Me.progressBar_Mdp.Size = New System.Drawing.Size(242, 27)
+        Me.progressBar_Mdp.Size = New System.Drawing.Size(90, 11)
         Me.progressBar_Mdp.TabIndex = 22
         Me.progressBar_Mdp.Value = 10
         '
         'lbl_Voitures
         '
         Me.lbl_Voitures.AutoSize = True
-        Me.lbl_Voitures.Location = New System.Drawing.Point(628, 63)
+        Me.lbl_Voitures.Location = New System.Drawing.Point(589, 58)
         Me.lbl_Voitures.Name = "lbl_Voitures"
         Me.lbl_Voitures.Size = New System.Drawing.Size(45, 13)
         Me.lbl_Voitures.TabIndex = 24
         Me.lbl_Voitures.Text = "Voitures"
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.lbl_Name)
+        Me.GroupBox1.Controls.Add(Me.txtB_name)
+        Me.GroupBox1.Controls.Add(Me.lbl_prenom)
+        Me.GroupBox1.Controls.Add(Me.txt_Prenom)
+        Me.GroupBox1.Controls.Add(Me.lbl_Adr)
+        Me.GroupBox1.Controls.Add(Me.date_DateEmbauche)
+        Me.GroupBox1.Controls.Add(Me.txtB_Adresse)
+        Me.GroupBox1.Controls.Add(Me.lbl_CodePostal)
+        Me.GroupBox1.Controls.Add(Me.lbl_DateEmbauche)
+        Me.GroupBox1.Controls.Add(Me.txtB_CodePostal)
+        Me.GroupBox1.Controls.Add(Me.txtB_Ville)
+        Me.GroupBox1.Controls.Add(Me.lbl_Ville)
+        Me.GroupBox1.Location = New System.Drawing.Point(19, 12)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(314, 259)
+        Me.GroupBox1.TabIndex = 25
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Informations"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.lbl_Login)
+        Me.GroupBox2.Controls.Add(Me.txtB_Login)
+        Me.GroupBox2.Controls.Add(Me.lbl_Mdp)
+        Me.GroupBox2.Controls.Add(Me.lbl_InfoMdp)
+        Me.GroupBox2.Controls.Add(Me.txtB_MDP)
+        Me.GroupBox2.Controls.Add(Me.progressBar_Mdp)
+        Me.GroupBox2.Location = New System.Drawing.Point(44, 277)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(256, 136)
+        Me.GroupBox2.TabIndex = 26
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Authentification"
+        '
         'creatUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(454, 547)
+        Me.ClientSize = New System.Drawing.Size(349, 593)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lbl_Voitures)
-        Me.Controls.Add(Me.lbl_InfoMdp)
-        Me.Controls.Add(Me.progressBar_Mdp)
         Me.Controls.Add(Me.lstV_Voitures)
-        Me.Controls.Add(Me.date_DateEmbauche)
         Me.Controls.Add(Me.grpb_TypeUser)
-        Me.Controls.Add(Me.lbl_DateEmbauche)
-        Me.Controls.Add(Me.txtB_Ville)
-        Me.Controls.Add(Me.lbl_Ville)
-        Me.Controls.Add(Me.txtB_CodePostal)
-        Me.Controls.Add(Me.lbl_CodePostal)
-        Me.Controls.Add(Me.txtB_Adresse)
-        Me.Controls.Add(Me.lbl_Adr)
-        Me.Controls.Add(Me.txtB_MDP)
-        Me.Controls.Add(Me.lbl_Mdp)
-        Me.Controls.Add(Me.txtB_Login)
-        Me.Controls.Add(Me.lbl_Login)
-        Me.Controls.Add(Me.txt_Prenom)
-        Me.Controls.Add(Me.lbl_prenom)
-        Me.Controls.Add(Me.txtB_name)
-        Me.Controls.Add(Me.lbl_Name)
         Me.Controls.Add(Me.btn_return)
         Me.Controls.Add(Me.btn_Submit)
         Me.Name = "creatUser"
         Me.Text = "Création d'un nouvel utilisateur"
         Me.grpb_TypeUser.ResumeLayout(False)
         Me.grpb_TypeUser.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -328,4 +352,6 @@ Partial Class creatUser
     Friend WithEvents lbl_InfoMdp As System.Windows.Forms.Label
     Friend WithEvents progressBar_Mdp As System.Windows.Forms.ProgressBar
     Friend WithEvents lbl_Voitures As System.Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
 End Class

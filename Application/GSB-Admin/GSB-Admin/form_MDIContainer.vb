@@ -1,15 +1,12 @@
-﻿Public Class form_MDIContainer
+﻿Imports System.Data.SqlClient
 
-    Private Sub ListeDesUtilisateursToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListeDesUtilisateursToolStripMenuItem.Click
-        form_ListeUtiliasteurs.MdiParent = Me
-        form_ListeUtiliasteurs.Show()
-    End Sub
+Public Class form_MDIContainer
 
-    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
-        form_Utilisateur.MdiParent = Me
-        form_Utilisateur.Show()
-    End Sub
+    'Objet Connexion permettant d'accéder à la base de données
+    Dim ConnexionSQL As New Connexion
 
+    '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'Bouton de déconnexion
     Private Sub DéconnexionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DéconnexionToolStripMenuItem.Click
         Dim Reponse As DialogResult 'Déclaration de la variavle "Reponse" en local
         Reponse = MessageBox.Show("Voulez-vous vraiment vous déconnecter ?", "Quitter", _
@@ -17,22 +14,41 @@
         If Reponse = DialogResult.Yes Then
             form_Connexion.Close()
             form_Connexion.Show()
+            Auth.Clear()
+            Database.Clear()
             Me.Close()
         End If
     End Sub
+    '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+    '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'Chargement du formulaire (Authentification et connexion à la base de données)
     Private Sub MDIContainer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        form_ListeUtiliasteurs.MdiParent = Me
-        form_ListeUtiliasteurs.Show()
+        form_ListeUsers.MdiParent = Me
+        form_ListeUsers.Show()
     End Sub
+    '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+
+    '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'Menu du formulaire MDI
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
         form_aProposDe.MdiParent = Me
         form_aProposDe.Show()
     End Sub
-
+    Private Sub ListeDesUtilisateursToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListeDesUtilisateursToolStripMenuItem.Click
+        form_ListeUsers.MdiParent = Me
+        form_ListeUsers.Show()
+    End Sub
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        form_CreateUser.MdiParent = Me
+        form_CreateUser.Show()
+    End Sub
     Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
         Form_resetMDP.MdiParent = Me
         Form_resetMDP.Show()
     End Sub
+    '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 End Class

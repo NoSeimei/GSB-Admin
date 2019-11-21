@@ -40,7 +40,7 @@ Partial Class form_MDIContainer
         Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(192, 749)
+        Me.MenuStrip1.Size = New System.Drawing.Size(192, 791)
         Me.MenuStrip1.TabIndex = 22
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -65,7 +65,7 @@ Partial Class form_MDIContainer
         'DéconnexionToolStripMenuItem
         '
         Me.DéconnexionToolStripMenuItem.Name = "DéconnexionToolStripMenuItem"
-        Me.DéconnexionToolStripMenuItem.Size = New System.Drawing.Size(89, 19)
+        Me.DéconnexionToolStripMenuItem.Size = New System.Drawing.Size(88, 19)
         Me.DéconnexionToolStripMenuItem.Text = "Déconnexion"
         '
         'ToolStripMenuItem2
@@ -79,11 +79,11 @@ Partial Class form_MDIContainer
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(1370, 749)
+        Me.ClientSize = New System.Drawing.Size(1425, 791)
         Me.Controls.Add(Me.MenuStrip1)
         Me.IsMdiContainer = True
         Me.Name = "form_MDIContainer"
-        Me.Text = "Application GSB-Admin"
+        Me.Text = "MDIContainer"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
