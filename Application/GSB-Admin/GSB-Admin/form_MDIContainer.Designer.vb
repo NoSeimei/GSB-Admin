@@ -25,10 +25,9 @@ Partial Class form_MDIContainer
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ListeDesUtilisateursToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UtilisateursToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.DéconnexionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -37,7 +36,7 @@ Partial Class form_MDIContainer
         Me.MenuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuStrip1.ImeMode = System.Windows.Forms.ImeMode.[On]
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListeDesUtilisateursToolStripMenuItem, Me.ToolStripMenuItem1, Me.ToolStripMenuItem3, Me.UtilisateursToolStripMenuItem, Me.DéconnexionToolStripMenuItem, Me.ToolStripMenuItem2})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListeDesUtilisateursToolStripMenuItem, Me.ToolStripMenuItem1, Me.ToolStripMenuItem3, Me.DéconnexionToolStripMenuItem, Me.ToolStripMenuItem2})
         Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
@@ -48,8 +47,8 @@ Partial Class form_MDIContainer
         'ListeDesUtilisateursToolStripMenuItem
         '
         Me.ListeDesUtilisateursToolStripMenuItem.Name = "ListeDesUtilisateursToolStripMenuItem"
-        Me.ListeDesUtilisateursToolStripMenuItem.Size = New System.Drawing.Size(171, 19)
-        Me.ListeDesUtilisateursToolStripMenuItem.Text = "Liste des utilisateurs - Admin"
+        Me.ListeDesUtilisateursToolStripMenuItem.Size = New System.Drawing.Size(124, 19)
+        Me.ListeDesUtilisateursToolStripMenuItem.Text = "Liste des utilisateurs"
         '
         'ToolStripMenuItem1
         '
@@ -57,11 +56,11 @@ Partial Class form_MDIContainer
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(158, 19)
         Me.ToolStripMenuItem1.Text = "Créer un nouvel utilisateur"
         '
-        'UtilisateursToolStripMenuItem
+        'ToolStripMenuItem3
         '
-        Me.UtilisateursToolStripMenuItem.Name = "UtilisateursToolStripMenuItem"
-        Me.UtilisateursToolStripMenuItem.Size = New System.Drawing.Size(160, 19)
-        Me.UtilisateursToolStripMenuItem.Text = "Liste des utilisateurs -Users"
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(186, 19)
+        Me.ToolStripMenuItem3.Text = "Réinitialisation du mot de passe"
         '
         'DéconnexionToolStripMenuItem
         '
@@ -74,12 +73,6 @@ Partial Class form_MDIContainer
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
         Me.ToolStripMenuItem2.Size = New System.Drawing.Size(86, 19)
         Me.ToolStripMenuItem2.Text = "À propos de "
-        '
-        'ToolStripMenuItem3
-        '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(186, 19)
-        Me.ToolStripMenuItem3.Text = "Réinitialisation du mot de passe"
         '
         'form_MDIContainer
         '
@@ -102,6 +95,5 @@ Partial Class form_MDIContainer
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DéconnexionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents UtilisateursToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
 End Class

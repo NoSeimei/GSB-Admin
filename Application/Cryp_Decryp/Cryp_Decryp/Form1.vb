@@ -8,7 +8,7 @@ Public Class Form1
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim TexteEnBytes() As Byte = Encoding.UTF8.GetBytes(TextBox1.Text)
-        Dim KeyBytes() As Byte = Encoding.UTF8.GetBytes("admin974")
+        Dim KeyBytes() As Byte = Encoding.UTF8.GetBytes("aGioP782")
         Dim Crypto As New DESCryptoServiceProvider()
         Crypto.Key = KeyBytes
         Crypto.IV = KeyBytes
@@ -20,7 +20,7 @@ Public Class Form1
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim ResultatBytes() As Byte = Convert.FromBase64String(TextBox2.Text)
-        Dim KeyBytes() As Byte = Encoding.UTF8.GetBytes("admin974")
+        Dim KeyBytes() As Byte = Encoding.UTF8.GetBytes("aGioP782")
         Dim Crypto As New DESCryptoServiceProvider()
         Crypto.Key = KeyBytes
         Crypto.IV = KeyBytes

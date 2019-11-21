@@ -70,8 +70,14 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connexion.vb" />
-    <Compile Include="fonction.vb" />
+    <Compile Include="Classes Techniques\VarProjet.vb" />
+    <Compile Include="Classes Métiers\comptable.vb" />
+    <Compile Include="Classes Métiers\user.vb" />
+    <Compile Include="Classes Métiers\Vehicule.vb" />
+    <Compile Include="Classes Techniques\Connexion.vb" />
+    <Compile Include="Classes Techniques\fonction.vb" />
+    <Compile Include="Classes Métiers\visiteur.vb" />
+    <Compile Include="Classes Métiers\voitureUtilise.vb" />
     <Compile Include="form_aProposDe.Designer.vb">
       <DependentUpon>form_aProposDe.vb</DependentUpon>
     </Compile>
@@ -90,17 +96,17 @@
     <Compile Include="Form_resetMDP.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_Utilisateur.Designer.vb">
-      <DependentUpon>form_Utilisateur.vb</DependentUpon>
+    <Compile Include="form_CreateUser.Designer.vb">
+      <DependentUpon>form_CreateUser.vb</DependentUpon>
     </Compile>
-    <Compile Include="form_Utilisateur.vb">
+    <Compile Include="form_CreateUser.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_Principal.vb">
+    <Compile Include="form_ListeUsers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_Principal.Designer.vb">
-      <DependentUpon>form_Principal.vb</DependentUpon>
+    <Compile Include="form_ListeUsers.Designer.vb">
+      <DependentUpon>form_ListeUsers.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form_MDIContainer.Designer.vb">
@@ -124,7 +130,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Read.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="form_aProposDe.resx">
@@ -136,11 +141,11 @@
     <EmbeddedResource Include="Form_resetMDP.resx">
       <DependentUpon>Form_resetMDP.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_Utilisateur.resx">
-      <DependentUpon>form_Utilisateur.vb</DependentUpon>
+    <EmbeddedResource Include="form_CreateUser.resx">
+      <DependentUpon>form_CreateUser.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_Principal.resx">
-      <DependentUpon>form_Principal.vb</DependentUpon>
+    <EmbeddedResource Include="form_ListeUsers.resx">
+      <DependentUpon>form_ListeUsers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_MDIContainer.resx">
       <DependentUpon>form_MDIContainer.vb</DependentUpon>
@@ -164,6 +169,7 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
