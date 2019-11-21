@@ -7,7 +7,12 @@ Module fonction
     Private tabVigene As New Dictionary(Of String, ArrayList)
     Private key As String = "GSB-Admin"
 
-    'Fonction permetttant de vérifier la complexité d'un mot de passe
+
+
+
+
+
+    'Fonction permetttant de vérifier la complexité d'un mot de passe pour les progress bar
     Function ValidatePassword(ByVal pwd As String,
     Optional ByVal minLength As Integer = 8,
     Optional ByVal numUpper As Integer = 2,
@@ -32,6 +37,19 @@ Module fonction
         If lower.Matches(pwd).Count < numLower Then valueReturn -= 20
         If number.Matches(pwd).Count < numNumbers Then valueReturn -= 20
         If special.Matches(pwd).Count < numSpecial Then valueReturn -= 20
+
+        ' Passed all checks.
+        Return valueReturn
+    End Function
+
+    Function ValidateInt(ByVal valeur) As Boolean
+
+        ' Replace [A-Z] with \p{Lu}, to allow for Unicode uppercase letters.
+        Dim upper As New System.Text.RegularExpressions.Regex("[A-Z]")
+        Dim lower As New System.Text.RegularExpressions.Regex("[a-z]")
+        Dim number As New System.Text.RegularExpressions.Regex("[0-9]")
+        ' Special is "none of the above".
+        Dim special As New System.Text.RegularExpressions.Regex("[^a-zA-Z0-9]")
 
         ' Passed all checks.
         Return valueReturn

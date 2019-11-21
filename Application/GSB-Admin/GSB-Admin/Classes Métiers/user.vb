@@ -1,4 +1,6 @@
-﻿Public Class user
+﻿Imports System.Data.SqlClient
+
+Public Class user
 
     'propriétés de notre classe user
     Private m_id As Integer
@@ -33,6 +35,13 @@
             Return m_id
         End Get
         Set(value)
+
+            'Ouverture de la connexion
+            ConnexionSQL.OpenConnexion()
+            'Faire des requêtes dans une classe connexion qui permettrait de pouvoir effectuer les opérations dont on as besoin CRUD
+            ConnexionSQL.CloseConnexion()
+
+
             m_id = value
         End Set
     End Property
