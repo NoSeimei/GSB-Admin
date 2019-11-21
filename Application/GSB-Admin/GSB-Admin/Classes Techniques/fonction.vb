@@ -4,7 +4,7 @@ Imports System.Text
 Module fonction
     Public Auth As New Dictionary(Of String, String)
     Public Database As New Dictionary(Of String, String)
-
+    Private key As String = "GS"
 
     'Fonction permetttant de vérifier la complexité d'un mot de passe
     Function ValidatePassword(ByVal pwd As String,
@@ -135,5 +135,71 @@ Module fonction
         Next
 
         Throw New Exception("Cette utilisateur n'existe pas")
+    End Function
+
+
+
+
+    'Méthode pour permettre le cryptage d'une donnée grâce à la méthode du carre de vigenère
+    Function cryptage_carré_Vigenére(valeur As String)
+        'Valeur crypté qui sera retourné
+        Dim valeurCrytpe As String = ""
+        valeur = valeur.ToCharArray
+
+        'Récupération du fichier du fichier texte permettant le cryptage
+        Dim Lignes() As String = File.ReadAllLines("CryptFile/all_touche.txt", Encoding.Default)
+        'Tableau contenant notre première ligne du carré de vigenère
+        Dim tabVigene As New ArrayList
+
+
+
+        'Parcourt du fichier texte afin d'en récupérer les informations
+        For caracteres As Integer = 0 To Lignes.Length - 1
+            tabVigene.Add(Lignes(caracteres))
+        Next
+
+
+        'On parcourt maintenant la valeur qui nous as été envoyé pour en crypter cahque caractères
+        For i As Integer = 0 To valeur.Length - 1
+            'On récupére le caractère i de la chaîne
+            Dim indexPremierLigne = tabVigene.IndexOf(valeur.Substring(i, 1))
+            Dim indexKey As Integer
+            'Permet d'avoir la position de notre caractères i dans notre tableau
+            Dim indexCleCryptage As Integer
+
+            'On vérifie tout d'abord sur quels caractères de la clé le cryptage sera effectué en fonction
+            ' de la valeur envoyé
+            If key.Length <= i Then
+                indexKey = key.IndexOf(key.Substring(i Mod key.Length, 1))
+                indexCleCryptage = tabVigene.IndexOf(tabVigene.Item(indexKey))
+            Else
+                indexCleCryptage = tabVigene.IndexOf(key.Substring(i, 1))
+            End If
+
+
+            Dim caracteresCryptage As String
+            'Maintenant on crypte le caratère et on le conserve
+            If indexPremierLigne + indexCleCryptage > tabVigene.Count - 1 Then
+                Dim indexOfCaracteres = indexCleCryptage - ((tabVigene.Count - 1) - (indexPremierLigne))
+                caracteresCryptage = tabVigene(indexOfCaracteres)
+            Else
+                caracteresCryptage = tabVigene(indexCleCryptage)
+            End If
+
+
+            valeurCrytpe = valeurCrytpe + caracteresCryptage
+        Next
+
+
+        Return valeurCrytpe
+    End Function
+
+
+
+    'Méthode pour permettre le décryptage d'une donnée grâce à la méthode du carre de vigenère
+    Function décryptage_carré_Vigenére(valeur As String)
+        Dim valeurDecrypte As String
+
+        Return valeurDecrypte
     End Function
 End Module
