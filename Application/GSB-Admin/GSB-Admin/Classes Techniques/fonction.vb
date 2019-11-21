@@ -4,7 +4,7 @@ Imports System.Text
 Module fonction
     Public Auth As New Dictionary(Of String, String)
     Public Database As New Dictionary(Of String, String)
-    Dim tabVigene As New Dictionary(Of String, ArrayList)
+    Private tabVigene As New Dictionary(Of String, ArrayList)
     Private key As String = "GSB-Admin"
 
     'Fonction permetttant de vérifier la complexité d'un mot de passe
