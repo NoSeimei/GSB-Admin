@@ -15,7 +15,9 @@ Public Class form_Connexion
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Bouton de connexion
     Private Sub btn_Submit_Click(sender As Object, e As EventArgs) Handles btn_Submit.Click
-        cryptage_carré_Vigenére("HOLA")
+        Dim crypte = cryptage_carré_Vigenére("12-Soleil&")
+        Dim Decrypte = décryptage_carré_Vigenére(crypte)
+
         'Appel de la fonction qui charge nos Dictyonnary (connexion à la base de donées ainsi qu'à l'application)
         lectureFichier()
 
