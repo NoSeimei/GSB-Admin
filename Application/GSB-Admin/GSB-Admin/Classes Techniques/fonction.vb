@@ -6,6 +6,10 @@ Module fonction
     Public Database As New Dictionary(Of String, String)
     Private key As String = "GS"
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     'Fonction permetttant de vérifier la complexité d'un mot de passe
     Function ValidatePassword(ByVal pwd As String,
     Optional ByVal minLength As Integer = 8,
@@ -39,11 +43,12 @@ Module fonction
 
 
 
-    'Fonction permettant de récupérer les informations dans le fichier .ini et décrypte les valeurs 
+   'Fonction permettant de récupérer les informations dans le fichier .ini et décrypte les valeurs 
     Public Sub lectureFichier()
-
-        'Récupération du fichier de configuration au format .ini
-        Dim Lignes() As String = File.ReadAllLines("CryptFile/LocalConfig.ini")
+        'Récupération du fichier de configuration au format .ini (LOCAL)
+        Dim Lignes() As String = File.ReadAllLines("CryptFile/localConfig.ini")
+        'Récupération du fichier (PPE)
+        'Dim Lignes() As String = File.ReadAllLines("CryptFile/config.ini")
         Dim paragraphe As String = ""
 
 
@@ -137,6 +142,25 @@ Module fonction
         Throw New Exception("Cette utilisateur n'existe pas")
     End Function
 
+    Public Function IncreVisiteur() As Integer
+        Dim i As Integer = 0
+        For Each UnVisiteur In CollectionVisiteur
+            If UnVisiteur.idUser > i Then
+                i = UnVisiteur.idUser
+            End If
+        Next
+        Return i + 1
+    End Function
+
+    Public Function IncreComptable() As Integer
+        Dim i As Integer = 0
+        For Each UnComptable In CollectionComptable
+            If UnComptable.idUser > i Then
+                i = UnComptable.idUser
+            End If
+        Next
+        Return i + 1
+    End Function
 
 
 
@@ -196,10 +220,14 @@ Module fonction
 
 
 
+<<<<<<< Updated upstream
     'Méthode pour permettre le décryptage d'une donnée grâce à la méthode du carre de vigenère
     Function décryptage_carré_Vigenére(valeur As String)
         Dim valeurDecrypte As String
 
         Return valeurDecrypte
     End Function
+=======
+>>>>>>> Stashed changes
 End Module
+

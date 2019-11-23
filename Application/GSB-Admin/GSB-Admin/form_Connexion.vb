@@ -15,7 +15,10 @@ Public Class form_Connexion
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Bouton de connexion
     Private Sub btn_Submit_Click(sender As Object, e As EventArgs) Handles btn_Submit.Click
+<<<<<<< Updated upstream
         cryptage_carré_Vigenére("HOLA")
+=======
+>>>>>>> Stashed changes
         'Appel de la fonction qui charge nos Dictyonnary (connexion à la base de donées ainsi qu'à l'application)
         lectureFichier()
 
@@ -27,7 +30,6 @@ Public Class form_Connexion
             txtB_MDP.Text = ""
             lbl_Erreur.Text = " Login ou mot de passe incorrects..."
         End If
-
     End Sub
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

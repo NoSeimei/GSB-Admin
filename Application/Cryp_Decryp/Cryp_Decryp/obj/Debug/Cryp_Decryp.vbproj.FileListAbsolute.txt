@@ -8,6 +8,7 @@ c:\users\badbo\documents\visual studio 2013\Projects\Cryp_Decryp\Cryp_Decryp\obj
 c:\users\badbo\documents\visual studio 2013\Projects\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.exe
 c:\users\badbo\documents\visual studio 2013\Projects\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.xml
 c:\users\badbo\documents\visual studio 2013\Projects\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.pdb
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\Cryp_Decryp\Cryp_Decryp\bin\Debug\Cryp_Decryp.exe.config
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin-master\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.exe
@@ -25,3 +26,25 @@ C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\Cryp_Decryp\Cryp_Decryp\ob
 C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.vbproj.GenerateResource.Cache
 =======
 >>>>>>> parent of ce9ae01... Travail PPE (12 Novembre 2016)
+=======
+C:\Users\treportel\Downloads\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\bin\Debug\Cryp_Decryp.exe.config
+C:\Users\treportel\Downloads\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.exe
+C:\Users\treportel\Downloads\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.xml
+C:\Users\treportel\Downloads\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.pdb
+C:\Users\treportel\Downloads\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\bin\Debug\Cryp_Decryp.exe
+C:\Users\treportel\Downloads\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\bin\Debug\Cryp_Decryp.pdb
+C:\Users\treportel\Downloads\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\bin\Debug\Cryp_Decryp.xml
+C:\Users\treportel\Downloads\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.Form1.resources
+C:\Users\treportel\Downloads\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.Resources.resources
+C:\Users\treportel\Downloads\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.vbproj.GenerateResource.Cache
+C:\Users\treportel\Documents\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\bin\Debug\Cryp_Decryp.exe.config
+C:\Users\treportel\Documents\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.exe
+C:\Users\treportel\Documents\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.xml
+C:\Users\treportel\Documents\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.pdb
+C:\Users\treportel\Documents\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\bin\Debug\Cryp_Decryp.exe
+C:\Users\treportel\Documents\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\bin\Debug\Cryp_Decryp.pdb
+C:\Users\treportel\Documents\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\bin\Debug\Cryp_Decryp.xml
+C:\Users\treportel\Documents\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.Form1.resources
+C:\Users\treportel\Documents\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.Resources.resources
+C:\Users\treportel\Documents\GSB-Admin-NoSeimei\Application\Cryp_Decryp\Cryp_Decryp\obj\Debug\Cryp_Decryp.vbproj.GenerateResource.Cache
+>>>>>>> Stashed changes
