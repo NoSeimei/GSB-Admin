@@ -7,12 +7,12 @@ Public Class Connexion
     'Constructeur qui va permettre de spécifier la connexion à la bdd et va faire appel aux méthodes de construction des objets
     Sub New()
         'On ce connecte à la base de données BIBI
-        ' m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";Initial Catalog=" + Database.Item("baseDeDonnees") & _
-        '";User Id=" + Database.Item("user") + ";Password=" + Database.Item("mdpUser") + ";")
+        m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";Initial Catalog=" + Database.Item("baseDeDonnees") & _
+      ";User Id=" + Database.Item("user") + ";Password=" + Database.Item("mdpUser") + ";")
 
         'LOCAL
-        m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";" & _
-         "Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
+        'm_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";" & _
+        ' "Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
 
 
         'On ouvre la connexion

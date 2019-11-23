@@ -4,12 +4,10 @@ Imports System.Text
 Module fonction
     Public Auth As New Dictionary(Of String, String)
     Public Database As New Dictionary(Of String, String)
-    Private key As String = "GS"
+    Private tabVigene As New Dictionary(Of String, ArrayList)
+    Private key As String = "GSB-Admin"
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
     'Fonction permetttant de vérifier la complexité d'un mot de passe
     Function ValidatePassword(ByVal pwd As String,
     Optional ByVal minLength As Integer = 8,
@@ -46,9 +44,9 @@ Module fonction
    'Fonction permettant de récupérer les informations dans le fichier .ini et décrypte les valeurs 
     Public Sub lectureFichier()
         'Récupération du fichier de configuration au format .ini (LOCAL)
-        Dim Lignes() As String = File.ReadAllLines("CryptFile/localConfig.ini")
+        ' Dim Lignes() As String = File.ReadAllLines("CryptFile/local.ini")
         'Récupération du fichier (PPE)
-        'Dim Lignes() As String = File.ReadAllLines("CryptFile/config.ini")
+        Dim Lignes() As String = File.ReadAllLines("CryptFile/config.ini")
         Dim paragraphe As String = ""
 
 
@@ -164,70 +162,122 @@ Module fonction
 
 
 
-    'Méthode pour permettre le cryptage d'une donnée grâce à la méthode du carre de vigenère
+    '----------------------------------------------------------------------------------------------------------------------------------------------
+    'Méthode nécessaire au cryptage du carré de Vigenére
+
+    'Fonction pour permettre le cryptage d'une donnée grâce à la méthode du carre de vigenère
     Function cryptage_carré_Vigenére(valeur As String)
-        'Valeur crypté qui sera retourné
-        Dim valeurCrytpe As String = ""
-        valeur = valeur.ToCharArray
+        'Tout d'abord, on rempit notre tableau de vigenére
+        remplir_Tableau_Vigenere()
 
-        'Récupération du fichier du fichier texte permettant le cryptage
-        Dim Lignes() As String = File.ReadAllLines("CryptFile/all_touche.txt", Encoding.Default)
-        'Tableau contenant notre première ligne du carré de vigenère
-        Dim tabVigene As New ArrayList
-
-
-
-        'Parcourt du fichier texte afin d'en récupérer les informations
-        For caracteres As Integer = 0 To Lignes.Length - 1
-            tabVigene.Add(Lignes(caracteres))
-        Next
-
-
-        'On parcourt maintenant la valeur qui nous as été envoyé pour en crypter cahque caractères
+        Dim valeurCrypte As String = ""
+        Dim premiereLigne = tabVigene.Item("²")
+        Dim caractereKey As String
+        Dim indexCaracteresKey As Integer = 0
+        'On crypte maintenant toutes les données de notre chaîne de caractères
         For i As Integer = 0 To valeur.Length - 1
-            'On récupére le caractère i de la chaîne
-            Dim indexPremierLigne = tabVigene.IndexOf(valeur.Substring(i, 1))
-            Dim indexKey As Integer
-            'Permet d'avoir la position de notre caractères i dans notre tableau
-            Dim indexCleCryptage As Integer
 
-            'On vérifie tout d'abord sur quels caractères de la clé le cryptage sera effectué en fonction
-            ' de la valeur envoyé
-            If key.Length <= i Then
-                indexKey = key.IndexOf(key.Substring(i Mod key.Length, 1))
-                indexCleCryptage = tabVigene.IndexOf(tabVigene.Item(indexKey))
-            Else
-                indexCleCryptage = tabVigene.IndexOf(key.Substring(i, 1))
+            'On reprend de 0 si la limite as été atteinte
+            If indexCaracteresKey = key.Length Then
+                indexCaracteresKey = 0
             End If
 
+            'On récupére l'emplacement du caractères i de la chaîne envoyé
+            Dim place_caracteres = premiereLigne.IndexOf(valeur.Substring(i, 1))
+            'Et onrécupére le caractère de notre clé de cryptage
+            caractereKey = key.Substring(indexCaracteresKey, 1)
 
-            Dim caracteresCryptage As String
-            'Maintenant on crypte le caratère et on le conserve
-            If indexPremierLigne + indexCleCryptage > tabVigene.Count - 1 Then
-                Dim indexOfCaracteres = indexCleCryptage - ((tabVigene.Count - 1) - (indexPremierLigne))
-                caracteresCryptage = tabVigene(indexOfCaracteres)
-            Else
-                caracteresCryptage = tabVigene(indexCleCryptage)
-            End If
+            'On récupére maintenant la ligne correspondant au caractères x de la clé 
+            Dim cléLigne = tabVigene.Item(caractereKey)
+            'Enfin on récupére l'emplacement i contenu dans notre ligne correspondant au caractères x de la clé
+            Dim caracteresCrypté = cléLigne.Item(place_caracteres)
 
-
-            valeurCrytpe = valeurCrytpe + caracteresCryptage
+            'on l'incrémente dans notre chaîne de caractères
+            valeurCrypte = valeurCrypte + caracteresCrypté
+            'On incrémente pour passer au caractères suivant de notre clé de cryptage
+            indexCaracteresKey = indexCaracteresKey + 1
         Next
 
+        'On vide le tableau à la fin
+        tabVigene.Clear()
 
-        Return valeurCrytpe
+        Return valeurCrypte
     End Function
 
 
 
-<<<<<<< Updated upstream
-    'Méthode pour permettre le décryptage d'une donnée grâce à la méthode du carre de vigenère
+    'Fonction pour permettre le décryptage d'une donnée grâce à la méthode du carre de vigenère
     Function décryptage_carré_Vigenére(valeur As String)
-        Dim valeurDecrypte As String
+        'Tout d'abord, on rempit notre tableau de vigenére
+        remplir_Tableau_Vigenere()
+
+        Dim valeurDecrypte As String = ""
+        Dim premiereLigne = tabVigene.Item("²")
+        Dim caractereLigne As String
+        Dim indexCaracteresKey As Integer = 0
+        'On crypte maintenant toutes les données de notre chaîne de caractères
+        For i As Integer = 0 To valeur.Length - 1
+
+            'On reprend de 0 si la limite as été atteinte
+            If indexCaracteresKey = key.Length Then
+                indexCaracteresKey = 0
+            End If
+
+            'On commence par récupérer la ligne du caractère c de la clé
+            Dim ligneCrypte = tabVigene.Item(key.Substring(indexCaracteresKey, 1))
+            'On récupére l'emplacement du caractère crypté
+            Dim emplacementCrypte = ligneCrypte.IndexOf(valeur.Substring(i, 1))
+            'Ensuite on récupére l'emplacement correspondant à notre premier caractère de la chaîne
+            caractereLigne = premiereLigne.Item(emplacementCrypte)
+
+            'on l'incrémente dans notre chaîne de caractères
+            valeurDecrypte = valeurDecrypte + caractereLigne
+            'On incrémente pour passer au caractères suivant de notre clé de cryptage
+            indexCaracteresKey = indexCaracteresKey + 1
+        Next
+
+        'On vide le tableau à la fin
+        tabVigene.Clear()
 
         Return valeurDecrypte
     End Function
-=======
->>>>>>> Stashed changes
+
+
+    'Méthode permettant de remplir le tableau sur lequel on va travailler
+    Sub remplir_Tableau_Vigenere()
+        'Récupération du fichier du fichier texte permettant le cryptage
+        Dim Lignes() As String = File.ReadAllLines("CryptFile/all_touche.txt", Encoding.Default)
+        'Tableau contenant notre première ligne du carré de vigenère
+
+
+        'Pour chaque caractère x correspondant à la clé 
+        For i As Integer = 0 To Lignes.Length - 1
+            Dim index As Integer = 0
+            Dim value = i
+            Dim ligneTab As New ArrayList
+
+            'On ajoute la valeur en commençant par la clé x
+            While (index < Lignes.Length)
+                'On vérifie que la limite de la ligne n'a pas déjà été atteinte
+                If value = Lignes.Length Then
+                    value = 0
+                End If
+
+                ligneTab.Add(Lignes(value))
+
+                'On incrémente +1
+                value = value + 1
+                index = index + 1
+            End While
+
+            'On ajoute à la clé x l'ensemble de sa ligne le correspondant
+            tabVigene.Add(Lignes(i), ligneTab)
+        Next
+
+    End Sub
+    'Méthode précédente du carré de Vigenére
+    '----------------------------------------------------------------------------------------------------------------------------------------------
+
+
 End Module
 

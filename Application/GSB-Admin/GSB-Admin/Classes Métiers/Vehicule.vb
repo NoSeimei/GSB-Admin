@@ -39,18 +39,6 @@
     End Property
 
 
-    Function verif_voitureUtilise(vehicule As Vehicule) As Boolean
-        Dim verif As Boolean = False
 
-        For Each utilise In CollectionVoitureUtiliser
-            If utilise.vehiculeVoiture() = vehicule Then
-                If utilise.dateFin Is Nothing Then
-                    verif = True
-                End If
-            End If
-        Next
-
-            Return verif
-    End Function
 
 End Class
