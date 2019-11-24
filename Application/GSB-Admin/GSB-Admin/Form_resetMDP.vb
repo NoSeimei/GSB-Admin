@@ -1,6 +1,8 @@
-﻿Public Class Form_resetMDP
+﻿Imports System.Data.SqlClient
 
-    
+Public Class Form_resetMDP
+
+
     Private Sub tb_mdpchange_TextChanged(sender As Object, e As EventArgs) Handles tb_mdpchange.TextChanged
         Dim valueProgressBar = ValidatePassword(tb_mdpchange.Text)
         progressBar_Mdp.Value = valueProgressBar
@@ -40,5 +42,32 @@
         tb_mdpchange.Text = "12-SoLeil&"
     End Sub
 
-   
+
+    Private Sub dgw_Utilisateurs_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgw_Utilisateurs.CellContentClick
+        Dim MonDataSet As New DataSet
+
+        'dgw_Utilisateurs.DataSource = MonDataTable.Tables("user")
+    End Sub
+
+    Private Sub Form_resetMDP_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim conn As New SqlConnection("Data Source=" + Database.Item("serveur") + ";" & _
+                                                             "Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
+        Dim cmd As New SqlCommand("SELECT prenom FROM utilisateur", conn)
+        Dim ds As New DataSet
+        Dim da As New SqlDataAdapter(cmd)
+        da.Fill(ds, "users")
+        Dim DataCollection As New AutoCompleteStringCollection()
+        Dim i As Integer
+        For i = 0 To ds.Tables(0).Rows.Count - 1
+            DataCollection.Add(ds.Tables(0).Rows(i)("prenom".ToString))
+
+        Next
+        tb_Rech.AutoCompleteCustomSource = DataCollection
+        dgw_Utilisateurs.DataSource = ds
+        dgw_Utilisateurs.DataMember = "users"
+    End Sub
+
+    Private Sub tb_Rech_TextChanged(sender As Object, e As EventArgs) Handles tb_Rech.TextChanged
+
+    End Sub
 End Class
