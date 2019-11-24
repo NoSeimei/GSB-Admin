@@ -30,6 +30,7 @@ Partial Class form_Connexion
         Me.btn_Quitte = New System.Windows.Forms.Button()
         Me.btn_Submit = New System.Windows.Forms.Button()
         Me.lbl_Erreur = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtB_MDP
@@ -104,11 +105,21 @@ Partial Class form_Connexion
         Me.lbl_Erreur.Size = New System.Drawing.Size(0, 13)
         Me.lbl_Erreur.TabIndex = 17
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(76, 183)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 18
+        Me.Button1.Text = "test"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'form_Connexion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(530, 262)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lbl_Erreur)
         Me.Controls.Add(Me.btn_Quitte)
         Me.Controls.Add(Me.btn_Submit)
@@ -132,4 +143,5 @@ Partial Class form_Connexion
     Friend WithEvents btn_Quitte As System.Windows.Forms.Button
     Friend WithEvents btn_Submit As System.Windows.Forms.Button
     Friend WithEvents lbl_Erreur As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
