@@ -21,7 +21,7 @@ BEGIN
 UPDATE utiliser
 SET dateFin = @dateSys
 WHERE immat = @immat
-AND dateFin IS NULL;
+AND dateFin > @dateSys;
 
 PRINT 'Le véhicule ayant pour immatriculation ' + @immat + ' est désormais disponible'
 RETURN; -- On arrête l'éxécution de la procédure stockée
@@ -32,7 +32,7 @@ BEGIN
 -- On rend ici tout les véhicules utilisés à ce jour disponibles!
 UPDATE utiliser
 SET dateFin = @dateSys
-WHERE dateFin IS NULL;
+WHERE dateFin > @dateSys;
 
 PRINT 'Tout les véhicules sont désormais disponible'
 RETURN; -- On arrête l'éxécution de la procédure stockée

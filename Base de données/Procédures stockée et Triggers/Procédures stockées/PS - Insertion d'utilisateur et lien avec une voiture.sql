@@ -22,7 +22,7 @@ CREATE PROC verifAdd_VoitureForVisiteur
 
 
 -- Permet de préciser la date fin d'utilisation si il y en as une
-@dateFin date = NULL
+@dateFin date
 ------------------------------------------------------------------------------------
 
 AS
@@ -33,12 +33,14 @@ BEGIN
 DECLARE @dateFinReq as date; -- Variables destinées à acceuillir la donnée x de la date de fin d'utilisation d'une voiture
 DECLARE @Verif as int;
 SET @Verif = 1;
+DECLARE @dateSys as date; -- Variables destiné à récupérer la date du système
+SELECT @dateSys = CONVERT (date, SYSDATETIME()); -- Récupére la date du système
 ------------------------------------------------------------------------------------
 
 
 -- SI UNE VOITURE EST EN COURS D'UTILISATION ON NE FAIT RIEN
 -------------------------------------------------------------------------------------------
-IF EXISTS(SELECT * FROM utiliser WHERE immat = @immat AND dateFin IS NULL) -- On effectue un test avant la boucle
+IF EXISTS(SELECT * FROM utiliser WHERE immat = @immat AND dateFin >= @dateSys) -- On effectue un test avant la boucle
 BEGIN
 	PRINT 'La voiture choisie n''est pas disponible'; -- Si on est dans ce cas, alors la voiture n'est pas disponible
 	SET @Verif = 0;
