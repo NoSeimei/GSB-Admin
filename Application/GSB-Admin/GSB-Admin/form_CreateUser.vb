@@ -14,15 +14,6 @@
 
     Private Sub rb_Visiteur_CheckedChanged(sender As Object, e As EventArgs) Handles rb_Visiteur.CheckedChanged
         If rb_Visiteur.Checked = True Then
-            Dim item As ListViewItem
-
-            'On parcourt l'ensemble de notre collection d'utilisateurs
-            For Each uneVoiture In CollectionVehicule
-                item = New ListViewItem({uneVoiture.LireImmat, uneVoiture.LirePuiss, uneVoiture.LireModele})
-                lstV_Voitures.Items.Add(item)
-            Next
-
-
             Me.Size = New Size(780, Me.Size.Height)
         Else
             Me.Size = New Size(370, Me.Size.Height)
@@ -32,6 +23,16 @@
 
     Private Sub creatUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         rb_Comptable.Checked = True
+
+        Dim item As ListViewItem
+
+        'On parcourt l'ensemble de notre collection d'utilisateurs
+        For Each uneVoiture In CollectionVehicule
+            item = New ListViewItem({uneVoiture.LireImmat, uneVoiture.LirePuiss, uneVoiture.LireModele})
+            lstV_Voitures.Items.Add(item)
+        Next
+
+
     End Sub
 
 
@@ -68,8 +69,8 @@
                         i = i + 1
                     End While
 
-
-                    Dim LeVehicule = CollectionVehicule.Item(i).
+                    'On récupére le véhicule sélectionné
+                    Dim LeVehicule = CollectionVehicule.Item(i)
 
 
 

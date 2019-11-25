@@ -57,6 +57,12 @@ Partial Class form_CreateUser
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.grpb_TypeUser.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.gb_login.SuspendLayout()
@@ -65,18 +71,20 @@ Partial Class form_CreateUser
         '
         'btn_Submit
         '
-        Me.btn_Submit.Location = New System.Drawing.Point(120, 501)
+        Me.btn_Submit.Location = New System.Drawing.Point(174, 757)
+        Me.btn_Submit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btn_Submit.Name = "btn_Submit"
-        Me.btn_Submit.Size = New System.Drawing.Size(83, 32)
+        Me.btn_Submit.Size = New System.Drawing.Size(111, 39)
         Me.btn_Submit.TabIndex = 0
         Me.btn_Submit.Text = "Valider"
         Me.btn_Submit.UseVisualStyleBackColor = True
         '
         'btn_return
         '
-        Me.btn_return.Location = New System.Drawing.Point(12, 558)
+        Me.btn_return.Location = New System.Drawing.Point(13, 827)
+        Me.btn_return.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btn_return.Name = "btn_return"
-        Me.btn_return.Size = New System.Drawing.Size(75, 23)
+        Me.btn_return.Size = New System.Drawing.Size(100, 28)
         Me.btn_return.TabIndex = 1
         Me.btn_return.Text = "&Annuler"
         Me.btn_return.UseVisualStyleBackColor = True
@@ -84,121 +92,136 @@ Partial Class form_CreateUser
         'lbl_Name
         '
         Me.lbl_Name.AutoSize = True
-        Me.lbl_Name.Location = New System.Drawing.Point(67, 27)
+        Me.lbl_Name.Location = New System.Drawing.Point(89, 33)
+        Me.lbl_Name.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_Name.Name = "lbl_Name"
-        Me.lbl_Name.Size = New System.Drawing.Size(29, 13)
+        Me.lbl_Name.Size = New System.Drawing.Size(37, 17)
         Me.lbl_Name.TabIndex = 2
         Me.lbl_Name.Text = "Nom"
         '
         'txtB_name
         '
-        Me.txtB_name.Location = New System.Drawing.Point(102, 24)
+        Me.txtB_name.Location = New System.Drawing.Point(136, 30)
+        Me.txtB_name.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtB_name.Name = "txtB_name"
-        Me.txtB_name.Size = New System.Drawing.Size(148, 20)
+        Me.txtB_name.Size = New System.Drawing.Size(196, 22)
         Me.txtB_name.TabIndex = 3
         '
         'txt_Prenom
         '
-        Me.txt_Prenom.Location = New System.Drawing.Point(102, 68)
+        Me.txt_Prenom.Location = New System.Drawing.Point(136, 84)
+        Me.txt_Prenom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_Prenom.Name = "txt_Prenom"
-        Me.txt_Prenom.Size = New System.Drawing.Size(148, 20)
+        Me.txt_Prenom.Size = New System.Drawing.Size(196, 22)
         Me.txt_Prenom.TabIndex = 5
         '
         'lbl_prenom
         '
         Me.lbl_prenom.AutoSize = True
-        Me.lbl_prenom.Location = New System.Drawing.Point(53, 71)
+        Me.lbl_prenom.Location = New System.Drawing.Point(71, 87)
+        Me.lbl_prenom.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_prenom.Name = "lbl_prenom"
-        Me.lbl_prenom.Size = New System.Drawing.Size(43, 13)
+        Me.lbl_prenom.Size = New System.Drawing.Size(57, 17)
         Me.lbl_prenom.TabIndex = 4
         Me.lbl_prenom.Text = "Prénom"
         '
         'txtB_Login
         '
-        Me.txtB_Login.Location = New System.Drawing.Point(79, 25)
+        Me.txtB_Login.Location = New System.Drawing.Point(211, 28)
+        Me.txtB_Login.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtB_Login.Name = "txtB_Login"
-        Me.txtB_Login.Size = New System.Drawing.Size(148, 20)
+        Me.txtB_Login.Size = New System.Drawing.Size(196, 22)
         Me.txtB_Login.TabIndex = 7
         '
         'lbl_Login
         '
         Me.lbl_Login.AutoSize = True
-        Me.lbl_Login.Location = New System.Drawing.Point(37, 28)
+        Me.lbl_Login.Location = New System.Drawing.Point(81, 31)
+        Me.lbl_Login.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_Login.Name = "lbl_Login"
-        Me.lbl_Login.Size = New System.Drawing.Size(36, 13)
+        Me.lbl_Login.Size = New System.Drawing.Size(47, 17)
         Me.lbl_Login.TabIndex = 6
         Me.lbl_Login.Text = "Login "
         '
         'txtB_MDP
         '
-        Me.txtB_MDP.Location = New System.Drawing.Point(79, 69)
+        Me.txtB_MDP.Location = New System.Drawing.Point(211, 78)
+        Me.txtB_MDP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtB_MDP.Name = "txtB_MDP"
-        Me.txtB_MDP.Size = New System.Drawing.Size(148, 20)
+        Me.txtB_MDP.Size = New System.Drawing.Size(196, 22)
         Me.txtB_MDP.TabIndex = 9
         '
         'lbl_Mdp
         '
         Me.lbl_Mdp.AutoSize = True
-        Me.lbl_Mdp.Location = New System.Drawing.Point(5, 72)
+        Me.lbl_Mdp.Location = New System.Drawing.Point(63, 81)
+        Me.lbl_Mdp.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_Mdp.Name = "lbl_Mdp"
-        Me.lbl_Mdp.Size = New System.Drawing.Size(71, 13)
+        Me.lbl_Mdp.Size = New System.Drawing.Size(93, 17)
         Me.lbl_Mdp.TabIndex = 8
         Me.lbl_Mdp.Text = "Mot de passe"
         '
         'txtB_Adresse
         '
-        Me.txtB_Adresse.Location = New System.Drawing.Point(101, 107)
+        Me.txtB_Adresse.Location = New System.Drawing.Point(135, 132)
+        Me.txtB_Adresse.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtB_Adresse.Name = "txtB_Adresse"
-        Me.txtB_Adresse.Size = New System.Drawing.Size(148, 20)
+        Me.txtB_Adresse.Size = New System.Drawing.Size(196, 22)
         Me.txtB_Adresse.TabIndex = 11
         '
         'lbl_Adr
         '
         Me.lbl_Adr.AutoSize = True
-        Me.lbl_Adr.Location = New System.Drawing.Point(53, 110)
+        Me.lbl_Adr.Location = New System.Drawing.Point(71, 135)
+        Me.lbl_Adr.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_Adr.Name = "lbl_Adr"
-        Me.lbl_Adr.Size = New System.Drawing.Size(45, 13)
+        Me.lbl_Adr.Size = New System.Drawing.Size(60, 17)
         Me.lbl_Adr.TabIndex = 10
         Me.lbl_Adr.Text = "Adresse"
         '
         'txtB_CodePostal
         '
-        Me.txtB_CodePostal.Location = New System.Drawing.Point(101, 146)
+        Me.txtB_CodePostal.Location = New System.Drawing.Point(135, 180)
+        Me.txtB_CodePostal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtB_CodePostal.Name = "txtB_CodePostal"
-        Me.txtB_CodePostal.Size = New System.Drawing.Size(72, 20)
+        Me.txtB_CodePostal.Size = New System.Drawing.Size(95, 22)
         Me.txtB_CodePostal.TabIndex = 13
         '
         'lbl_CodePostal
         '
         Me.lbl_CodePostal.AutoSize = True
-        Me.lbl_CodePostal.Location = New System.Drawing.Point(34, 149)
+        Me.lbl_CodePostal.Location = New System.Drawing.Point(45, 183)
+        Me.lbl_CodePostal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_CodePostal.Name = "lbl_CodePostal"
-        Me.lbl_CodePostal.Size = New System.Drawing.Size(64, 13)
+        Me.lbl_CodePostal.Size = New System.Drawing.Size(84, 17)
         Me.lbl_CodePostal.TabIndex = 12
         Me.lbl_CodePostal.Text = "Code Postal"
         '
         'txtB_Ville
         '
-        Me.txtB_Ville.Location = New System.Drawing.Point(101, 186)
+        Me.txtB_Ville.Location = New System.Drawing.Point(135, 229)
+        Me.txtB_Ville.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtB_Ville.Name = "txtB_Ville"
-        Me.txtB_Ville.Size = New System.Drawing.Size(151, 20)
+        Me.txtB_Ville.Size = New System.Drawing.Size(200, 22)
         Me.txtB_Ville.TabIndex = 15
         '
         'lbl_Ville
         '
         Me.lbl_Ville.AutoSize = True
-        Me.lbl_Ville.Location = New System.Drawing.Point(72, 189)
+        Me.lbl_Ville.Location = New System.Drawing.Point(96, 233)
+        Me.lbl_Ville.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_Ville.Name = "lbl_Ville"
-        Me.lbl_Ville.Size = New System.Drawing.Size(26, 13)
+        Me.lbl_Ville.Size = New System.Drawing.Size(34, 17)
         Me.lbl_Ville.TabIndex = 14
         Me.lbl_Ville.Text = "Ville"
         '
         'lbl_DateEmbauche
         '
         Me.lbl_DateEmbauche.AutoSize = True
-        Me.lbl_DateEmbauche.Location = New System.Drawing.Point(4, 230)
+        Me.lbl_DateEmbauche.Location = New System.Drawing.Point(5, 283)
+        Me.lbl_DateEmbauche.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_DateEmbauche.Name = "lbl_DateEmbauche"
-        Me.lbl_DateEmbauche.Size = New System.Drawing.Size(91, 13)
+        Me.lbl_DateEmbauche.Size = New System.Drawing.Size(119, 17)
         Me.lbl_DateEmbauche.TabIndex = 16
         Me.lbl_DateEmbauche.Text = "Date d'embauche"
         '
@@ -206,9 +229,11 @@ Partial Class form_CreateUser
         '
         Me.grpb_TypeUser.Controls.Add(Me.rb_Visiteur)
         Me.grpb_TypeUser.Controls.Add(Me.rb_Comptable)
-        Me.grpb_TypeUser.Location = New System.Drawing.Point(85, 277)
+        Me.grpb_TypeUser.Location = New System.Drawing.Point(113, 341)
+        Me.grpb_TypeUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.grpb_TypeUser.Name = "grpb_TypeUser"
-        Me.grpb_TypeUser.Size = New System.Drawing.Size(168, 58)
+        Me.grpb_TypeUser.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grpb_TypeUser.Size = New System.Drawing.Size(224, 71)
         Me.grpb_TypeUser.TabIndex = 18
         Me.grpb_TypeUser.TabStop = False
         Me.grpb_TypeUser.Text = "Type d'utilisateur"
@@ -216,9 +241,10 @@ Partial Class form_CreateUser
         'rb_Visiteur
         '
         Me.rb_Visiteur.AutoSize = True
-        Me.rb_Visiteur.Location = New System.Drawing.Point(13, 28)
+        Me.rb_Visiteur.Location = New System.Drawing.Point(17, 34)
+        Me.rb_Visiteur.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.rb_Visiteur.Name = "rb_Visiteur"
-        Me.rb_Visiteur.Size = New System.Drawing.Size(59, 17)
+        Me.rb_Visiteur.Size = New System.Drawing.Size(76, 21)
         Me.rb_Visiteur.TabIndex = 9
         Me.rb_Visiteur.Text = "Visiteur"
         Me.rb_Visiteur.UseVisualStyleBackColor = True
@@ -227,9 +253,10 @@ Partial Class form_CreateUser
         '
         Me.rb_Comptable.AutoSize = True
         Me.rb_Comptable.Checked = True
-        Me.rb_Comptable.Location = New System.Drawing.Point(89, 28)
+        Me.rb_Comptable.Location = New System.Drawing.Point(119, 34)
+        Me.rb_Comptable.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.rb_Comptable.Name = "rb_Comptable"
-        Me.rb_Comptable.Size = New System.Drawing.Size(75, 17)
+        Me.rb_Comptable.Size = New System.Drawing.Size(96, 21)
         Me.rb_Comptable.TabIndex = 8
         Me.rb_Comptable.TabStop = True
         Me.rb_Comptable.Text = "Comptable"
@@ -237,18 +264,20 @@ Partial Class form_CreateUser
         '
         'date_DateEmbauche
         '
-        Me.date_DateEmbauche.Location = New System.Drawing.Point(101, 224)
+        Me.date_DateEmbauche.Location = New System.Drawing.Point(135, 276)
+        Me.date_DateEmbauche.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.date_DateEmbauche.Name = "date_DateEmbauche"
-        Me.date_DateEmbauche.Size = New System.Drawing.Size(192, 20)
+        Me.date_DateEmbauche.Size = New System.Drawing.Size(255, 22)
         Me.date_DateEmbauche.TabIndex = 20
         '
         'lstV_Voitures
         '
         Me.lstV_Voitures.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
         Me.lstV_Voitures.FullRowSelect = True
-        Me.lstV_Voitures.Location = New System.Drawing.Point(436, 206)
+        Me.lstV_Voitures.Location = New System.Drawing.Point(581, 254)
+        Me.lstV_Voitures.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lstV_Voitures.Name = "lstV_Voitures"
-        Me.lstV_Voitures.Size = New System.Drawing.Size(272, 327)
+        Me.lstV_Voitures.Size = New System.Drawing.Size(361, 402)
         Me.lstV_Voitures.TabIndex = 21
         Me.lstV_Voitures.UseCompatibleStateImageBehavior = False
         Me.lstV_Voitures.View = System.Windows.Forms.View.Details
@@ -271,24 +300,27 @@ Partial Class form_CreateUser
         'lbl_InfoMdp
         '
         Me.lbl_InfoMdp.AutoSize = True
-        Me.lbl_InfoMdp.Location = New System.Drawing.Point(9, 111)
+        Me.lbl_InfoMdp.Location = New System.Drawing.Point(12, 137)
+        Me.lbl_InfoMdp.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_InfoMdp.Name = "lbl_InfoMdp"
-        Me.lbl_InfoMdp.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_InfoMdp.Size = New System.Drawing.Size(0, 17)
         Me.lbl_InfoMdp.TabIndex = 23
         '
         'progressBar_Mdp
         '
-        Me.progressBar_Mdp.Location = New System.Drawing.Point(137, 95)
+        Me.progressBar_Mdp.Location = New System.Drawing.Point(250, 108)
+        Me.progressBar_Mdp.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.progressBar_Mdp.Name = "progressBar_Mdp"
-        Me.progressBar_Mdp.Size = New System.Drawing.Size(90, 11)
+        Me.progressBar_Mdp.Size = New System.Drawing.Size(120, 14)
         Me.progressBar_Mdp.TabIndex = 22
         '
         'lbl_Voitures
         '
         Me.lbl_Voitures.AutoSize = True
-        Me.lbl_Voitures.Location = New System.Drawing.Point(543, 190)
+        Me.lbl_Voitures.Location = New System.Drawing.Point(724, 234)
+        Me.lbl_Voitures.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_Voitures.Name = "lbl_Voitures"
-        Me.lbl_Voitures.Size = New System.Drawing.Size(45, 13)
+        Me.lbl_Voitures.Size = New System.Drawing.Size(60, 17)
         Me.lbl_Voitures.TabIndex = 24
         Me.lbl_Voitures.Text = "Voitures"
         '
@@ -306,40 +338,52 @@ Partial Class form_CreateUser
         Me.GroupBox1.Controls.Add(Me.txtB_CodePostal)
         Me.GroupBox1.Controls.Add(Me.txtB_Ville)
         Me.GroupBox1.Controls.Add(Me.lbl_Ville)
-        Me.GroupBox1.Location = New System.Drawing.Point(19, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(25, 15)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(314, 259)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(419, 319)
         Me.GroupBox1.TabIndex = 25
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Informations"
         '
         'gb_login
         '
+        Me.gb_login.Controls.Add(Me.Label7)
+        Me.gb_login.Controls.Add(Me.TextBox1)
+        Me.gb_login.Controls.Add(Me.Label5)
+        Me.gb_login.Controls.Add(Me.Label4)
+        Me.gb_login.Controls.Add(Me.Label3)
+        Me.gb_login.Controls.Add(Me.Label6)
         Me.gb_login.Controls.Add(Me.lbl_Login)
         Me.gb_login.Controls.Add(Me.txtB_Login)
         Me.gb_login.Controls.Add(Me.lbl_Mdp)
         Me.gb_login.Controls.Add(Me.lbl_InfoMdp)
         Me.gb_login.Controls.Add(Me.txtB_MDP)
         Me.gb_login.Controls.Add(Me.progressBar_Mdp)
-        Me.gb_login.Location = New System.Drawing.Point(44, 341)
+        Me.gb_login.Location = New System.Drawing.Point(33, 420)
+        Me.gb_login.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.gb_login.Name = "gb_login"
-        Me.gb_login.Size = New System.Drawing.Size(256, 135)
+        Me.gb_login.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.gb_login.Size = New System.Drawing.Size(428, 329)
         Me.gb_login.TabIndex = 26
         Me.gb_login.TabStop = False
         Me.gb_login.Text = "Authentification"
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(153, 21)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(204, 26)
+        Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(177, 20)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(235, 22)
         Me.DateTimePicker1.TabIndex = 27
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(153, 66)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(204, 81)
+        Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(177, 20)
+        Me.DateTimePicker2.Size = New System.Drawing.Size(235, 22)
         Me.DateTimePicker2.TabIndex = 28
         '
         'GroupBox3
@@ -348,9 +392,11 @@ Partial Class form_CreateUser
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox3.Controls.Add(Me.DateTimePicker2)
-        Me.GroupBox3.Location = New System.Drawing.Point(419, 50)
+        Me.GroupBox3.Location = New System.Drawing.Point(559, 62)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(344, 107)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Size = New System.Drawing.Size(459, 132)
         Me.GroupBox3.TabIndex = 29
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Location"
@@ -358,26 +404,85 @@ Partial Class form_CreateUser
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 72)
+        Me.Label2.Location = New System.Drawing.Point(8, 89)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(125, 13)
+        Me.Label2.Size = New System.Drawing.Size(165, 17)
         Me.Label2.TabIndex = 30
         Me.Label2.Text = "Date de fin de la location"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 27)
+        Me.Label1.Location = New System.Drawing.Point(8, 33)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(141, 13)
+        Me.Label1.Size = New System.Drawing.Size(186, 17)
         Me.Label1.TabIndex = 29
         Me.Label1.Text = "Date de début de la location"
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.ForeColor = System.Drawing.Color.DimGray
+        Me.Label5.Location = New System.Drawing.Point(88, 256)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(132, 17)
+        Me.Label5.TabIndex = 41
+        Me.Label5.Text = "·1 caractère spécial"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.Color.DimGray
+        Me.Label4.Location = New System.Drawing.Point(88, 239)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(70, 17)
+        Me.Label4.TabIndex = 40
+        Me.Label4.Text = "·2 chiffres"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.Color.DimGray
+        Me.Label3.Location = New System.Drawing.Point(88, 222)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(91, 17)
+        Me.Label3.TabIndex = 39
+        Me.Label3.Text = "·8 caractères"
+        '
+        'Label6
+        '
+        Me.Label6.ForeColor = System.Drawing.Color.DimGray
+        Me.Label6.Location = New System.Drawing.Point(77, 194)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(275, 28)
+        Me.Label6.TabIndex = 38
+        Me.Label6.Text = "Le mot de passe doit contenir minimum :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(7, 141)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(196, 17)
+        Me.Label7.TabIndex = 42
+        Me.Label7.Text = "Confirmation du mot de passe"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(211, 141)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(196, 22)
+        Me.TextBox1.TabIndex = 43
+        '
         'form_CreateUser
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(347, 593)
+        Me.ClientSize = New System.Drawing.Size(474, 868)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.gb_login)
         Me.Controls.Add(Me.GroupBox1)
@@ -387,6 +492,7 @@ Partial Class form_CreateUser
         Me.Controls.Add(Me.btn_return)
         Me.Controls.Add(Me.btn_Submit)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "form_CreateUser"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Création d'un nouvel utilisateur"
@@ -437,4 +543,10 @@ Partial Class form_CreateUser
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
 End Class

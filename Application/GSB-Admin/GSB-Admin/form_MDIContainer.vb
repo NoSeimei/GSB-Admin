@@ -2,9 +2,6 @@
 
 Public Class form_MDIContainer
 
-    'Objet Connexion permettant d'accéder à la base de données
-    Dim ConnexionSQL As New Connexion
-
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Bouton de déconnexion
     Private Sub DéconnexionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DéconnexionToolStripMenuItem.Click
