@@ -2,7 +2,13 @@
 
 Public Class Form_resetMDP
 
+    Dim conn As New SqlConnection("Data Source=" + Database.Item("serveur") + ";" & _
+                                                     "Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
+    Dim cmd As New SqlCommand("SELECT id, nom, prenom FROM utilisateur", conn)
+    Dim ds As New DataSet
+    Dim da As New SqlDataAdapter(cmd)
 
+    Dim DataCollection As New AutoCompleteStringCollection()
     Private Sub tb_mdpchange_TextChanged(sender As Object, e As EventArgs) Handles tb_mdpchange.TextChanged
         Dim valueProgressBar = ValidatePassword(tb_mdpchange.Text)
         progressBar_Mdp.Value = valueProgressBar
@@ -43,20 +49,8 @@ Public Class Form_resetMDP
     End Sub
 
 
-    Private Sub dgw_Utilisateurs_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgw_Utilisateurs.CellContentClick
-        Dim MonDataSet As New DataSet
-
-        'dgw_Utilisateurs.DataSource = MonDataTable.Tables("user")
-    End Sub
-
     Private Sub Form_resetMDP_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim conn As New SqlConnection("Data Source=" + Database.Item("serveur") + ";" & _
-                                                             "Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
-        Dim cmd As New SqlCommand("SELECT prenom FROM utilisateur", conn)
-        Dim ds As New DataSet
-        Dim da As New SqlDataAdapter(cmd)
         da.Fill(ds, "users")
-        Dim DataCollection As New AutoCompleteStringCollection()
         Dim i As Integer
         For i = 0 To ds.Tables(0).Rows.Count - 1
             DataCollection.Add(ds.Tables(0).Rows(i)("prenom".ToString))
@@ -68,6 +62,25 @@ Public Class Form_resetMDP
     End Sub
 
     Private Sub tb_Rech_TextChanged(sender As Object, e As EventArgs) Handles tb_Rech.TextChanged
+
+        Dim rowPos As Integer = 0
+        For Each row As DataGridViewRow In dgw_Utilisateurs.Rows
+
+            If row.Cells("prenom").Value = tb_Rech.Text Then
+                dgw_Utilisateurs.ClearSelection()
+                row.Cells("prenom").Selected = True
+                row.Selected = True
+
+
+                Exit For
+            End If
+        Next
+
+
+    End Sub
+
+
+    Private Sub Btn_Select_Click(sender As Object, e As EventArgs) Handles Btn_Select.Click
 
     End Sub
 End Class
