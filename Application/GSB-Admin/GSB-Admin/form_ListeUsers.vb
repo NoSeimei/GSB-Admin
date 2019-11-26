@@ -47,24 +47,9 @@ Public Class form_ListeUsers
         Dim item As ListViewItem
 
         'On parcourt l'ensemble de notre collection d'utilisateurs
-<<<<<<< HEAD
-
-        For Each unVisiteur In CollectionVisiteur
-            item = New ListViewItem({unVisiteur.nomUser, unVisiteur.prenomUSer, unVisiteur.dateEmbaucheUser})
-            Me.lstV_visiteur.Items.Add(item)
-            Me.lstV_visiteur.Refresh()
-
-        Next
-
-        For Each unComptable In CollectionComptable
-            item = New ListViewItem({unComptable.nomUser, unComptable.prenomUSer, unComptable.dateEmbaucheUser})
-=======
         For Each unUser In CollectionUser
             item = New ListViewItem({unUser.idUser, unUser.nomUser, unUser.prenomUSer, unUser.dateEmbaucheUser})
->>>>>>> 61dbf2b53640247f290884b2e552714b3a3e7a9f
             Me.lstV_visiteur.Items.Add(item)
-            Me.lstV_visiteur.Refresh()
-
 
         Next
 

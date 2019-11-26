@@ -55,21 +55,14 @@ Partial Class form_CreateUser
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-<<<<<<< HEAD
-=======
         Me.Label3 = New System.Windows.Forms.Label()
->>>>>>> 61dbf2b53640247f290884b2e552714b3a3e7a9f
         Me.Label6 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-<<<<<<< HEAD
-        Me.Label8 = New System.Windows.Forms.Label()
-=======
         Me.txtB_name = New System.Windows.Forms.TextBox()
->>>>>>> 61dbf2b53640247f290884b2e552714b3a3e7a9f
         Me.grpb_TypeUser.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.gb_login.SuspendLayout()
@@ -321,18 +314,11 @@ Partial Class form_CreateUser
         '
         'gb_login
         '
-<<<<<<< HEAD
-        Me.gb_login.Controls.Add(Me.Label8)
-=======
->>>>>>> 61dbf2b53640247f290884b2e552714b3a3e7a9f
         Me.gb_login.Controls.Add(Me.Label7)
         Me.gb_login.Controls.Add(Me.TextBox1)
         Me.gb_login.Controls.Add(Me.Label5)
         Me.gb_login.Controls.Add(Me.Label4)
-<<<<<<< HEAD
-=======
         Me.gb_login.Controls.Add(Me.Label3)
->>>>>>> 61dbf2b53640247f290884b2e552714b3a3e7a9f
         Me.gb_login.Controls.Add(Me.Label6)
         Me.gb_login.Controls.Add(Me.lbl_Login)
         Me.gb_login.Controls.Add(Me.txtB_Login)
@@ -372,11 +358,7 @@ Partial Class form_CreateUser
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(100, 13)
         Me.Label5.TabIndex = 41
-<<<<<<< HEAD
-        Me.Label5.Text = "·2 caractère spécial"
-=======
         Me.Label5.Text = "·1 caractère spécial"
->>>>>>> 61dbf2b53640247f290884b2e552714b3a3e7a9f
         '
         'Label4
         '
@@ -389,17 +371,6 @@ Partial Class form_CreateUser
         Me.Label4.TabIndex = 40
         Me.Label4.Text = "·2 chiffres"
         '
-<<<<<<< HEAD
-        'Label6
-        '
-        Me.Label6.ForeColor = System.Drawing.Color.DimGray
-        Me.Label6.Location = New System.Drawing.Point(47, 150)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(206, 30)
-        Me.Label6.TabIndex = 38
-        Me.Label6.Text = "Le mot de passe doit contenir minimum " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "8 caractères avec:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-=======
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -420,7 +391,6 @@ Partial Class form_CreateUser
         Me.Label6.Size = New System.Drawing.Size(206, 23)
         Me.Label6.TabIndex = 38
         Me.Label6.Text = "Le mot de passe doit contenir minimum :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
->>>>>>> 61dbf2b53640247f290884b2e552714b3a3e7a9f
         '
         'DateTimePicker1
         '
@@ -467,35 +437,18 @@ Partial Class form_CreateUser
         Me.Label1.TabIndex = 29
         Me.Label1.Text = "Date de début de la location"
         '
-<<<<<<< HEAD
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.Color.DimGray
-        Me.Label8.Location = New System.Drawing.Point(66, 180)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(74, 13)
-        Me.Label8.TabIndex = 44
-        Me.Label8.Text = "·2 majuscules "
-=======
         'txtB_name
         '
         Me.txtB_name.Location = New System.Drawing.Point(102, 24)
         Me.txtB_name.Name = "txtB_name"
         Me.txtB_name.Size = New System.Drawing.Size(148, 20)
         Me.txtB_name.TabIndex = 3
->>>>>>> 61dbf2b53640247f290884b2e552714b3a3e7a9f
         '
         'form_CreateUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-<<<<<<< HEAD
-        Me.ClientSize = New System.Drawing.Size(847, 705)
-=======
         Me.ClientSize = New System.Drawing.Size(356, 705)
->>>>>>> 61dbf2b53640247f290884b2e552714b3a3e7a9f
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.gb_login)
         Me.Controls.Add(Me.GroupBox1)
@@ -556,16 +509,9 @@ Partial Class form_CreateUser
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
-<<<<<<< HEAD
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-=======
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents txtB_name As System.Windows.Forms.TextBox
->>>>>>> 61dbf2b53640247f290884b2e552714b3a3e7a9f
 End Class

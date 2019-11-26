@@ -185,10 +185,18 @@ Public Class Connexion
             Dim leVehicule = trouverVehicule(myReader.GetString(0))
 
             'On instancie un objet visiteur
-            Dim uneVoitureUtiliser As New voitureUtilise(leVehicule, leVisiteur, myReader.GetDateTime(1), myReader.GetDateTime(3))
+            Dim uneVoitureUtiliser As New voitureUtilise(leVehicule, leVisiteur, myReader.GetDateTime(1))
 
 
-            
+            myReader.GetValue(3)
+            IsDBNull(myReader.GetValue(3))
+            'On vérifie que la date as été renseigné
+            If Not IsDBNull(myReader.GetValue(3)) Then
+                'On met à jour cette date de fin si jamais
+                uneVoitureUtiliser.dateFin = myReader.GetDateTime(3)
+            End If
+
+
             'On l'ajoute à notre collection de visiteur
             CollectionVoitureUtiliser.Add(uneVoitureUtiliser)
         Loop
