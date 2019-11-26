@@ -37,6 +37,7 @@ Partial Class form_ListeUsers
         Me.OUiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LacheMoiMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.columnId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.GroupBox1.SuspendLayout()
         Me.ClicDroit.SuspendLayout()
         Me.SuspendLayout()
@@ -100,30 +101,33 @@ Partial Class form_ListeUsers
         '
         'lstV_visiteur
         '
-        Me.lstV_visiteur.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnNom, Me.ColumnPrenom, Me.ColumnDateEmbauche})
+        Me.lstV_visiteur.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.columnId, Me.ColumnNom, Me.ColumnPrenom, Me.ColumnDateEmbauche})
         Me.lstV_visiteur.ContextMenuStrip = Me.ClicDroit
         Me.lstV_visiteur.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lstV_visiteur.FullRowSelect = True
         Me.lstV_visiteur.Location = New System.Drawing.Point(25, 124)
         Me.lstV_visiteur.MultiSelect = False
         Me.lstV_visiteur.Name = "lstV_visiteur"
-        Me.lstV_visiteur.Size = New System.Drawing.Size(437, 321)
+        Me.lstV_visiteur.Size = New System.Drawing.Size(478, 321)
         Me.lstV_visiteur.TabIndex = 22
         Me.lstV_visiteur.UseCompatibleStateImageBehavior = False
         Me.lstV_visiteur.View = System.Windows.Forms.View.Details
         '
         'ColumnNom
         '
+        Me.ColumnNom.DisplayIndex = 1
         Me.ColumnNom.Text = "Nom"
         Me.ColumnNom.Width = 148
         '
         'ColumnPrenom
         '
+        Me.ColumnPrenom.DisplayIndex = 2
         Me.ColumnPrenom.Text = "Prénom"
         Me.ColumnPrenom.Width = 153
         '
         'ColumnDateEmbauche
         '
+        Me.ColumnDateEmbauche.DisplayIndex = 3
         Me.ColumnDateEmbauche.Text = "Date d'embauche"
         Me.ColumnDateEmbauche.Width = 132
         '
@@ -147,18 +151,24 @@ Partial Class form_ListeUsers
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(317, 462)
+        Me.Button1.Location = New System.Drawing.Point(393, 481)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(145, 23)
         Me.Button1.TabIndex = 23
         Me.Button1.Text = "Réinitialiser le mot de passe"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'columnId
+        '
+        Me.columnId.DisplayIndex = 0
+        Me.columnId.Text = "N°"
+        Me.columnId.Width = 37
+        '
         'form_ListeUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(491, 516)
+        Me.ClientSize = New System.Drawing.Size(550, 516)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lstV_visiteur)
         Me.Controls.Add(Me.GroupBox1)
@@ -188,5 +198,6 @@ Partial Class form_ListeUsers
     Friend WithEvents OUiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LacheMoiMToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents columnId As System.Windows.Forms.ColumnHeader
 
 End Class

@@ -59,4 +59,23 @@
     End Property
     '------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+    Shared Function voitureDispo(immat As String)
+        Dim uneVoitureUtilise
+        Try
+            uneVoitureUtilise = trouverVoitureUtilise(immat) 'on tente de récupérer la voiture utilisé
+        Catch ex As Exception
+            Return False 'Sinon c'est qu'elle n'existe pas, on retourne alors false
+        End Try
+
+
+        'Si elle existe on effectue des tests afin de vérifier que cette voiture n'est pas en cours d'utilisation
+        If uneVoitureUtilise.dateFin >= DateTime.Now.Date Then
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
+
 End Class

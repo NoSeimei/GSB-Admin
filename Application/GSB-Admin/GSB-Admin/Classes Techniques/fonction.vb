@@ -113,7 +113,7 @@ Module fonction
             End If
         Next
 
-        Return False
+        Throw New Exception("Lvisiteur n'existe pas") 'On génére une exception
     End Function
 
 
@@ -125,7 +125,7 @@ Module fonction
             End If
         Next
 
-        Return False
+        Throw New Exception("Le véhicule n'est pas répertorié") 'On génére une exception
     End Function
 
 
@@ -137,7 +137,7 @@ Module fonction
             End If
         Next
 
-        Return False
+        Throw New Exception("L'utilisateur n'existe pas") 'On génére une exception
     End Function
 
     'Permet de retourner le comptable s'il existe
@@ -148,8 +148,31 @@ Module fonction
             End If
         Next
 
-        Return False
+        Throw New Exception("Le comptable n'existe pas") 'On génére une exception
     End Function
+
+
+    'Permet de retourner le comptable s'il existe
+    Function trouverVoitureUtilise(immat As String)
+        For Each uneVoiture In CollectionVoitureUtiliser
+            If uneVoiture.vehiculeVoiture.LireImmat = immat Then
+                Return uneVoiture
+            End If
+        Next
+
+        Throw New Exception("La voiture n'est pas utilisé") 'On génére une exception
+    End Function
+
+
+    'Retourne le visiteur ou le comptable en fonction de l'Id
+    Sub DeleteUserCorrespondant(id As Integer)
+
+        If CollectionComptable.Contains(trouverComptable(id)) Then
+            CollectionComptable.Remove(trouverComptable(id))
+        ElseIf CollectionVisiteur.Contains(trouverVisiteur(id)) Then
+            CollectionVisiteur.Remove(trouverVisiteur(id))
+        End If
+    End Sub
 
     Public Function IncreVisiteur() As Integer
         Dim i As Integer = 0
@@ -290,21 +313,5 @@ Module fonction
     '----------------------------------------------------------------------------------------------------------------------------------------------
 
 
-
-
-
-
-
-    'Méthode pour pouvoir supprimer un utilisateur
-    Sub SupprimeUser(idUser As Integer)
-
-        CollectionUser.Remove(trouverUtilisateur(idUser)) 'On supprime l'utilisateur
-        'On vérifie quelle type d'user on veux supprimer
-        If trouverVisiteur(idUser) = False Then
-            CollectionComptable.Remove(trouverComptable(idUser)) 'On suppripme le cmptable correspondant
-        Else
-            CollectionVisiteur.Remove(trouverVisiteur(idUser)) 'On suppripme le visiteur correspondant
-        End If
-    End Sub
 End Module
 

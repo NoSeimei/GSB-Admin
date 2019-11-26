@@ -20,7 +20,13 @@ Public Class form_ListeUsers
         MessageBoxButtons.YesNo, MessageBoxIcon.Question) 'Affichage de la message box avec le choix de quitter ou de rester
         If Reponse = DialogResult.Yes Then
 
-            Me.Close()
+            Dim idUser As Integer = lstV_visiteur.SelectedItems.Item(0).Text 'On récupére l'identifiant de cette personne
+            user.SupprimeUser(idUser) 'On exécute la méthode qui gère la suppression
+
+
+            'On remet à jour la listView des users
+            Me.lstV_visiteur.Items.Clear()
+            Me.lstV_visiteur.Refresh()
         End If
     End Sub
 
@@ -41,20 +47,13 @@ Public Class form_ListeUsers
 
         'On parcourt l'ensemble de notre collection d'utilisateurs
 
-        For Each unVisiteur In CollectionVisiteur
-            item = New ListViewItem({unVisiteur.nomUser, unVisiteur.prenomUSer, unVisiteur.dateEmbaucheUser})
+        For Each unUser In CollectionUser
+            item = New ListViewItem({unUser.idUser, unUser.nomUser, unUser.prenomUSer, unUser.dateEmbaucheUser})
             Me.lstV_visiteur.Items.Add(item)
             Me.lstV_visiteur.Refresh()
 
         Next
 
-        For Each unComptable In CollectionComptable
-            item = New ListViewItem({unComptable.nomUser, unComptable.prenomUSer, unComptable.dateEmbaucheUser})
-            Me.lstV_visiteur.Items.Add(item)
-            Me.lstV_visiteur.Refresh()
-
-
-        Next
 
 
     End Sub
@@ -69,7 +68,7 @@ Public Class form_ListeUsers
             'On parcourt l'ensemble de notre collection d'utilisateurs
            
             For Each unVisiteur In CollectionVisiteur
-                item = New ListViewItem({unVisiteur.nomUser, unVisiteur.prenomUSer, unVisiteur.dateEmbaucheUser})
+                item = New ListViewItem({unVisiteur.idUser, unVisiteur.nomUser, unVisiteur.prenomUSer, unVisiteur.dateEmbaucheUser})
                 Me.lstV_visiteur.Items.Add(item)
                 Me.lstV_visiteur.Refresh()
 
@@ -90,7 +89,7 @@ Public Class form_ListeUsers
 
             'On parcourt l'ensemble de notre collection d'utilisateurs
             For Each unComptable In CollectionComptable
-                item = New ListViewItem({unComptable.nomUser, unComptable.prenomUSer, unComptable.dateEmbaucheUser})
+                item = New ListViewItem({unComptable.idUser, unComptable.nomUser, unComptable.prenomUSer, unComptable.dateEmbaucheUser})
                 Me.lstV_visiteur.Items.Add(item)
                 Me.lstV_visiteur.Refresh()
 
@@ -100,14 +99,5 @@ Public Class form_ListeUsers
     End Sub
 
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    Private Sub form_ListeUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        
-
-
-        
-    End Sub
-
 
 End Class

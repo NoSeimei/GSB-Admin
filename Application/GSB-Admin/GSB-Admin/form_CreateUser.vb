@@ -30,7 +30,14 @@
         'On parcourt l'ensemble de notre collection d'utilisateurs
         For Each uneVoiture In CollectionVehicule
             item = New ListViewItem({uneVoiture.LireImmat, uneVoiture.LirePuiss, uneVoiture.LireModele})
-            lstV_Voitures.Items.Add(item)
+
+            If voitureUtilise.voitureDispo(uneVoiture.LireImmat) Then 'On vérifie si la voiture est disponible ou non
+                item.BackColor = Color.Red 'On modifie la couleur en conséquence
+            Else
+                item.BackColor = Color.Green
+            End If
+
+            lstV_Voitures.Items.Add(item) 'Ajout de l'item à la listview
         Next
 
 
@@ -49,65 +56,49 @@
         MessageBoxButtons.YesNo, MessageBoxIcon.Question) 'Affichage de la message box avec le choix de quitter ou de rester
         If Reponse = DialogResult.Yes Then
 
+
+            'Test ici que toutes les informations ont bien été entrées
             Dim t
             For Each t In Me.Controls
                 If TypeOf t Is TextBox Then
                     If t.Text = "" Then
                         MsgBox("Complete Entry!")
-                        Exit Sub
+                        Exit Sub 'Arrête l'exécution de la Sub
                         Exit For
                     End If
                 End If
             Next
 
 
-        ElseIf rb_Visiteur.Checked = True Then
+            'On test ici que les mots de passe sont bien identique
+            If txtB_MDP.Text <> txtB_ConfirmMDP.Text Then
+                MsgBox("Les mots de passes ne sont pas identiques!")
+                Exit Sub 'Arrête l'exécution de la Sub
+            End If
 
-            Dim unVisiteur As New visiteur(IncreVisiteur, txtB_name.Text, txt_Prenom.Text, txtB_Login.Text, txtB_MDP.Text, txtB_Adresse.Text, txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text)
-            ' on l'ajoute à la collection de visiteur
-            CollectionVisiteur.Add(unVisiteur)
+            If rb_Visiteur.Checked = True Then
 
-            'Variables permettant de parcourir une boucle
-            Dim i As Integer = 0
+                Dim unVisiteur As New visiteur(IncreVisiteur, txtB_name.Text, txt_Prenom.Text, txtB_Login.Text, txtB_MDP.Text, txtB_Adresse.Text, txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text)
+                CollectionVisiteur.Add(unVisiteur) ' on l'ajoute à la collection de visiteur
 
-            'Lorsque l'élément aura été choisie on parcourt la liste pour le retrouver 
-            For Each Element As ListViewItem In lstV_Voitures.SelectedItems
+                'On vérifie tout d'abord qu'un véhicule as été assigné avant d'insérer le visiteur
+                If lstV_Voitures.SelectedItems.Count > 0 Then
 
-                ' On cherche l'élément sélectionné
-                If Element.Selected = True Then
-                    'Une fois trouvé, on travaille dessus
 
-                    'tout d'abord on recherche le produit sur lequel on va travailler
-                    While i < CollectionVehicule.Count And CollectionVehicule.Item(i).LireImmat <> Element.SubItems(0).Text
-                        i = i + 1
-                    End While
 
-                    'On récupére le véhicule sélectionné
-                    Dim LeVehicule = CollectionVehicule.Item(i)
-
-                    'On déclare l'objet et on l'insère dans la collection
-                    Dim LeVehiculeUtilise As New voitureUtilise(LeVehicule, unVisiteur, DateTimePicker1.Text, DateTimePicker2.Text)
+                    Dim leVehicule = trouverVehicule(lstV_Voitures.SelectedItems.Item(0).Text) 'On récupére le véhicule grâce à une méthode
+                    'On déclare l'objet LeVehiculeUtilise et on l'insère dans la collection
+                    Dim LeVehiculeUtilise As New voitureUtilise(leVehicule, unVisiteur, DateTimePicker1.Text, DateTimePicker2.Text)
                     CollectionVoitureUtiliser.Add(LeVehiculeUtilise)
 
-
                 End If
-            Next
 
-        Else
-
-            Dim unComptable As New comptable(IncreComptable, txtB_name.Text, txt_Prenom.Text, txtB_Login.Text, txtB_MDP.Text, txtB_Adresse.Text, txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text, False)
-            ' on l'ajoute à la collection de comptable
-            CollectionComptable.Add(unComptable)
-
-
-
-            form_ListeUsers.lstV_visiteur.Refresh()
-            form_ListeUsers.Show()
-            Me.Close()
-
-
+            Else
+                Dim unComptable As New comptable(IncreComptable, txtB_name.Text, txt_Prenom.Text, txtB_Login.Text, txtB_MDP.Text, txtB_Adresse.Text, txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text, False)
+                ' on l'ajoute à la collection de comptable
+                CollectionComptable.Add(unComptable)
+            End If
         End If
-
 
 
     End Sub

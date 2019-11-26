@@ -147,3 +147,4 @@ F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\G
 F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
 F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
 F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbprojResolveAssemblyReference.cache

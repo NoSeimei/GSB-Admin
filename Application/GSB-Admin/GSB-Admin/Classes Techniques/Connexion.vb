@@ -7,12 +7,12 @@ Public Class Connexion
     'Constructeur qui va permettre de spécifier la connexion à la bdd et va faire appel aux méthodes de construction des objets
     Sub New()
         'On ce connecte à la base de données BIBI
-        m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";Initial Catalog=" + Database.Item("baseDeDonnees") & _
-      ";User Id=" + Database.Item("user") + ";Password=" + Database.Item("mdpUser") + ";")
+        '  m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";Initial Catalog=" + Database.Item("baseDeDonnees") & _
+        ' ";User Id=" + Database.Item("user") + ";Password=" + Database.Item("mdpUser") + ";")
 
         'LOCAL
-        'm_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";" & _
-        ' "Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
+        m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";" & _
+         "Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
 
 
         'On ouvre la connexion
@@ -195,5 +195,40 @@ Public Class Connexion
 
         'On ferme le datareader
         myReader.Close()
+    End Sub
+
+
+
+
+
+    'Permet la création des objets voitureUtiliser et le remplissage de la collection
+    Public Sub deleteUser(idUser As Integer)
+
+        OpenConnexion() 'Ouverture de la connexion
+
+        'On prépare notre requête SQL dans un objet Command
+        Dim Mycommand As SqlCommand = m_Connexion.CreateCommand()
+        Mycommand.CommandText = "DELETE FROM utilisateur WHERE id =" + idUser.ToString 'On prépapre notre requête SQL
+        Mycommand.ExecuteNonQuery() 'On exécute la commande
+
+        CloseConnexion() 'Fermeture de la connexion
+    End Sub
+
+
+
+    'Permet d'insérer une information dans la table utiliser (voiture utilisé par un visiteur)
+    Public Sub insertUtiliser(immat As String, dateDebut As Date, idUser As Integer, dateFin As Date)
+
+        OpenConnexion() 'Ouverture de la connexion
+
+        'On prépare notre requête SQL dans un objet Command
+        Dim Mycommand As SqlCommand = m_Connexion.CreateCommand()
+        Mycommand.CommandText = "INSERT INTO utiliser VALUES(" + immat + "," + dateDebut.ToString + "," + idUser.ToString + "," + dateFin.ToString + ")"
+        'On prépapre notre requête SQL
+
+        'On effectue notre requête
+        Mycommand.ExecuteNonQuery() 'On exécute la commande
+
+        CloseConnexion() 'Fermeture de la connexion
     End Sub
 End Class
