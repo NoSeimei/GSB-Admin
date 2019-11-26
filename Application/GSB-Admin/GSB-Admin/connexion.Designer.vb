@@ -34,22 +34,17 @@ Partial Class connexion
         '
         'txtB_MDP
         '
-        Me.txtB_MDP.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtB_MDP.Location = New System.Drawing.Point(193, 126)
+        Me.txtB_MDP.Enabled = False
+        Me.txtB_MDP.Location = New System.Drawing.Point(216, 116)
         Me.txtB_MDP.Name = "txtB_MDP"
-        Me.txtB_MDP.Size = New System.Drawing.Size(242, 20)
+        Me.txtB_MDP.Size = New System.Drawing.Size(122, 20)
         Me.txtB_MDP.TabIndex = 13
+        Me.txtB_MDP.UseSystemPasswordChar = True
         '
         'lbl_Mdp
         '
-        Me.lbl_Mdp.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbl_Mdp.AutoSize = True
-        Me.lbl_Mdp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Mdp.Location = New System.Drawing.Point(112, 133)
+        Me.lbl_Mdp.Location = New System.Drawing.Point(142, 119)
         Me.lbl_Mdp.Name = "lbl_Mdp"
         Me.lbl_Mdp.Size = New System.Drawing.Size(71, 13)
         Me.lbl_Mdp.TabIndex = 12
@@ -57,22 +52,16 @@ Partial Class connexion
         '
         'txtB_Login
         '
-        Me.txtB_Login.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtB_Login.Location = New System.Drawing.Point(193, 82)
+        Me.txtB_Login.Location = New System.Drawing.Point(216, 72)
         Me.txtB_Login.Name = "txtB_Login"
-        Me.txtB_Login.Size = New System.Drawing.Size(242, 20)
+        Me.txtB_Login.Size = New System.Drawing.Size(122, 20)
         Me.txtB_Login.TabIndex = 11
         '
         'lbl_Login
         '
-        Me.lbl_Login.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbl_Login.AutoSize = True
-        Me.lbl_Login.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Login.Location = New System.Drawing.Point(147, 85)
+        Me.lbl_Login.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Login.Location = New System.Drawing.Point(174, 75)
         Me.lbl_Login.Name = "lbl_Login"
         Me.lbl_Login.Size = New System.Drawing.Size(36, 13)
         Me.lbl_Login.TabIndex = 10
@@ -80,12 +69,9 @@ Partial Class connexion
         '
         'lbl_GSBAdmin
         '
-        Me.lbl_GSBAdmin.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbl_GSBAdmin.AutoSize = True
         Me.lbl_GSBAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_GSBAdmin.Location = New System.Drawing.Point(146, 23)
+        Me.lbl_GSBAdmin.Location = New System.Drawing.Point(111, 31)
         Me.lbl_GSBAdmin.Name = "lbl_GSBAdmin"
         Me.lbl_GSBAdmin.Size = New System.Drawing.Size(307, 20)
         Me.lbl_GSBAdmin.TabIndex = 14
@@ -93,49 +79,36 @@ Partial Class connexion
         '
         'btn_Quitte
         '
-        Me.btn_Quitte.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_Quitte.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_Quitte.Location = New System.Drawing.Point(465, 237)
+        Me.btn_Quitte.Location = New System.Drawing.Point(443, 227)
         Me.btn_Quitte.Name = "btn_Quitte"
         Me.btn_Quitte.Size = New System.Drawing.Size(75, 23)
         Me.btn_Quitte.TabIndex = 16
-        Me.btn_Quitte.Text = "Quitter"
+        Me.btn_Quitte.Text = "&Quitter"
         Me.btn_Quitte.UseVisualStyleBackColor = True
         '
         'btn_Submit
         '
-        Me.btn_Submit.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_Submit.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_Submit.Location = New System.Drawing.Point(266, 207)
+        Me.btn_Submit.Enabled = False
+        Me.btn_Submit.Location = New System.Drawing.Point(228, 171)
         Me.btn_Submit.Name = "btn_Submit"
-        Me.btn_Submit.Size = New System.Drawing.Size(75, 23)
+        Me.btn_Submit.Size = New System.Drawing.Size(88, 36)
         Me.btn_Submit.TabIndex = 15
         Me.btn_Submit.Text = "Connexion"
         Me.btn_Submit.UseVisualStyleBackColor = True
         '
         'lbl_Erreur
         '
-        Me.lbl_Erreur.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbl_Erreur.AutoSize = True
-        Me.lbl_Erreur.ForeColor = System.Drawing.Color.Red
-        Me.lbl_Erreur.Location = New System.Drawing.Point(228, 163)
+        Me.lbl_Erreur.Location = New System.Drawing.Point(195, 146)
         Me.lbl_Erreur.Name = "lbl_Erreur"
-        Me.lbl_Erreur.Size = New System.Drawing.Size(144, 13)
+        Me.lbl_Erreur.Size = New System.Drawing.Size(0, 13)
         Me.lbl_Erreur.TabIndex = 17
-        Me.lbl_Erreur.Text = "Mot de passe ou incorrects..."
-        Me.lbl_Erreur.Visible = False
         '
         'connexion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(552, 272)
+        Me.ClientSize = New System.Drawing.Size(530, 262)
         Me.Controls.Add(Me.lbl_Erreur)
         Me.Controls.Add(Me.btn_Quitte)
         Me.Controls.Add(Me.btn_Submit)

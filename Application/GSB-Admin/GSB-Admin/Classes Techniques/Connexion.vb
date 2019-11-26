@@ -7,12 +7,12 @@ Public Class Connexion
     'Constructeur qui va permettre de spécifier la connexion à la bdd et va faire appel aux méthodes de construction des objets
     Sub New()
         'On ce connecte à la base de données BIBI
-        '   m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";Initial Catalog=" + Database.Item("baseDeDonnees") & _
+        'm_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";Initial Catalog=" + Database.Item("baseDeDonnees") & _
         ' ";User Id=" + Database.Item("user") + ";Password=" + Database.Item("mdpUser") + ";")
 
         'LOCAL
         m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";" & _
-                                                             "Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
+         "Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
 
 
         'On ouvre la connexion
@@ -37,6 +37,7 @@ Public Class Connexion
             m_Connexion.Open()
         Catch ex As Exception
             MsgBox("La connexion à la base de données a échouée")
+            End
         End Try
     End Sub
 
@@ -123,7 +124,7 @@ Public Class Connexion
             Dim unUser = trouverUtilisateur(myReader.GetInt32(0))
             'On instancie un objet comptable
             Dim unComptable As New comptable(unUser.idUser, unUser.nomUser, unUser.prenomUSer, unUser.loginUser, unUser.mdpUser, unUser.adrUser,
-                                         unUser.cpUser, unUser.villeUSer, unUser.dateEmbaucheUser, myReader.GetInt32(1))
+                                         unUser.cpUser, unUser.villeUSer, unUser.dateEmbaucheUser, myReader.GetInt32(0))
 
             'On l'ajoute à notre collection de notre comptable
             CollectionComptable.Add(unComptable)

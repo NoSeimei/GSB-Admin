@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class form_ListeUsers
+    Dim item As ListViewItem
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs)
         form_CreateUser.Show()
     End Sub
@@ -19,6 +20,13 @@ Public Class form_ListeUsers
         MessageBoxButtons.YesNo, MessageBoxIcon.Question) 'Affichage de la message box avec le choix de quitter ou de rester
         If Reponse = DialogResult.Yes Then
 
+
+            'On supprime alors l'utilisateur en question
+
+            Dim idUser As Integer = lstV_visiteur.SelectedItems.Item(0).Text
+            SupprimeUser(idUser)
+
+
             Me.Close()
         End If
     End Sub
@@ -32,28 +40,60 @@ Public Class form_ListeUsers
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Bouton radio
     Private Sub rb_AllUser_CheckedChanged(sender As Object, e As EventArgs) Handles rb_AllUser.CheckedChanged
+        Me.lstV_visiteur.Items.Clear()
+        Me.lstV_visiteur.Refresh()
 
-        'Vérifie que ce bouton est bien checké
-        If rb_AllUser.Checked = True Then
-            'On prépare un item de notre listView
-            Dim item As ListViewItem
+
+        Dim item As ListViewItem
+
+        'On parcourt l'ensemble de notre collection d'utilisateurs
+        For Each unUser In CollectionUser
+            item = New ListViewItem({unUser.idUser, unUser.nomUser, unUser.prenomUSer, unUser.dateEmbaucheUser})
+            Me.lstV_visiteur.Items.Add(item)
+
+        Next
+
+
+    End Sub
+
+    Private Sub rb_Visiteur_CheckedChanged(sender As Object, e As EventArgs) Handles rb_Visiteur.CheckedChanged
+        If rb_Visiteur.Checked = True Then
+            Me.lstV_visiteur.Items.Clear()
+
+
+
 
             'On parcourt l'ensemble de notre collection d'utilisateurs
-            For Each unUser In CollectionUser
-                item = New ListViewItem({unUser.nomUser, unUser.prenomUSer, unUser.dateEmbaucheUser})
-                lstV_visiteur.Items.Add(item)
+           
+            For Each unVisiteur In CollectionVisiteur
+                item = New ListViewItem({unVisiteur.idUser, unVisiteur.nomUser, unVisiteur.prenomUSer, unVisiteur.dateEmbaucheUser})
+                Me.lstV_visiteur.Items.Add(item)
+                Me.lstV_visiteur.Refresh()
+
             Next
+
+
 
         End If
 
     End Sub
 
-    Private Sub rb_Visiteur_CheckedChanged(sender As Object, e As EventArgs) Handles rb_Visiteur.CheckedChanged
-
-    End Sub
-
     Private Sub rb_Comptable_CheckedChanged(sender As Object, e As EventArgs) Handles rb_Comptable.CheckedChanged
+        If rb_Comptable.Checked = True Then
+            Me.lstV_visiteur.Items.Clear()
 
+
+
+
+            'On parcourt l'ensemble de notre collection d'utilisateurs
+            For Each unComptable In CollectionComptable
+                item = New ListViewItem({unComptable.idUser, unComptable.nomUser, unComptable.prenomUSer, unComptable.dateEmbaucheUser})
+                Me.lstV_visiteur.Items.Add(item)
+                Me.lstV_visiteur.Refresh()
+
+
+            Next
+        End If
     End Sub
 
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

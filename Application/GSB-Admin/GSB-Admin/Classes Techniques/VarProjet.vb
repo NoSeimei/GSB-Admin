@@ -7,4 +7,5 @@
 
     'Objet Connexion permettant d'accéder à la base de données
     Public ConnexionSQL As New Connexion
+
 End Module

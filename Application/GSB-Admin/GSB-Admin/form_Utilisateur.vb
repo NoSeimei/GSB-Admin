@@ -8,7 +8,7 @@
         MessageBoxButtons.YesNo, MessageBoxIcon.Question) 'Affichage de la message box avec le choix de quitter ou de rester
         If Reponse = DialogResult.Yes Then
             Me.Close()
-            form_ListeUtiliasteurs.Show()
+            form_Principal.Show()
         End If
     End Sub
 

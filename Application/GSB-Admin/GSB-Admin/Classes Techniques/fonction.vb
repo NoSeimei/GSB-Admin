@@ -8,11 +8,7 @@ Module fonction
     Private key As String = "GSB-Admin"
 
 
-
-
-
-
-    'Fonction permetttant de vérifier la complexité d'un mot de passe pour les progress bar
+    'Fonction permetttant de vérifier la complexité d'un mot de passe
     Function ValidatePassword(ByVal pwd As String,
     Optional ByVal minLength As Integer = 8,
     Optional ByVal numUpper As Integer = 2,
@@ -42,27 +38,15 @@ Module fonction
         Return valueReturn
     End Function
 
-    Function ValidateInt(ByVal valeur) As Boolean
-
-        ' Replace [A-Z] with \p{Lu}, to allow for Unicode uppercase letters.
-        Dim upper As New System.Text.RegularExpressions.Regex("[A-Z]")
-        Dim lower As New System.Text.RegularExpressions.Regex("[a-z]")
-        Dim number As New System.Text.RegularExpressions.Regex("[0-9]")
-        ' Special is "none of the above".
-        Dim special As New System.Text.RegularExpressions.Regex("[^a-zA-Z0-9]")
-
-        ' Passed all checks.
-        Return valueReturn
-    End Function
 
 
 
-
-    'Fonction permettant de récupérer les informations dans le fichier .ini et décrypte les valeurs 
+   'Fonction permettant de récupérer les informations dans le fichier .ini et décrypte les valeurs 
     Public Sub lectureFichier()
-
-        'Récupération du fichier de configuration au format .ini
-        Dim Lignes() As String = File.ReadAllLines("CryptFile/LocalConfig.ini")
+        'Récupération du fichier de configuration au format .ini (LOCAL)
+        ' Dim Lignes() As String = File.ReadAllLines("CryptFile/local.ini")
+        'Récupération du fichier (PPE)
+        Dim Lignes() As String = File.ReadAllLines("CryptFile/localConfig.ini")
         Dim paragraphe As String = ""
 
 
@@ -129,7 +113,7 @@ Module fonction
             End If
         Next
 
-        Throw New Exception("Ce visiteur n'existe pas")
+        Return False
     End Function
 
 
@@ -141,7 +125,7 @@ Module fonction
             End If
         Next
 
-        Throw New Exception("Cette immatriculation n'existe pas")
+        Return False
     End Function
 
 
@@ -153,9 +137,39 @@ Module fonction
             End If
         Next
 
-        Throw New Exception("Cette utilisateur n'existe pas")
+        Return False
     End Function
 
+    'Permet de retourner le comptable s'il existe
+    Function trouverComptable(id As Integer)
+        For Each unUser In CollectionComptable
+            If unUser.idUser = id Then
+                Return unUser
+            End If
+        Next
+
+        Return False
+    End Function
+
+    Public Function IncreVisiteur() As Integer
+        Dim i As Integer = 0
+        For Each UnVisiteur In CollectionVisiteur
+            If UnVisiteur.idUser > i Then
+                i = UnVisiteur.idUser
+            End If
+        Next
+        Return i + 1
+    End Function
+
+    Public Function IncreComptable() As Integer
+        Dim i As Integer = 0
+        For Each UnComptable In CollectionComptable
+            If UnComptable.idUser > i Then
+                i = UnComptable.idUser
+            End If
+        Next
+        Return i + 1
+    End Function
 
 
 
@@ -277,4 +291,20 @@ Module fonction
 
 
 
+
+
+
+
+    'Méthode pour pouvoir supprimer un utilisateur
+    Sub SupprimeUser(idUser As Integer)
+
+        CollectionUser.Remove(trouverUtilisateur(idUser)) 'On supprime l'utilisateur
+        'On vérifie quelle type d'user on veux supprimer
+        If trouverVisiteur(idUser) = False Then
+            CollectionComptable.Remove(trouverComptable(idUser)) 'On suppripme le cmptable correspondant
+        Else
+            CollectionVisiteur.Remove(trouverVisiteur(idUser)) 'On suppripme le visiteur correspondant
+        End If
+    End Sub
 End Module
+
