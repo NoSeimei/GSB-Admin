@@ -48,6 +48,7 @@ Public Class Form_resetMDP
         tb_mdpchange.Text = "12-SoLeil&"
     End Sub
 
+<<<<<<< HEAD
 
     Private Sub Form_resetMDP_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         da.Fill(ds, "users")
@@ -81,6 +82,10 @@ Public Class Form_resetMDP
 
 
     Private Sub Btn_Select_Click(sender As Object, e As EventArgs) Handles Btn_Select.Click
+=======
+   
+    Private Sub Form_resetMDP_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+>>>>>>> 6288d8eacf0f2850320e1cb690bb7c231ca331c3
 
     End Sub
 End Class

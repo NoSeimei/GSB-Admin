@@ -107,3 +107,61 @@ C:\Users\treportel\Documents\GSB-Admin-NoSeimei\Application\GSB-Admin\GSB-Admin\
 C:\Users\treportel\Documents\GSB-Admin-NoSeimei\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
 C:\Users\treportel\Documents\GSB-Admin-NoSeimei\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
 C:\Users\treportel\Documents\GSB-Admin-NoSeimei\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
+C:\Users\NoSeimei\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
+C:\Users\NoSeimei\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
+C:\Users\NoSeimei\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
+C:\Users\NoSeimei\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+<<<<<<< HEAD
+C:\Users\lebeauem\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
+C:\Users\lebeauem\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
+C:\Users\lebeauem\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
+C:\Users\lebeauem\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+C:\Users\lebeauem\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe
+C:\Users\lebeauem\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.pdb
+C:\Users\lebeauem\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.xml
+C:\Users\lebeauem\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_aProposDe.resources
+C:\Users\lebeauem\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Connexion.resources
+C:\Users\lebeauem\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Form_resetMDP.resources
+C:\Users\lebeauem\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_CreateUser.resources
+C:\Users\lebeauem\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_ListeUsers.resources
+C:\Users\lebeauem\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
+C:\Users\lebeauem\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
+C:\Users\lebeauem\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
+=======
+C:\Users\treportel\Downloads\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
+C:\Users\treportel\Downloads\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
+C:\Users\treportel\Downloads\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
+C:\Users\treportel\Downloads\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+C:\Users\treportel\Downloads\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
+C:\Users\treportel\Downloads\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
+C:\Users\treportel\Downloads\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
+C:\Users\treportel\Downloads\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+C:\Users\treportel\Downloads\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe
+C:\Users\treportel\Downloads\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.pdb
+C:\Users\treportel\Downloads\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.xml
+C:\Users\treportel\Downloads\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbprojResolveAssemblyReference.cache
+C:\Users\treportel\Downloads\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_aProposDe.resources
+C:\Users\treportel\Downloads\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Connexion.resources
+C:\Users\treportel\Downloads\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Form_resetMDP.resources
+C:\Users\treportel\Downloads\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_CreateUser.resources
+C:\Users\treportel\Downloads\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_ListeUsers.resources
+C:\Users\treportel\Downloads\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
+C:\Users\treportel\Downloads\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
+C:\Users\treportel\Downloads\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
+F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
+F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
+F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
+F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe
+F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.pdb
+F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.xml
+F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbprojResolveAssemblyReference.cache
+F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_aProposDe.resources
+F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Connexion.resources
+F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Form_resetMDP.resources
+F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_CreateUser.resources
+F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_ListeUsers.resources
+F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
+F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
+F:\GSB-Admin-master\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
+>>>>>>> 61dbf2b53640247f290884b2e552714b3a3e7a9f

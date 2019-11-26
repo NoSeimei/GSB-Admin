@@ -7,12 +7,12 @@ Public Class Connexion
     'Constructeur qui va permettre de spécifier la connexion à la bdd et va faire appel aux méthodes de construction des objets
     Sub New()
         'On ce connecte à la base de données BIBI
-        m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";Initial Catalog=" + Database.Item("baseDeDonnees") & _
-      ";User Id=" + Database.Item("user") + ";Password=" + Database.Item("mdpUser") + ";")
+        'm_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";Initial Catalog=" + Database.Item("baseDeDonnees") & _
+        ' ";User Id=" + Database.Item("user") + ";Password=" + Database.Item("mdpUser") + ";")
 
         'LOCAL
-        'm_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";" & _
-        ' "Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
+        m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";" & _
+         "Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
 
 
         'On ouvre la connexion
@@ -185,18 +185,10 @@ Public Class Connexion
             Dim leVehicule = trouverVehicule(myReader.GetString(0))
 
             'On instancie un objet visiteur
-            Dim uneVoitureUtiliser As New voitureUtilise(leVehicule, leVisiteur, myReader.GetDateTime(1))
+            Dim uneVoitureUtiliser As New voitureUtilise(leVehicule, leVisiteur, myReader.GetDateTime(1), myReader.GetDateTime(3))
 
 
-            myReader.GetValue(3)
-            IsDBNull(myReader.GetValue(3))
-            'On vérifie que la date as été renseigné
-            If Not IsDBNull(myReader.GetValue(3)) Then
-                'On met à jour cette date de fin si jamais
-                uneVoitureUtiliser.dateFin = myReader.GetDateTime(3)
-            End If
-
-
+            
             'On l'ajoute à notre collection de visiteur
             CollectionVoitureUtiliser.Add(uneVoitureUtiliser)
         Loop

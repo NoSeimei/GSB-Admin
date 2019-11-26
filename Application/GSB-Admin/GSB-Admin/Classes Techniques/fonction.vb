@@ -13,8 +13,8 @@ Module fonction
     Optional ByVal minLength As Integer = 8,
     Optional ByVal numUpper As Integer = 2,
     Optional ByVal numLower As Integer = 2,
-    Optional ByVal numNumbers As Integer = 2,
-    Optional ByVal numSpecial As Integer = 2) As Integer
+    Optional ByVal numNumbers As Integer = 1,
+    Optional ByVal numSpecial As Integer = 1) As Integer
 
         'Valeur de retour
         Dim valueReturn As Integer = 100
@@ -41,12 +41,14 @@ Module fonction
 
 
 
-   'Fonction permettant de récupérer les informations dans le fichier .ini et décrypte les valeurs 
+
+
+    'Fonction permettant de récupérer les informations dans le fichier .ini et décrypte les valeurs 
     Public Sub lectureFichier()
         'Récupération du fichier de configuration au format .ini (LOCAL)
         ' Dim Lignes() As String = File.ReadAllLines("CryptFile/local.ini")
         'Récupération du fichier (PPE)
-        Dim Lignes() As String = File.ReadAllLines("CryptFile/config.ini")
+        Dim Lignes() As String = File.ReadAllLines("CryptFile/localConfig.ini")
         Dim paragraphe As String = ""
 
 
@@ -113,7 +115,7 @@ Module fonction
             End If
         Next
 
-        Throw New Exception("Ce visiteur n'existe pas")
+        Return False
     End Function
 
 
@@ -125,7 +127,7 @@ Module fonction
             End If
         Next
 
-        Throw New Exception("Cette immatriculation n'existe pas")
+        Return False
     End Function
 
 
@@ -137,7 +139,18 @@ Module fonction
             End If
         Next
 
-        Throw New Exception("Cette utilisateur n'existe pas")
+        Return False
+    End Function
+
+    'Permet de retourner le comptable s'il existe
+    Function trouverComptable(id As Integer)
+        For Each unUser In CollectionComptable
+            If unUser.idUser = id Then
+                Return unUser
+            End If
+        Next
+
+        Return False
     End Function
 
     Public Function IncreVisiteur() As Integer
@@ -279,5 +292,21 @@ Module fonction
     '----------------------------------------------------------------------------------------------------------------------------------------------
 
 
+
+
+
+
+
+    'Méthode pour pouvoir supprimer un utilisateur
+    Sub SupprimeUser(idUser As Integer)
+
+        CollectionUser.Remove(trouverUtilisateur(idUser)) 'On supprime l'utilisateur
+        'On vérifie quelle type d'user on veux supprimer
+        If trouverVisiteur(idUser) = False Then
+            CollectionComptable.Remove(trouverComptable(idUser)) 'On suppripme le cmptable correspondant
+        Else
+            CollectionVisiteur.Remove(trouverVisiteur(idUser)) 'On suppripme le visiteur correspondant
+        End If
+    End Sub
 End Module
 
