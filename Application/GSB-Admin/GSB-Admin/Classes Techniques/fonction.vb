@@ -13,8 +13,8 @@ Module fonction
     Optional ByVal minLength As Integer = 8,
     Optional ByVal numUpper As Integer = 2,
     Optional ByVal numLower As Integer = 2,
-    Optional ByVal numNumbers As Integer = 2,
-    Optional ByVal numSpecial As Integer = 2) As Integer
+    Optional ByVal numNumbers As Integer = 1,
+    Optional ByVal numSpecial As Integer = 1) As Integer
 
         'Valeur de retour
         Dim valueReturn As Integer = 100
@@ -41,7 +41,9 @@ Module fonction
 
 
 
-   'Fonction permettant de récupérer les informations dans le fichier .ini et décrypte les valeurs 
+
+
+    'Fonction permettant de récupérer les informations dans le fichier .ini et décrypte les valeurs 
     Public Sub lectureFichier()
         'Récupération du fichier de configuration au format .ini (LOCAL)
         ' Dim Lignes() As String = File.ReadAllLines("CryptFile/local.ini")
