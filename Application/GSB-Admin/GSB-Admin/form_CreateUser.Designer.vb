@@ -25,7 +25,6 @@ Partial Class form_CreateUser
         Me.btn_Submit = New System.Windows.Forms.Button()
         Me.btn_return = New System.Windows.Forms.Button()
         Me.lbl_Name = New System.Windows.Forms.Label()
-        Me.txtB_name = New System.Windows.Forms.TextBox()
         Me.txt_Prenom = New System.Windows.Forms.TextBox()
         Me.lbl_prenom = New System.Windows.Forms.Label()
         Me.txtB_Login = New System.Windows.Forms.TextBox()
@@ -52,11 +51,18 @@ Partial Class form_CreateUser
         Me.lbl_Voitures = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.gb_login = New System.Windows.Forms.GroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtB_name = New System.Windows.Forms.TextBox()
         Me.grpb_TypeUser.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.gb_login.SuspendLayout()
@@ -65,7 +71,7 @@ Partial Class form_CreateUser
         '
         'btn_Submit
         '
-        Me.btn_Submit.Location = New System.Drawing.Point(120, 501)
+        Me.btn_Submit.Location = New System.Drawing.Point(130, 615)
         Me.btn_Submit.Name = "btn_Submit"
         Me.btn_Submit.Size = New System.Drawing.Size(83, 32)
         Me.btn_Submit.TabIndex = 0
@@ -74,7 +80,7 @@ Partial Class form_CreateUser
         '
         'btn_return
         '
-        Me.btn_return.Location = New System.Drawing.Point(12, 558)
+        Me.btn_return.Location = New System.Drawing.Point(10, 672)
         Me.btn_return.Name = "btn_return"
         Me.btn_return.Size = New System.Drawing.Size(75, 23)
         Me.btn_return.TabIndex = 1
@@ -89,13 +95,6 @@ Partial Class form_CreateUser
         Me.lbl_Name.Size = New System.Drawing.Size(29, 13)
         Me.lbl_Name.TabIndex = 2
         Me.lbl_Name.Text = "Nom"
-        '
-        'txtB_name
-        '
-        Me.txtB_name.Location = New System.Drawing.Point(102, 24)
-        Me.txtB_name.Name = "txtB_name"
-        Me.txtB_name.Size = New System.Drawing.Size(148, 20)
-        Me.txtB_name.TabIndex = 3
         '
         'txt_Prenom
         '
@@ -115,7 +114,7 @@ Partial Class form_CreateUser
         '
         'txtB_Login
         '
-        Me.txtB_Login.Location = New System.Drawing.Point(79, 25)
+        Me.txtB_Login.Location = New System.Drawing.Point(158, 23)
         Me.txtB_Login.Name = "txtB_Login"
         Me.txtB_Login.Size = New System.Drawing.Size(148, 20)
         Me.txtB_Login.TabIndex = 7
@@ -123,7 +122,7 @@ Partial Class form_CreateUser
         'lbl_Login
         '
         Me.lbl_Login.AutoSize = True
-        Me.lbl_Login.Location = New System.Drawing.Point(37, 28)
+        Me.lbl_Login.Location = New System.Drawing.Point(61, 25)
         Me.lbl_Login.Name = "lbl_Login"
         Me.lbl_Login.Size = New System.Drawing.Size(36, 13)
         Me.lbl_Login.TabIndex = 6
@@ -131,7 +130,7 @@ Partial Class form_CreateUser
         '
         'txtB_MDP
         '
-        Me.txtB_MDP.Location = New System.Drawing.Point(79, 69)
+        Me.txtB_MDP.Location = New System.Drawing.Point(158, 63)
         Me.txtB_MDP.Name = "txtB_MDP"
         Me.txtB_MDP.Size = New System.Drawing.Size(148, 20)
         Me.txtB_MDP.TabIndex = 9
@@ -139,7 +138,7 @@ Partial Class form_CreateUser
         'lbl_Mdp
         '
         Me.lbl_Mdp.AutoSize = True
-        Me.lbl_Mdp.Location = New System.Drawing.Point(5, 72)
+        Me.lbl_Mdp.Location = New System.Drawing.Point(47, 66)
         Me.lbl_Mdp.Name = "lbl_Mdp"
         Me.lbl_Mdp.Size = New System.Drawing.Size(71, 13)
         Me.lbl_Mdp.TabIndex = 8
@@ -278,7 +277,7 @@ Partial Class form_CreateUser
         '
         'progressBar_Mdp
         '
-        Me.progressBar_Mdp.Location = New System.Drawing.Point(137, 95)
+        Me.progressBar_Mdp.Location = New System.Drawing.Point(188, 88)
         Me.progressBar_Mdp.Name = "progressBar_Mdp"
         Me.progressBar_Mdp.Size = New System.Drawing.Size(90, 11)
         Me.progressBar_Mdp.TabIndex = 22
@@ -315,18 +314,83 @@ Partial Class form_CreateUser
         '
         'gb_login
         '
+        Me.gb_login.Controls.Add(Me.Label7)
+        Me.gb_login.Controls.Add(Me.TextBox1)
+        Me.gb_login.Controls.Add(Me.Label5)
+        Me.gb_login.Controls.Add(Me.Label4)
+        Me.gb_login.Controls.Add(Me.Label3)
+        Me.gb_login.Controls.Add(Me.Label6)
         Me.gb_login.Controls.Add(Me.lbl_Login)
         Me.gb_login.Controls.Add(Me.txtB_Login)
         Me.gb_login.Controls.Add(Me.lbl_Mdp)
         Me.gb_login.Controls.Add(Me.lbl_InfoMdp)
         Me.gb_login.Controls.Add(Me.txtB_MDP)
         Me.gb_login.Controls.Add(Me.progressBar_Mdp)
-        Me.gb_login.Location = New System.Drawing.Point(44, 341)
+        Me.gb_login.Location = New System.Drawing.Point(25, 341)
         Me.gb_login.Name = "gb_login"
-        Me.gb_login.Size = New System.Drawing.Size(256, 135)
+        Me.gb_login.Size = New System.Drawing.Size(321, 267)
         Me.gb_login.TabIndex = 26
         Me.gb_login.TabStop = False
         Me.gb_login.Text = "Authentification"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(5, 115)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(146, 13)
+        Me.Label7.TabIndex = 42
+        Me.Label7.Text = "Confirmation du mot de passe"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(158, 115)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(148, 20)
+        Me.TextBox1.TabIndex = 43
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.ForeColor = System.Drawing.Color.DimGray
+        Me.Label5.Location = New System.Drawing.Point(66, 208)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(100, 13)
+        Me.Label5.TabIndex = 41
+        Me.Label5.Text = "·1 caractère spécial"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.Color.DimGray
+        Me.Label4.Location = New System.Drawing.Point(66, 194)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(53, 13)
+        Me.Label4.TabIndex = 40
+        Me.Label4.Text = "·2 chiffres"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.Color.DimGray
+        Me.Label3.Location = New System.Drawing.Point(66, 180)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(69, 13)
+        Me.Label3.TabIndex = 39
+        Me.Label3.Text = "·8 caractères"
+        '
+        'Label6
+        '
+        Me.Label6.ForeColor = System.Drawing.Color.DimGray
+        Me.Label6.Location = New System.Drawing.Point(58, 158)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(206, 23)
+        Me.Label6.TabIndex = 38
+        Me.Label6.Text = "Le mot de passe doit contenir minimum :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'DateTimePicker1
         '
@@ -373,11 +437,18 @@ Partial Class form_CreateUser
         Me.Label1.TabIndex = 29
         Me.Label1.Text = "Date de début de la location"
         '
+        'txtB_name
+        '
+        Me.txtB_name.Location = New System.Drawing.Point(102, 24)
+        Me.txtB_name.Name = "txtB_name"
+        Me.txtB_name.Size = New System.Drawing.Size(148, 20)
+        Me.txtB_name.TabIndex = 3
+        '
         'form_CreateUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(347, 593)
+        Me.ClientSize = New System.Drawing.Size(356, 705)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.gb_login)
         Me.Controls.Add(Me.GroupBox1)
@@ -405,7 +476,6 @@ Partial Class form_CreateUser
     Friend WithEvents btn_Submit As System.Windows.Forms.Button
     Friend WithEvents btn_return As System.Windows.Forms.Button
     Friend WithEvents lbl_Name As System.Windows.Forms.Label
-    Friend WithEvents txtB_name As System.Windows.Forms.TextBox
     Friend WithEvents txt_Prenom As System.Windows.Forms.TextBox
     Friend WithEvents lbl_prenom As System.Windows.Forms.Label
     Friend WithEvents txtB_Login As System.Windows.Forms.TextBox
@@ -437,4 +507,11 @@ Partial Class form_CreateUser
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtB_name As System.Windows.Forms.TextBox
 End Class

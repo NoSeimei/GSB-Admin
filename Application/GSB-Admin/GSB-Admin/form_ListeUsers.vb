@@ -20,6 +20,13 @@ Public Class form_ListeUsers
         MessageBoxButtons.YesNo, MessageBoxIcon.Question) 'Affichage de la message box avec le choix de quitter ou de rester
         If Reponse = DialogResult.Yes Then
 
+
+            'On supprime alors l'utilisateur en question
+
+            Dim idUser As Integer = lstV_visiteur.SelectedItems.Item(0).Text
+            SupprimeUser(idUser)
+
+
             Me.Close()
         End If
     End Sub
@@ -41,7 +48,7 @@ Public Class form_ListeUsers
 
         'On parcourt l'ensemble de notre collection d'utilisateurs
         For Each unUser In CollectionUser
-            item = New ListViewItem({unUser.nomUser, unUser.prenomUSer, unUser.dateEmbaucheUser})
+            item = New ListViewItem({unUser.idUser, unUser.nomUser, unUser.prenomUSer, unUser.dateEmbaucheUser})
             Me.lstV_visiteur.Items.Add(item)
 
         Next
@@ -59,7 +66,7 @@ Public Class form_ListeUsers
             'On parcourt l'ensemble de notre collection d'utilisateurs
            
             For Each unVisiteur In CollectionVisiteur
-                item = New ListViewItem({unVisiteur.nomUser, unVisiteur.prenomUSer, unVisiteur.dateEmbaucheUser})
+                item = New ListViewItem({unVisiteur.idUser, unVisiteur.nomUser, unVisiteur.prenomUSer, unVisiteur.dateEmbaucheUser})
                 Me.lstV_visiteur.Items.Add(item)
                 Me.lstV_visiteur.Refresh()
 
@@ -80,7 +87,7 @@ Public Class form_ListeUsers
 
             'On parcourt l'ensemble de notre collection d'utilisateurs
             For Each unComptable In CollectionComptable
-                item = New ListViewItem({unComptable.nomUser, unComptable.prenomUSer, unComptable.dateEmbaucheUser})
+                item = New ListViewItem({unComptable.idUser, unComptable.nomUser, unComptable.prenomUSer, unComptable.dateEmbaucheUser})
                 Me.lstV_visiteur.Items.Add(item)
                 Me.lstV_visiteur.Refresh()
 
@@ -90,14 +97,4 @@ Public Class form_ListeUsers
     End Sub
 
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    Private Sub form_ListeUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        
-
-
-        
-    End Sub
-
-
 End Class
