@@ -3,7 +3,6 @@ INSTEAD OF INSERT
 
 AS
 BEGIN
-
 -- DECLARATION DE NOS VARIABLES
 ------------------------------------------------------------------------------------
 DECLARE @immat as varchar(50) -- Pour récupérer l'immatriculation
@@ -11,16 +10,11 @@ DECLARE @dateDebut as date
 DECLARE @id as int
 DECLARE @dateFin as date
 SELECT @dateDebut = dateDebut, @immat = immat, @id = id, @dateFin = @dateFin FROM inserted;
-print @dateDebut 
-print @immat
 ------------------------------------------------------------------------------------
 
 
 -- SI UNE VOITURE EST EN COURS D'UTILISATION ON NE FAIT RIEN ET ON ANNULE L'INSERTION / UPDATE
 -------------------------------------------------------------------------------------------
-declare @dte as date
-select @dte=dateFin from utiliser WHERE immat = @immat
-print @dte
 IF EXISTS(SELECT * FROM utiliser WHERE immat = @immat AND dateFin >= @dateDebut) -- On effectue un test avant la boucle
 BEGIN
 	PRINT 'La voiture choisie n''est pas disponible' -- Si on est dans ce cas, alors la voiture n'est pas disponible

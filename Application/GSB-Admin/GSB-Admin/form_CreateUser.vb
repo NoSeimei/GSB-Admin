@@ -31,15 +31,12 @@
         For Each uneVoiture In CollectionVehicule
             item = New ListViewItem({uneVoiture.LireImmat, uneVoiture.LirePuiss, uneVoiture.LireModele})
 
-            If voitureUtilise.voitureDispo(uneVoiture.LireImmat) Then 'On vérifie si la voiture est disponible ou non
-                item.BackColor = Color.Red 'On modifie la couleur en conséquence
-            Else
-                item.BackColor = Color.Green
+            If voitureUtilise.voitureDispo(uneVoiture.LireImmat) = False Then 'On vérifie si la voiture est disponible ou non
+                lstV_Voitures.Items.Add(item) 'Ajout de l'item à la listview
             End If
 
-            lstV_Voitures.Items.Add(item) 'Ajout de l'item à la listview
         Next
-
+        dateFinLocation.Value = DateAdd(DateInterval.Month, 3, dateDebutLoc.Value) 'Permet de mettre 3 mois en plus par défaut
 
     End Sub
 
@@ -78,25 +75,44 @@
 
             If rb_Visiteur.Checked = True Then
 
-                Dim unVisiteur As New visiteur(IncreVisiteur, txtB_name.Text, txt_Prenom.Text, txtB_Login.Text, txtB_MDP.Text, txtB_Adresse.Text, txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text)
-                CollectionVisiteur.Add(unVisiteur) ' on l'ajoute à la collection de visiteur
+
 
                 'On vérifie tout d'abord qu'un véhicule as été assigné avant d'insérer le visiteur
                 If lstV_Voitures.SelectedItems.Count > 0 Then
 
 
+                    createUser(txtB_name.Text, txt_Prenom.Text, txtB_Login.Text, txtB_MDP.Text, txtB_Adresse.Text,
+                               txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text)
 
-                    Dim leVehicule = trouverVehicule(lstV_Voitures.SelectedItems.Item(0).Text) 'On récupére le véhicule grâce à une méthode
-                    'On déclare l'objet LeVehiculeUtilise et on l'insère dans la collection
-                    Dim LeVehiculeUtilise As New voitureUtilise(leVehicule, unVisiteur, DateTimePicker1.Text, DateTimePicker2.Text)
-                    CollectionVoitureUtiliser.Add(LeVehiculeUtilise)
+                    'On récupére ici le dernier visiteur qui viens d'être insérer
+                    Dim leVisiteur = CollectionVisiteur.Item(CollectionVisiteur.Count - 1)
+                    'Appel de la fonction avec les paramètres dont la méthode a besoin
+                    addVehicule_Visiteur(lstV_Voitures.SelectedItems.Item(0).Text, leVisiteur.idUser, dateDebutLoc.Text, dateFinLocation.Text)
+
+
+                Else
+
+                    'On le prévient ici qu'aucun véhicule n'a été assigné
+                    Reponse = MessageBox.Show("Aucun véhicule n'a été attribué à au visiteur " + vbCrLf +
+                                               txt_Prenom.Text + " " + txtB_Login.Text + vbCrLf +
+                    "Effectué l'ajout?", "Information", _
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) 'Affichage de la message box avec un choix 
+                    If Reponse = DialogResult.Yes Then
+
+                        'On crée ici l'user
+                        createUser(txtB_name.Text, txt_Prenom.Text, txtB_Login.Text, txtB_MDP.Text, txtB_Adresse.Text,
+                                    txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text)
+
+                        Me.Close()
+                    End If
 
                 End If
 
             Else
-                Dim unComptable As New comptable(IncreComptable, txtB_name.Text, txt_Prenom.Text, txtB_Login.Text, txtB_MDP.Text, txtB_Adresse.Text, txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text, False)
-                ' on l'ajoute à la collection de comptable
-                CollectionComptable.Add(unComptable)
+
+                'On crée ici le comptable
+                createUser(txtB_name.Text, txt_Prenom.Text, txtB_Login.Text, txtB_MDP.Text, txtB_Adresse.Text,
+txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text, 0)
             End If
         End If
 

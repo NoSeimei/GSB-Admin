@@ -33,7 +33,7 @@ ville = @param_ville, dateEmbauche = @param_dateEmbauche
 WHERE id = @param_id;
 
 
-PRINT 'L''utilisateur existait déjà, il as été mise à jour'
+SELECT 0, 'L''utilisateur existait déjà, il as été mise à jour'
 END;
 
 ELSE
@@ -57,8 +57,6 @@ INSERT INTO visiteur (id) VALUES
 (@param_id);
 
 -- Affiche un message spécifiant l'action effectuer
-PRINT 'L''utilisateur n''existait pas, il as été créer '
+SELECT 1, 'L''utilisateur n''existait pas, il as été créer '
  END;
-
-
 

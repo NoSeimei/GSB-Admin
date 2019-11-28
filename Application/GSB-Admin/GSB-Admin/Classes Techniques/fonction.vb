@@ -113,7 +113,7 @@ Module fonction
             End If
         Next
 
-        Throw New Exception("Lvisiteur n'existe pas") 'On génére une exception
+        Throw New Exception("Le visiteur n'existe pas") 'On génére une exception
     End Function
 
 
@@ -174,21 +174,11 @@ Module fonction
         End If
     End Sub
 
-    Public Function IncreVisiteur() As Integer
+    Public Function IncreUser() As Integer
         Dim i As Integer = 0
-        For Each UnVisiteur In CollectionVisiteur
-            If UnVisiteur.idUser > i Then
-                i = UnVisiteur.idUser
-            End If
-        Next
-        Return i + 1
-    End Function
-
-    Public Function IncreComptable() As Integer
-        Dim i As Integer = 0
-        For Each UnComptable In CollectionComptable
-            If UnComptable.idUser > i Then
-                i = UnComptable.idUser
+        For Each UnUser In CollectionUser
+            If UnUser.idUser > i Then
+                i = UnUser.idUser
             End If
         Next
         Return i + 1
@@ -313,5 +303,50 @@ Module fonction
     '----------------------------------------------------------------------------------------------------------------------------------------------
 
 
+
+
+    'Procédure qui va permettre de gérer la création d'un user ou d'un comptable mais aussi de l'insérer dans la BDD
+    Sub createUser(name As String, surname As String, login As String, mdp As String, adr As String, cp As String,
+                        ville As String, dateEbauche As Date, Optional nbFiche As Integer = -1)
+
+        Dim idUser As Integer = IncreUser()
+
+        'On crée aussi le user
+        Dim unUser As New user(idUser, name, surname, login, mdp, adr, cp, ville, dateEbauche)
+        CollectionUser.Add(unUser) ' on l'ajoute à la collection de user
+
+        'On vérifie quel type d'utilisateur a voulu être enregistrer
+        If nbFiche = -1 Then
+            Dim unVisiteur As New visiteur(idUser, name, surname, login, mdp, adr, cp, ville, dateEbauche)
+            CollectionVisiteur.Add(unVisiteur) ' on l'ajoute à la collection de visiteur
+        Else
+            Dim unComptable As New comptable(idUser, name, surname, login, mdp, adr, cp, ville, dateEbauche, nbFiche)
+            CollectionComptable.Add(unComptable) ' on l'ajoute à la collection de comptable
+        End If
+
+        'On insére maintenant l'utilisateur pour effectuer la persistance des données
+        ConnexionSQL.Insert_Update_User(idUser, name, surname, login, mdp, adr, cp, ville, dateEbauche, nbFiche)
+    End Sub
+
+
+
+
+    'Procédure qui va permettre de gérer l'association entre un visiteur et un véhicule
+    Sub addVehicule_Visiteur(immat As String, id As Integer, dateDebut As Date, dateFin As Date)
+
+        Try
+            ConnexionSQL.verifDispoVehicule(immat, dateDebut)
+        Catch ex As Exception
+            MsgBox(ex.Message) 'On affiche ici le message renvoyé par la fonction
+        End Try
+
+
+        'Si l'exception n'a pas été levé alors on crée notre objet
+        Dim voitureUtilise As New voitureUtilise(trouverVehicule(immat), trouverVisiteur(id), dateDebut, dateFin)
+        CollectionVoitureUtiliser.Add(voitureUtilise)
+
+        'On met en lien le véhicule avec le visiteur dans la BDD afin de faire persister les données
+        ConnexionSQL.insertUtiliser(immat, dateDebut, id, dateFin)
+    End Sub
 End Module
 

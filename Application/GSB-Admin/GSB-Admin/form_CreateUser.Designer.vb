@@ -58,8 +58,8 @@ Partial Class form_CreateUser
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.dateDebutLoc = New System.Windows.Forms.DateTimePicker()
+        Me.dateFinLocation = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -399,26 +399,26 @@ Partial Class form_CreateUser
         Me.Label6.TabIndex = 38
         Me.Label6.Text = "Le mot de passe doit contenir minimum " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "8 caractères avec:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'DateTimePicker1
+        'dateDebutLoc
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(153, 21)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(177, 20)
-        Me.DateTimePicker1.TabIndex = 27
+        Me.dateDebutLoc.Location = New System.Drawing.Point(153, 21)
+        Me.dateDebutLoc.Name = "dateDebutLoc"
+        Me.dateDebutLoc.Size = New System.Drawing.Size(177, 20)
+        Me.dateDebutLoc.TabIndex = 27
         '
-        'DateTimePicker2
+        'dateFinLocation
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(153, 66)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(177, 20)
-        Me.DateTimePicker2.TabIndex = 28
+        Me.dateFinLocation.Location = New System.Drawing.Point(153, 66)
+        Me.dateFinLocation.Name = "dateFinLocation"
+        Me.dateFinLocation.Size = New System.Drawing.Size(177, 20)
+        Me.dateFinLocation.TabIndex = 28
         '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.Label1)
-        Me.GroupBox3.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox3.Controls.Add(Me.DateTimePicker2)
+        Me.GroupBox3.Controls.Add(Me.dateDebutLoc)
+        Me.GroupBox3.Controls.Add(Me.dateFinLocation)
         Me.GroupBox3.Location = New System.Drawing.Point(419, 50)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(344, 107)
@@ -503,8 +503,8 @@ Partial Class form_CreateUser
     Friend WithEvents gb_login As System.Windows.Forms.GroupBox
     Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dateDebutLoc As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dateFinLocation As System.Windows.Forms.DateTimePicker
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
