@@ -30,9 +30,13 @@
         'On parcourt l'ensemble de notre collection d'utilisateurs
         For Each uneVoiture In CollectionVehicule
             item = New ListViewItem({uneVoiture.LireImmat, uneVoiture.LirePuiss, uneVoiture.LireModele})
-            lstV_Voitures.Items.Add(item)
-        Next
 
+            If voitureUtilise.voitureDispo(uneVoiture.LireImmat) = False Then 'On vérifie si la voiture est disponible ou non
+                lstV_Voitures.Items.Add(item) 'Ajout de l'item à la listview
+            End If
+
+        Next
+        dateFinLocation.Value = DateAdd(DateInterval.Month, 3, dateDebutLoc.Value) 'Permet de mettre 3 mois en plus par défaut
 
     End Sub
 
@@ -49,65 +53,68 @@
         MessageBoxButtons.YesNo, MessageBoxIcon.Question) 'Affichage de la message box avec le choix de quitter ou de rester
         If Reponse = DialogResult.Yes Then
 
+
+            'Test ici que toutes les informations ont bien été entrées
             Dim t
             For Each t In Me.Controls
                 If TypeOf t Is TextBox Then
                     If t.Text = "" Then
                         MsgBox("Complete Entry!")
-                        Exit Sub
+                        Exit Sub 'Arrête l'exécution de la Sub
                         Exit For
                     End If
                 End If
             Next
 
 
-        ElseIf rb_Visiteur.Checked = True Then
+            'On test ici que les mots de passe sont bien identique
+            If txtB_MDP.Text <> txtB_ConfirmMDP.Text Then
+                MsgBox("Les mots de passes ne sont pas identiques!")
+                Exit Sub 'Arrête l'exécution de la Sub
+            End If
 
-            Dim unVisiteur As New visiteur(IncreVisiteur, txtB_name.Text, txt_Prenom.Text, txtB_Login.Text, txtB_MDP.Text, txtB_Adresse.Text, txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text)
-            ' on l'ajoute à la collection de visiteur
-            CollectionVisiteur.Add(unVisiteur)
+            If rb_Visiteur.Checked = True Then
 
-            'Variables permettant de parcourir une boucle
-            Dim i As Integer = 0
 
-            'Lorsque l'élément aura été choisie on parcourt la liste pour le retrouver 
-            For Each Element As ListViewItem In lstV_Voitures.SelectedItems
 
-                ' On cherche l'élément sélectionné
-                If Element.Selected = True Then
-                    'Une fois trouvé, on travaille dessus
+                'On vérifie tout d'abord qu'un véhicule as été assigné avant d'insérer le visiteur
+                If lstV_Voitures.SelectedItems.Count > 0 Then
 
-                    'tout d'abord on recherche le produit sur lequel on va travailler
-                    While i < CollectionVehicule.Count And CollectionVehicule.Item(i).LireImmat <> Element.SubItems(0).Text
-                        i = i + 1
-                    End While
 
-                    'On récupére le véhicule sélectionné
-                    Dim LeVehicule = CollectionVehicule.Item(i)
+                    createUser(txtB_name.Text, txt_Prenom.Text, txtB_Login.Text, txtB_MDP.Text, txtB_Adresse.Text,
+                               txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text)
 
-                    'On déclare l'objet et on l'insère dans la collection
-                    Dim LeVehiculeUtilise As New voitureUtilise(LeVehicule, unVisiteur, DateTimePicker1.Text, DateTimePicker2.Text)
-                    CollectionVoitureUtiliser.Add(LeVehiculeUtilise)
+                    'On récupére ici le dernier visiteur qui viens d'être insérer
+                    Dim leVisiteur = CollectionVisiteur.Item(CollectionVisiteur.Count - 1)
+                    'Appel de la fonction avec les paramètres dont la méthode a besoin
+                    addVehicule_Visiteur(lstV_Voitures.SelectedItems.Item(0).Text, leVisiteur.idUser, dateDebutLoc.Text, dateFinLocation.Text)
 
+
+                Else
+
+                    'On le prévient ici qu'aucun véhicule n'a été assigné
+                    Reponse = MessageBox.Show("Aucun véhicule n'a été attribué à au visiteur " + vbCrLf +
+                                               txt_Prenom.Text + " " + txtB_Login.Text + vbCrLf +
+                    "Effectué l'ajout?", "Information", _
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) 'Affichage de la message box avec un choix 
+                    If Reponse = DialogResult.Yes Then
+
+                        'On crée ici l'user
+                        createUser(txtB_name.Text, txt_Prenom.Text, txtB_Login.Text, txtB_MDP.Text, txtB_Adresse.Text,
+                                    txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text)
+
+                        Me.Close()
+                    End If
 
                 End If
-            Next
 
-        Else
+            Else
 
-            Dim unComptable As New comptable(IncreComptable, txtB_name.Text, txt_Prenom.Text, txtB_Login.Text, txtB_MDP.Text, txtB_Adresse.Text, txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text, False)
-            ' on l'ajoute à la collection de comptable
-            CollectionComptable.Add(unComptable)
-
-
-
-            form_ListeUsers.lstV_visiteur.Refresh()
-            form_ListeUsers.Show()
-            Me.Close()
-
-
+                'On crée ici le comptable
+                createUser(txtB_name.Text, txt_Prenom.Text, txtB_Login.Text, txtB_MDP.Text, txtB_Adresse.Text,
+                txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text, 0)
+            End If
         End If
-
 
 
     End Sub
@@ -115,4 +122,7 @@
 
     
     
+    Private Sub lstV_Voitures_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstV_Voitures.SelectedIndexChanged
+
+    End Sub
 End Class

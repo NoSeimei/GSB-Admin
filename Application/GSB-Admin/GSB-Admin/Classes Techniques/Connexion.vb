@@ -7,12 +7,12 @@ Public Class Connexion
     'Constructeur qui va permettre de spécifier la connexion à la bdd et va faire appel aux méthodes de construction des objets
     Sub New()
         'On ce connecte à la base de données BIBI
-        m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";Initial Catalog=" + Database.Item("baseDeDonnees") & _
-      ";User Id=" + Database.Item("user") + ";Password=" + Database.Item("mdpUser") + ";")
+        '   m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";Initial Catalog=" + Database.Item("baseDeDonnees") & _
+        '  ";User Id=" + Database.Item("user") + ";Password=" + Database.Item("mdpUser") + ";")
 
         'LOCAL
-        'm_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";" & _
-        ' "Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
+        m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";" & _
+       "Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
 
 
         'On ouvre la connexion
@@ -24,6 +24,7 @@ Public Class Connexion
         remplirComptable()
         remplirVisiteur()
         remplirUtiliser()
+
         'Enfin on ferme la connexion
         CloseConnexion()
     End Sub
@@ -195,5 +196,134 @@ Public Class Connexion
 
         'On ferme le datareader
         myReader.Close()
+    End Sub
+    'FIN DE LA PARTIE DES METHODES DE REMPLISSAGE DES COLLECTIONS
+    '----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+    '----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'DEBUT DE LA PARTIE PERSISTANCE DES DONNEES
+
+
+
+    'Permet la création des objets voitureUtiliser et le remplissage de la collection
+    Public Sub deleteUser(idUser As Integer)
+
+        OpenConnexion() 'Ouverture de la connexion
+
+        'On prépare notre requête SQL dans un objet Command
+        Dim Mycommand As SqlCommand = m_Connexion.CreateCommand()
+        Mycommand.CommandText = "DELETE FROM utilisateur WHERE id =" + idUser.ToString 'On prépapre notre requête SQL
+        Mycommand.ExecuteNonQuery() 'On exécute la commande
+
+        CloseConnexion() 'Fermeture de la connexion
+    End Sub
+
+
+
+    'Permet d'insérer une information dans la table utiliser (voiture utilisé par un visiteur)
+    Public Sub insertUtiliser(immat As String, dateDebut As Date, idUser As Integer, dateFin As Date)
+
+        OpenConnexion() 'Ouverture de la connexion
+
+        'On prépare notre requête SQL dans un objet Command
+        Dim Mycommand As SqlCommand = m_Connexion.CreateCommand()
+        Mycommand.CommandText = "INSERT INTO utiliser VALUES('" + immat.ToString + "','" + dateDebut.ToString("yyyy-MM-dd") + "'," + idUser.ToString + ",'" + dateFin.ToString("yyyy-MM-dd") + "')"
+        'On prépapre notre requête SQL
+
+
+        'On effectue notre requête
+        Try
+            Mycommand.ExecuteNonQuery() 'On exécute la commande
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+
+        CloseConnexion() 'Fermeture de la connexion
+    End Sub
+
+
+
+    'Permet de vérifier que la valeur qui va être enregistrer dans la table utiliser pourra l'être 
+    Public Function verifDispoVehicule(immat As String, dateDebut As Date)
+
+        OpenConnexion() 'Ouverture de la connexion
+
+        Dim Mycommand As SqlCommand = m_Connexion.CreateCommand() 'On crée notre objet Command
+        Mycommand.CommandText = "verifAdd_VoitureForVisiteur" 'On Spécifie notre procédure stockée
+        Mycommand.CommandType = CommandType.StoredProcedure 'On spcifie que c'est une procédure stockée
+
+        'On spécifie les paramètres nécessaires
+        Mycommand.Parameters.AddWithValue("@immat", immat)
+        Mycommand.Parameters.AddWithValue("@dateDebut", dateDebut)
+
+        'On exécute la requête en DataReader afin de pouvoir lire ce que la procédure nous renvoit
+        Dim valueReturn As SqlDataReader = Mycommand.ExecuteReader()
+
+
+        Try
+            valueReturn.Read() 'On prend la première ligne
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+        'On récupére les valeurs avant la fermeture de la connexion
+        Dim valueFirstColumn = valueReturn.GetValue(0)
+        Dim valueSecondColumn = valueReturn.GetValue(1)
+
+        valueReturn.Close()
+        CloseConnexion() 'Fermeture de la connexion
+
+        'On effectue nos test sur la valeur renvoyé par notre procédure et on renvoit la valeur
+        If valueFirstColumn = 1 Then
+            Return True
+        Else
+            Throw New Exception(valueSecondColumn) 'On récupére le message et on génére une erreur
+        End If
+
+
+    End Function
+
+
+
+
+    'Permet d'insérer via la procédure stockée présentes sur le serveur de BDD
+    Public Sub Insert_Update_User(id As Integer, name As String, surname As String, login As String, mdp As String, adr As String, cp As String,
+                        ville As String, dateEbauche As Date, nbFiche As Integer)
+
+
+        OpenConnexion() 'Ouverture de la connexion
+
+        Dim Mycommand As SqlCommand = m_Connexion.CreateCommand() 'On crée notre objet Command
+        Mycommand.CommandText = "Insert_Update_User" 'On Spécifie notre procédure stockée
+        Mycommand.CommandType = CommandType.StoredProcedure 'On spcifie que c'est une procédure stockée
+
+        'On spécifie les paramètres nécessaires
+        Mycommand.Parameters.AddWithValue("@param_id", id)
+        Mycommand.Parameters.AddWithValue("@param_nom", name)
+        Mycommand.Parameters.AddWithValue("@param_prenom", surname)
+        Mycommand.Parameters.AddWithValue("@param_login", login)
+        Mycommand.Parameters.AddWithValue("@param_mdp", mdp)
+        Mycommand.Parameters.AddWithValue("@param_adresse", adr)
+        Mycommand.Parameters.AddWithValue("@param_cp", cp)
+        Mycommand.Parameters.AddWithValue("@param_ville", ville)
+        Mycommand.Parameters.AddWithValue("@param_dateEmbauche", dateEbauche)
+        Mycommand.Parameters.AddWithValue("@param_nbFichesRefuse", nbFiche)
+
+        Try
+            'On exécute la commande
+            Mycommand.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    
+
+        CloseConnexion() 'Fermeture de la connexion
+
     End Sub
 End Class

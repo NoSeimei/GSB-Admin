@@ -114,4 +114,12 @@
     '------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+
+    'Méthode pour pouvoir supprimer un utilisateur ainsi que son équivalent en héritage
+    Shared Sub SupprimeUser(idUser As Integer)
+        CollectionUser.Remove(trouverUtilisateur(idUser)) 'On supprime l'utilisateur dans notre collection
+        DeleteUserCorrespondant(idUser) 'On supprime l'utilisateur correspondant dans les collections hérités
+        ConnexionSQL.deleteUser(idUser)  'On effectue maintenant la persistance des données avec la BDD
+    End Sub
+
 End Class

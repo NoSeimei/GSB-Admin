@@ -52,17 +52,17 @@ Partial Class form_CreateUser
         Me.lbl_Voitures = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.gb_login = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtB_ConfirmMDP = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.dateDebutLoc = New System.Windows.Forms.DateTimePicker()
+        Me.dateFinLocation = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.grpb_TypeUser.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.gb_login.SuspendLayout()
@@ -323,7 +323,7 @@ Partial Class form_CreateUser
         '
         Me.gb_login.Controls.Add(Me.Label8)
         Me.gb_login.Controls.Add(Me.Label7)
-        Me.gb_login.Controls.Add(Me.TextBox1)
+        Me.gb_login.Controls.Add(Me.txtB_ConfirmMDP)
         Me.gb_login.Controls.Add(Me.Label5)
         Me.gb_login.Controls.Add(Me.Label4)
         Me.gb_login.Controls.Add(Me.Label6)
@@ -340,6 +340,17 @@ Partial Class form_CreateUser
         Me.gb_login.TabStop = False
         Me.gb_login.Text = "Authentification"
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.Color.DimGray
+        Me.Label8.Location = New System.Drawing.Point(66, 180)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(74, 13)
+        Me.Label8.TabIndex = 44
+        Me.Label8.Text = "·2 majuscules "
+        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -349,12 +360,12 @@ Partial Class form_CreateUser
         Me.Label7.TabIndex = 42
         Me.Label7.Text = "Confirmation du mot de passe"
         '
-        'TextBox1
+        'txtB_ConfirmMDP
         '
-        Me.TextBox1.Location = New System.Drawing.Point(158, 115)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(148, 20)
-        Me.TextBox1.TabIndex = 43
+        Me.txtB_ConfirmMDP.Location = New System.Drawing.Point(158, 115)
+        Me.txtB_ConfirmMDP.Name = "txtB_ConfirmMDP"
+        Me.txtB_ConfirmMDP.Size = New System.Drawing.Size(148, 20)
+        Me.txtB_ConfirmMDP.TabIndex = 43
         '
         'Label5
         '
@@ -388,26 +399,26 @@ Partial Class form_CreateUser
         Me.Label6.TabIndex = 38
         Me.Label6.Text = "Le mot de passe doit contenir minimum " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "8 caractères avec:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'DateTimePicker1
+        'dateDebutLoc
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(153, 21)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(177, 20)
-        Me.DateTimePicker1.TabIndex = 27
+        Me.dateDebutLoc.Location = New System.Drawing.Point(153, 21)
+        Me.dateDebutLoc.Name = "dateDebutLoc"
+        Me.dateDebutLoc.Size = New System.Drawing.Size(177, 20)
+        Me.dateDebutLoc.TabIndex = 27
         '
-        'DateTimePicker2
+        'dateFinLocation
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(153, 66)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(177, 20)
-        Me.DateTimePicker2.TabIndex = 28
+        Me.dateFinLocation.Location = New System.Drawing.Point(153, 66)
+        Me.dateFinLocation.Name = "dateFinLocation"
+        Me.dateFinLocation.Size = New System.Drawing.Size(177, 20)
+        Me.dateFinLocation.TabIndex = 28
         '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.Label1)
-        Me.GroupBox3.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox3.Controls.Add(Me.DateTimePicker2)
+        Me.GroupBox3.Controls.Add(Me.dateDebutLoc)
+        Me.GroupBox3.Controls.Add(Me.dateFinLocation)
         Me.GroupBox3.Location = New System.Drawing.Point(419, 50)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(344, 107)
@@ -433,22 +444,11 @@ Partial Class form_CreateUser
         Me.Label1.TabIndex = 29
         Me.Label1.Text = "Date de début de la location"
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.Color.DimGray
-        Me.Label8.Location = New System.Drawing.Point(66, 180)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(74, 13)
-        Me.Label8.TabIndex = 44
-        Me.Label8.Text = "·2 majuscules "
-        '
         'form_CreateUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(847, 705)
+        Me.ClientSize = New System.Drawing.Size(862, 705)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.gb_login)
         Me.Controls.Add(Me.GroupBox1)
@@ -503,8 +503,8 @@ Partial Class form_CreateUser
     Friend WithEvents gb_login As System.Windows.Forms.GroupBox
     Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dateDebutLoc As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dateFinLocation As System.Windows.Forms.DateTimePicker
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -512,6 +512,6 @@ Partial Class form_CreateUser
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtB_ConfirmMDP As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
 End Class

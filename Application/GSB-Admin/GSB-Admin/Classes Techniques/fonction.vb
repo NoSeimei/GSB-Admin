@@ -13,8 +13,8 @@ Module fonction
     Optional ByVal minLength As Integer = 8,
     Optional ByVal numUpper As Integer = 2,
     Optional ByVal numLower As Integer = 2,
-    Optional ByVal numNumbers As Integer = 1,
-    Optional ByVal numSpecial As Integer = 1) As Integer
+    Optional ByVal numNumbers As Integer = 2,
+    Optional ByVal numSpecial As Integer = 2) As Integer
 
         'Valeur de retour
         Dim valueReturn As Integer = 100
@@ -41,14 +41,12 @@ Module fonction
 
 
 
-
-
-    'Fonction permettant de récupérer les informations dans le fichier .ini et décrypte les valeurs 
+   'Fonction permettant de récupérer les informations dans le fichier .ini et décrypte les valeurs 
     Public Sub lectureFichier()
         'Récupération du fichier de configuration au format .ini (LOCAL)
         ' Dim Lignes() As String = File.ReadAllLines("CryptFile/local.ini")
         'Récupération du fichier (PPE)
-        Dim Lignes() As String = File.ReadAllLines("CryptFile/config.ini")
+        Dim Lignes() As String = File.ReadAllLines("CryptFile/localConfig.ini")
         Dim paragraphe As String = ""
 
 
@@ -105,6 +103,22 @@ Module fonction
     End Function
 
 
+    Function cryptValue(text As String)
+        'Crypte la valeur
+        Dim TexteEnBytes() As Byte = Encoding.UTF8.GetBytes(text)
+        Dim KeyBytes() As Byte = Encoding.UTF8.GetBytes("aGioP782")
+        Dim Crypto As New DESCryptoServiceProvider()
+        Crypto.Key = KeyBytes
+        Crypto.IV = KeyBytes
+        Dim Icrypto As ICryptoTransform = Crypto.CreateEncryptor()
+        Dim ResultatBytes() As Byte = Icrypto.TransformFinalBlock(TexteEnBytes, 0, TexteEnBytes.Length)
+        text = Convert.ToBase64String(ResultatBytes)
+
+        'Renvoi l'information
+        Return text
+    End Function
+
+
 
 
     'Permet de retourner le visiteur s'il existe
@@ -115,7 +129,7 @@ Module fonction
             End If
         Next
 
-        Throw New Exception("Ce visiteur n'existe pas")
+        Throw New Exception("Le visiteur n'existe pas") 'On génére une exception
     End Function
 
 
@@ -127,8 +141,27 @@ Module fonction
             End If
         Next
 
-        Throw New Exception("Cette immatriculation n'existe pas")
+        Throw New Exception("Le véhicule n'est pas répertorié") 'On génére une exception
     End Function
+
+
+    Function trouverUser(idUser As Integer)
+
+        For Each unVisiteur In CollectionVisiteur
+            If unVisiteur.idUser = idUser Then
+                Return "Visiteur"
+            End If
+        Next
+
+        For Each unUser In CollectionComptable
+            If unUser.idUser = idUser Then
+                Return "Comptable"
+            End If
+        Next
+
+        Throw New Exception("L'utilisateur n'appartient à aucune catégorie") 'On génére une exception
+    End Function
+
 
 
     'Permet de retourner l'utilisateur s'il existe
@@ -139,24 +172,48 @@ Module fonction
             End If
         Next
 
-        Throw New Exception("Cette utilisateur n'existe pas")
+        Throw New Exception("L'utilisateur n'existe pas") 'On génére une exception
     End Function
 
-    Public Function IncreVisiteur() As Integer
-        Dim i As Integer = 0
-        For Each UnVisiteur In CollectionVisiteur
-            If UnVisiteur.idUser > i Then
-                i = UnVisiteur.idUser
+    'Permet de retourner le comptable s'il existe
+    Function trouverComptable(id As Integer)
+        For Each unUser In CollectionComptable
+            If unUser.idUser = id Then
+                Return unUser
             End If
         Next
-        Return i + 1
+
+        Throw New Exception("Le comptable n'existe pas") 'On génére une exception
     End Function
 
-    Public Function IncreComptable() As Integer
+
+    'Permet de retourner le comptable s'il existe
+    Function trouverVoitureUtilise(immat As String)
+        For Each uneVoiture In CollectionVoitureUtiliser
+            If uneVoiture.vehiculeVoiture.LireImmat = immat Then
+                Return uneVoiture
+            End If
+        Next
+
+        Throw New Exception("La voiture n'est pas utilisé") 'On génére une exception
+    End Function
+
+
+    'Retourne le visiteur ou le comptable en fonction de l'Id
+    Sub DeleteUserCorrespondant(id As Integer)
+
+        If CollectionComptable.Contains(trouverComptable(id)) Then
+            CollectionComptable.Remove(trouverComptable(id))
+        ElseIf CollectionVisiteur.Contains(trouverVisiteur(id)) Then
+            CollectionVisiteur.Remove(trouverVisiteur(id))
+        End If
+    End Sub
+
+    Public Function IncreUser() As Integer
         Dim i As Integer = 0
-        For Each UnComptable In CollectionComptable
-            If UnComptable.idUser > i Then
-                i = UnComptable.idUser
+        For Each UnUser In CollectionUser
+            If UnUser.idUser > i Then
+                i = UnUser.idUser
             End If
         Next
         Return i + 1
@@ -281,5 +338,66 @@ Module fonction
     '----------------------------------------------------------------------------------------------------------------------------------------------
 
 
+
+
+    'Procédure qui va permettre de gérer la création d'un user ou d'un comptable mais aussi de l'insérer dans la BDD
+    Sub createUser(name As String, surname As String, login As String, mdp As String, adr As String, cp As String,
+                        ville As String, dateEbauche As Date, Optional nbFiche As Integer = -1)
+
+        Dim idUser As Integer = IncreUser()
+
+        'On crée aussi le user
+        Dim unUser As New user(idUser, name, surname, login, mdp, adr, cp, ville, dateEbauche)
+        CollectionUser.Add(unUser) ' on l'ajoute à la collection de user
+
+        'On vérifie quel type d'utilisateur a voulu être enregistrer
+        If nbFiche = -1 Then
+            Dim unVisiteur As New visiteur(idUser, name, surname, login, mdp, adr, cp, ville, dateEbauche)
+            CollectionVisiteur.Add(unVisiteur) ' on l'ajoute à la collection de visiteur
+        Else
+            Dim unComptable As New comptable(idUser, name, surname, login, mdp, adr, cp, ville, dateEbauche, nbFiche)
+            CollectionComptable.Add(unComptable) ' on l'ajoute à la collection de comptable
+        End If
+
+        'On insére maintenant l'utilisateur pour effectuer la persistance des données
+        ConnexionSQL.Insert_Update_User(idUser, name, surname, login, mdp, adr, cp, ville, dateEbauche, nbFiche)
+    End Sub
+
+
+
+
+    'Procédure qui va permettre de gérer l'association entre un visiteur et un véhicule
+    Sub addVehicule_Visiteur(immat As String, id As Integer, dateDebut As Date, dateFin As Date)
+
+        Try
+            ConnexionSQL.verifDispoVehicule(immat, dateDebut)
+        Catch ex As Exception
+            MsgBox(ex.Message) 'On affiche ici le message renvoyé par la fonction
+        End Try
+
+
+        'Si l'exception n'a pas été levé alors on crée notre objet
+        Dim voitureUtilise As New voitureUtilise(trouverVehicule(immat), trouverVisiteur(id), dateDebut, dateFin)
+        CollectionVoitureUtiliser.Add(voitureUtilise)
+
+        'On met en lien le véhicule avec le visiteur dans la BDD afin de faire persister les données
+        ConnexionSQL.insertUtiliser(immat, dateDebut, id, dateFin)
+    End Sub
+
+
+
+
+    Function doubleCryptage(value As String)
+        Dim valueCrypte = cryptage_carré_Vigenére(value) 'On crypte une première fois avec le carré de vigenére
+        valueCrypte = cryptValue(valueCrypte) 'On recrypte grâce au cryptage du système
+        Return valueCrypte 'on reourne la valeur
+    End Function
+
+
+    Function doubleDecryptage(value As String)
+        Dim valueDecrypte = deryptValue(value) 'On décrypte une première fois avec le décryptage du système
+        valueDecrypte = décryptage_carré_Vigenére(valueDecrypte) 'On décrypte ensuite avec le décryptage du crré de vigenére
+        Return valueDecrypte 'on retourne enfin la valeur décrypter
+    End Function
 End Module
 
