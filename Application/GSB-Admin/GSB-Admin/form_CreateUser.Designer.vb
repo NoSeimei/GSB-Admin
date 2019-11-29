@@ -63,6 +63,7 @@ Partial Class form_CreateUser
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.checkBox_AffichAllVehicule = New System.Windows.Forms.CheckBox()
         Me.grpb_TypeUser.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.gb_login.SuspendLayout()
@@ -444,11 +445,24 @@ Partial Class form_CreateUser
         Me.Label1.TabIndex = 29
         Me.Label1.Text = "Date de début de la location"
         '
+        'checkBox_AffichAllVehicule
+        '
+        Me.checkBox_AffichAllVehicule.AutoSize = True
+        Me.checkBox_AffichAllVehicule.Checked = True
+        Me.checkBox_AffichAllVehicule.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.checkBox_AffichAllVehicule.Location = New System.Drawing.Point(436, 549)
+        Me.checkBox_AffichAllVehicule.Name = "checkBox_AffichAllVehicule"
+        Me.checkBox_AffichAllVehicule.Size = New System.Drawing.Size(231, 17)
+        Me.checkBox_AffichAllVehicule.TabIndex = 30
+        Me.checkBox_AffichAllVehicule.Text = "Afficher uniquement les voitures disponibles"
+        Me.checkBox_AffichAllVehicule.UseVisualStyleBackColor = True
+        '
         'form_CreateUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(363, 705)
+        Me.ClientSize = New System.Drawing.Size(786, 705)
+        Me.Controls.Add(Me.checkBox_AffichAllVehicule)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.gb_login)
         Me.Controls.Add(Me.GroupBox1)
@@ -514,4 +528,5 @@ Partial Class form_CreateUser
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents txtB_ConfirmMDP As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents checkBox_AffichAllVehicule As System.Windows.Forms.CheckBox
 End Class

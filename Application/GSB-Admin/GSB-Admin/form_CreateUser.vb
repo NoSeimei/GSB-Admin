@@ -24,20 +24,7 @@
 
     Private Sub creatUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         rb_Comptable.Checked = True
-
-        Dim item As ListViewItem
-
-        'On parcourt l'ensemble de notre collection d'utilisateurs
-        For Each uneVoiture In CollectionVehicule
-            item = New ListViewItem({uneVoiture.LireImmat, uneVoiture.LirePuiss, uneVoiture.LireModele})
-
-            If voitureUtilise.voitureDispo(uneVoiture.LireImmat) = False Then 'On vérifie si la voiture est disponible ou non
-                lstV_Voitures.Items.Add(item) 'Ajout de l'item à la listview
-            End If
-
-        Next
         dateFinLocation.Value = DateAdd(DateInterval.Month, 3, dateDebutLoc.Value) 'Permet de mettre 3 mois en plus par défaut
-
     End Sub
 
 
@@ -121,5 +108,33 @@ txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text, 0)
 
 
     
-    
+    'Permet d'afficher toutes les voitures
+    Private Sub checkBox_AffichAllVehicule_CheckedChanged(sender As Object, e As EventArgs) Handles checkBox_AffichAllVehicule.CheckedChanged
+        Dim item As ListViewItem
+
+        lstV_Voitures.Items.Clear()
+        lstV_Voitures.Refresh()
+
+            'On parcourt l'ensemble de notre collection d'utilisateurs
+            For Each uneVoiture In CollectionVehicule
+                item = New ListViewItem({uneVoiture.LireImmat, uneVoiture.LirePuiss, uneVoiture.LireModele})
+
+            'On vérifie le check de la checkbox
+            If checkBox_AffichAllVehicule.Checked = True Then
+                If voitureUtilise.voitureDispo(uneVoiture.LireImmat) = False Then 'On vérifie si la voiture est disponible ou non
+                    lstV_Voitures.Items.Add(item) 'Ajout de l'item à la listview
+                End If
+            Else
+                If voitureUtilise.voitureDispo(uneVoiture.LireImmat) = True Then 'On vérifie si la voiture est disponible ou non
+                    item.BackColor = Color.PaleVioletRed
+                End If
+                lstV_Voitures.Items.Add(item) 'Ajout de l'item à la listview
+            End If
+
+
+            Next
+
+    End Sub
+
+
 End Class
