@@ -103,6 +103,22 @@ Module fonction
     End Function
 
 
+    Function cryptValue(text As String)
+        'Crypte la valeur
+        Dim TexteEnBytes() As Byte = Encoding.UTF8.GetBytes(text)
+        Dim KeyBytes() As Byte = Encoding.UTF8.GetBytes("aGioP782")
+        Dim Crypto As New DESCryptoServiceProvider()
+        Crypto.Key = KeyBytes
+        Crypto.IV = KeyBytes
+        Dim Icrypto As ICryptoTransform = Crypto.CreateEncryptor()
+        Dim ResultatBytes() As Byte = Icrypto.TransformFinalBlock(TexteEnBytes, 0, TexteEnBytes.Length)
+        text = Convert.ToBase64String(ResultatBytes)
+
+        'Renvoi l'information
+        Return text
+    End Function
+
+
 
 
     'Permet de retourner le visiteur s'il existe
@@ -348,5 +364,21 @@ Module fonction
         'On met en lien le véhicule avec le visiteur dans la BDD afin de faire persister les données
         ConnexionSQL.insertUtiliser(immat, dateDebut, id, dateFin)
     End Sub
+
+
+
+
+    Function doubleCryptage(value As String)
+        Dim valueCrypte = cryptage_carré_Vigenére(value) 'On crypte une première fois avec le carré de vigenére
+        valueCrypte = cryptValue(valueCrypte) 'On recrypte grâce au cryptage du système
+        Return valueCrypte 'on reourne la valeur
+    End Function
+
+
+    Function doubleDecryptage(value As String)
+        Dim valueDecrypte = deryptValue(value) 'On décrypte une première fois avec le décryptage du système
+        valueDecrypte = décryptage_carré_Vigenére(valueDecrypte) 'On décrypte ensuite avec le décryptage du crré de vigenére
+        Return valueDecrypte 'on retourne enfin la valeur décrypter
+    End Function
 End Module
 

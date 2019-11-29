@@ -1,4 +1,4 @@
-CREATE TRIGGER verifAdd_VoitureForVisiteur on utiliser
+CREATE TRIGGER verifAdd_Voiture on utiliser
 INSTEAD OF INSERT
 
 AS

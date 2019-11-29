@@ -65,7 +65,7 @@ Partial Class form_MDIContainer
         'DéconnexionToolStripMenuItem
         '
         Me.DéconnexionToolStripMenuItem.Name = "DéconnexionToolStripMenuItem"
-        Me.DéconnexionToolStripMenuItem.Size = New System.Drawing.Size(88, 19)
+        Me.DéconnexionToolStripMenuItem.Size = New System.Drawing.Size(89, 19)
         Me.DéconnexionToolStripMenuItem.Text = "Déconnexion"
         '
         'ToolStripMenuItem2

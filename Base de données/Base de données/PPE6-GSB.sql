@@ -37,7 +37,7 @@ CREATE TABLE [dbo].[utiliser](
 	[immat] [varchar](50) NOT NULL,
 	[DateDebut] [date] NOT NULL,
 	[id] [int] NOT NULL,
-	[dateFin] [date] NULL,
+	[dateFin] [date] NOT NULL,
  CONSTRAINT [PK_utiliser_composer] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC,

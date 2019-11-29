@@ -7,12 +7,12 @@ Public Class Connexion
     'Constructeur qui va permettre de spécifier la connexion à la bdd et va faire appel aux méthodes de construction des objets
     Sub New()
         'On ce connecte à la base de données BIBI
-        '  m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";Initial Catalog=" + Database.Item("baseDeDonnees") & _
-        ' ";User Id=" + Database.Item("user") + ";Password=" + Database.Item("mdpUser") + ";")
+        '   m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";Initial Catalog=" + Database.Item("baseDeDonnees") & _
+        '  ";User Id=" + Database.Item("user") + ";Password=" + Database.Item("mdpUser") + ";")
 
         'LOCAL
         m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";" & _
-         "Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
+       "Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
 
 
         'On ouvre la connexion
@@ -230,11 +230,18 @@ Public Class Connexion
 
         'On prépare notre requête SQL dans un objet Command
         Dim Mycommand As SqlCommand = m_Connexion.CreateCommand()
-        Mycommand.CommandText = "INSERT INTO utiliser VALUES(" + immat + "," + dateDebut.ToString + "," + idUser.ToString + "," + dateFin.ToString + ")"
+        Mycommand.CommandText = "INSERT INTO utiliser VALUES('" + immat.ToString + "','" + dateDebut.ToString("yyyy-MM-dd") + "'," + idUser.ToString + ",'" + dateFin.ToString("yyyy-MM-dd") + "')"
         'On prépapre notre requête SQL
 
+
         'On effectue notre requête
-        Mycommand.ExecuteNonQuery() 'On exécute la commande
+        Try
+            Mycommand.ExecuteNonQuery() 'On exécute la commande
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
 
         CloseConnexion() 'Fermeture de la connexion
     End Sub
@@ -257,17 +264,28 @@ Public Class Connexion
         'On exécute la requête en DataReader afin de pouvoir lire ce que la procédure nous renvoit
         Dim valueReturn As SqlDataReader = Mycommand.ExecuteReader()
 
-        valueReturn.Read() 'On prend la première ligne
 
-        'On effectue nos test sur la valeur renvoyé par notre procédure et on renvoit la valeur
-        If valueReturn.GetValue(0) = 1 Then
-            Return True
-        Else
-            Throw New Exception(valueReturn.GetValue(1)) 'On récupére le message et on génére une erreur
-        End If
+        Try
+            valueReturn.Read() 'On prend la première ligne
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+        'On récupére les valeurs avant la fermeture de la connexion
+        Dim valueFirstColumn = valueReturn.GetValue(0)
+        Dim valueSecondColumn = valueReturn.GetValue(1)
 
         valueReturn.Close()
         CloseConnexion() 'Fermeture de la connexion
+
+        'On effectue nos test sur la valeur renvoyé par notre procédure et on renvoit la valeur
+        If valueFirstColumn = 1 Then
+            Return True
+        Else
+            Throw New Exception(valueSecondColumn) 'On récupére le message et on génére une erreur
+        End If
+
 
     End Function
 
@@ -297,8 +315,13 @@ Public Class Connexion
         Mycommand.Parameters.AddWithValue("@param_dateEmbauche", dateEbauche)
         Mycommand.Parameters.AddWithValue("@param_nbFichesRefuse", nbFiche)
 
-        'On exécute la commande
-        Mycommand.ExecuteNonQuery()
+        Try
+            'On exécute la commande
+            Mycommand.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    
 
         CloseConnexion() 'Fermeture de la connexion
 
