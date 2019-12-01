@@ -149,3 +149,20 @@ C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\De
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbprojResolveAssemblyReference.cache
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_CreateUser.resources
 C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_ListeUsers.resources
+C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
+C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
+C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
+C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe
+C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.pdb
+C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.xml
+C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbprojResolveAssemblyReference.cache
+C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_aProposDe.resources
+C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Connexion.resources
+C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_modifUser.resources
+C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Form_resetMDP.resources
+C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_CreateUser.resources
+C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_ListeUsers.resources
+C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
+C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
+C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache

@@ -143,7 +143,22 @@ Module fonction
 
         Throw New Exception("Le véhicule n'est pas répertorié") 'On génére une exception
     End Function
+    Function trouverUser(idUser As Integer)
 
+        For Each unVisiteur In CollectionVisiteur
+            If unVisiteur.idUser = idUser Then
+                Return "Visiteur"
+            End If
+        Next
+
+        For Each unUser In CollectionComptable
+            If unUser.idUser = idUser Then
+                Return "Comptable"
+            End If
+        Next
+
+        Throw New Exception("L'utilisateur n'appartient à aucune catégorie") 'On génére une exception
+    End Function
 
     'Permet de retourner l'utilisateur s'il existe
     Function trouverUtilisateur(id As Integer)
