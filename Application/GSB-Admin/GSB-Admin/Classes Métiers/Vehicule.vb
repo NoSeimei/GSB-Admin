@@ -11,7 +11,7 @@
         m_modeleEtMarque = modeleEtMarque
     End Sub
 
-    Property LireImmat
+    Property Lireimmat
         Get
             Return m_immat
         End Get

@@ -195,6 +195,22 @@ Module fonction
     End Function
 
 
+    'Permet de retourner le comptable s'il existe
+    Function trouverVoitureUtilise_ParVisiteur(id As Integer)
+
+        Dim unTab As New ArrayList 'Création de notre collection
+
+        For Each uneVoitureUtilise In CollectionVoitureUtiliser
+            If uneVoitureUtilise.visiteurVoiture.idUser = id Then
+                unTab.Add(uneVoitureUtilise)
+            End If
+        Next
+
+        Return unTab
+    End Function
+
+
+
     'Retourne le visiteur ou le comptable en fonction de l'Id
     Sub DeleteUserCorrespondant(id As Integer)
 
@@ -402,7 +418,7 @@ Module fonction
 
 
 
-
+    'Fonction qui fait appel au deux type de cryptage
     Function doubleCryptage(value As String)
         Dim valueCrypte = cryptage_carré_Vigenére(value) 'On crypte une première fois avec le carré de vigenére
         valueCrypte = cryptValue(valueCrypte) 'On recrypte grâce au cryptage du système
@@ -410,6 +426,7 @@ Module fonction
     End Function
 
 
+    'Fonction qui permet de faire appel aux deux types de décryptage
     Function doubleDecryptage(value As String)
         Dim valueDecrypte = deryptValue(value) 'On décrypte une première fois avec le décryptage du système
         valueDecrypte = décryptage_carré_Vigenére(valueDecrypte) 'On décrypte ensuite avec le décryptage du crré de vigenére
@@ -417,27 +434,207 @@ Module fonction
     End Function
 
 
+    'Fonction qui permet de vérifier que la valeur recherchés x est bien au début de la valeur y envoyé
+    Function searchUser(valueSearch As String, value As String)
 
+        'Permet de vérifier que la valeur envoyé commence bien par ce que l'on recherche
+        Dim validateValue As New System.Text.RegularExpressions.Regex("^" + valueSearch)
+        Return validateValue.IsMatch(value) 'On retourne ici si la valeur recherché entre bien dans ce cadre
 
-
-    'Fonction permetttant de vérifier la complexité d'un mot de passe
-    Function VerifPassword(ByVal pwd As String,
-    Optional ByVal minLength As Integer = 8,
-    Optional ByVal numUpper As Integer = 2,
-    Optional ByVal numLower As Integer = 2,
-    Optional ByVal numNumbers As Integer = 2,
-    Optional ByVal numSpecial As Integer = 2) As Integer
-
-        'Valeur de retour
-        Dim valueReturn As Integer = 100
-
-        Dim upper As New System.Text.RegularExpressions.Regex("[A-Z]")
-
-        ' Check for minimum number of occurrences.
-        If upper.Matches(pwd).Count < numUpper Then valueReturn -= 20
-
-        ' Passed all checks.
-        Return valueReturn
     End Function
+
+
+    'Fonction qui permet de retrouver la personne ayant pour id=x et d'afficher ses informations en fonction de cela
+    Sub showInfo_User(id As Integer)
+
+        'Recherche le user dans comptable / visiteur
+
+        'Affiche un formulaire personalisé sur certains points en conséquence
+
+        'Modifie la couleur aussi en fonction
+
+        'Affiche toute les voitures du visiteur dans l'odre avec les dates de début et de fin
+
+        'Met une couleur à la voiture utilisé en cours
+
+        '------------------------------------------------------------------------------------------------------------------------------------------
+        'TRAITEMENT ET RECUPERATION DES INFORMATIONS
+        Dim typeUser = trouverUser(id) 'On récupére ici le type de user
+        Dim unUser 'Variable destiné à acceuillir le type de visiteur
+        Dim voitureUtilise As New ArrayList
+
+        If typeUser = "Visiteur" Then
+            unUser = trouverVisiteur(id) 'On récupére ici le visiteur
+            voitureUtilise = trouverVoitureUtilise_ParVisiteur(id) 'On récupére ici les voitures utilisés
+        Else
+            unUser = trouverComptable(id) 'Ici on récupére le comptable
+        End If
+        'FIN DU TRAITEMENT ET RECUPERATION DES INFORMATIONS
+        '------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+        '------------------------------------------------------------------------------------------------------------------------------------------
+        'DEBUT DE CREATION DU FORMULAIRE
+        'création du formulaire
+        Dim afficheInfo_User As New Form
+
+
+        'On change de couleur en fonction du type de visiteur
+        If typeUser = "Visiteur" Then
+            afficheInfo_User.BackColor = Color.Wheat
+        Else
+            afficheInfo_User.BackColor = Color.Salmon
+        End If
+
+        'Titre du formulaire
+        afficheInfo_User.Text = "Formulaire du " + typeUser + " " + unUser.nomUser + " " + unUser.prenomUser
+        'Taille et position du formulaire
+        afficheInfo_User.Width = 800
+        afficheInfo_User.Height = 600
+        afficheInfo_User.StartPosition = 1
+
+
+        'Label TITRE
+        Dim lbTitre As New Label
+        lbTitre.BackColor = Color.Wheat
+        lbTitre.Location = New Point(5, 10)
+        lbTitre.Font = New Font("arial", 12)
+        lbTitre.Width = 450
+        lbTitre.Text = "Informations de " + unUser.nomUser + " " + unUser.prenomUser
+        afficheInfo_User.Controls.Add(lbTitre)
+
+
+        'Label ADRESSE
+        Dim lbAdresse As New Label
+        lbAdresse.BackColor = Color.Wheat
+        lbAdresse.Location = New Point(5, 35)
+        lbAdresse.Font = New Font("arial", 12)
+        lbAdresse.Width = 250
+        lbAdresse.Text = "Adresse : " + unUser.adrUser
+        afficheInfo_User.Controls.Add(lbAdresse)
+
+
+        'Lable CODE POSTAL
+        Dim lbCodePostal As New Label
+        lbCodePostal.BackColor = Color.Wheat
+        lbCodePostal.Location = New Point(5, 85)
+        lbCodePostal.Font = New Font("arial", 12)
+        lbCodePostal.Width = 200
+        lbCodePostal.Text = "Code postal : " + unUser.cpUser
+        afficheInfo_User.Controls.Add(lbCodePostal)
+
+
+        'Label VILLE
+        Dim lbVilleUser As New Label
+        lbVilleUser.BackColor = Color.Wheat
+        lbVilleUser.Location = New Point(5, 110)
+        lbVilleUser.Font = New Font("arial", 12)
+        lbVilleUser.Width = 200
+        lbVilleUser.Text = "Ville : " + unUser.villeUser
+        afficheInfo_User.Controls.Add(lbVilleUser)
+
+
+        'Label DATE EMBAUCHE
+        Dim lbDateEmbauche As New Label
+        lbDateEmbauche.BackColor = Color.Wheat
+        lbDateEmbauche.Location = New Point(5, 145)
+        lbDateEmbauche.Font = New Font("arial", 12)
+        lbDateEmbauche.Width = 200
+        lbDateEmbauche.Text = "Date d'embauche : " + unUser.dateEmbaucheUser.ToString
+        afficheInfo_User.Controls.Add(lbDateEmbauche)
+
+
+        'On affiche ici les types d'informations en fonction du type d'utilisateur
+        If typeUser = "Comptable" Then
+
+            'Label DATE EMBAUCHE
+            Dim lbnbFiche As New Label
+            lbnbFiche.BackColor = Color.Wheat
+            lbnbFiche.Location = New Point(5, 180)
+            lbnbFiche.Font = New Font("arial", 12)
+            lbnbFiche.Width = 200
+            lbnbFiche.Text = "Nombre(s) de fiche(s) refusée(s) : " + unUser.nbFicheComptable.ToString
+            afficheInfo_User.Controls.Add(lbnbFiche)
+
+        Else
+
+            'Label des voitures utilisés par le visiteur
+
+            'Variables pour parcourir les produits de la commande
+            Dim i As Integer = 1
+            'ordo pour positionner les contrôles en hauteur
+            Dim ordo As Integer = 180
+            Dim unLabel As Label 'Création ici du label
+
+
+            For Each uneVoitureUtilise In voitureUtilise 'On parourt ici l'ensemble des voitures utilisés
+
+                'LABEL IMMATRICULATION DE LA VOITURE
+                unLabel = New Label
+                unLabel.BackColor = Color.Wheat
+                unLabel.Location = New Point(5, ordo)
+                unLabel.Font = New Font("arial", 12)
+                unLabel.Width = 210
+                unLabel.TextAlign = ContentAlignment.MiddleLeft
+                unLabel.Text = uneVoitureUtilise.vehiculeVoiture.Lireimmat
+                afficheInfo_User.Controls.Add(unLabel)
+
+
+                'LABEL DATE DE DEBUT DE L'EMPRUNT
+                unLabel = New Label
+                unLabel.BackColor = Color.Wheat
+                unLabel.Location = New Point(105, ordo)
+                unLabel.Font = New Font("arial", 12)
+                unLabel.Width = 200
+                unLabel.TextAlign = ContentAlignment.MiddleRight
+                unLabel.Text = uneVoitureUtilise.dateDebut.ToString
+                afficheInfo_User.Controls.Add(unLabel)
+
+                'LABEL DATE DE FIN DE L'EMPRUNT
+                unLabel = New Label
+                unLabel.BackColor = Color.Wheat
+                unLabel.Location = New Point(205, ordo)
+                unLabel.Font = New Font("arial", 12)
+                unLabel.Width = 200
+                unLabel.TextAlign = ContentAlignment.MiddleRight
+                unLabel.Text = uneVoitureUtilise.dateFin.ToString
+                afficheInfo_User.Controls.Add(unLabel)
+
+
+                'au delà de 8 voitures il faut agrandir la fenêtre
+                If i > 8 Then
+                    afficheInfo_User.Height = afficheInfo_User.Height + 30
+                End If
+                'voiture suivante
+                i = i + 1
+                'pour passer à la ligne du dessous
+                ordo = ordo + 25
+            Next
+
+
+            'augmenter la taille de la fenêtre si plus de 5 produit
+            If i > 5 Then
+                afficheInfo_User.Height = afficheInfo_User.Height + 100
+            End If
+
+
+            'affichage d'un trait
+            unLabel = New Label
+            unLabel.BackColor = Color.Black
+            unLabel.Location = New Point(5, ordo)
+            unLabel.Font = New Font("arial", 4)
+            unLabel.Width = 380
+            unLabel.Height = 5
+            afficheInfo_User.Controls.Add(unLabel)
+
+        End If
+
+        'Affichage du formulaire 
+        afficheInfo_User.Show()
+
+    End Sub
+
+
 End Module
 

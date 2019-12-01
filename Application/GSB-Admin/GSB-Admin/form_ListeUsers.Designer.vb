@@ -30,6 +30,7 @@ Partial Class form_ListeUsers
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.lstV_visiteur = New System.Windows.Forms.ListView()
+        Me.columnId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnNom = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnPrenom = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnDateEmbauche = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -37,7 +38,8 @@ Partial Class form_ListeUsers
         Me.OUiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LacheMoiMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.columnId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.txtB_Search = New System.Windows.Forms.TextBox()
+        Me.lbl_Search = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.ClicDroit.SuspendLayout()
         Me.SuspendLayout()
@@ -113,21 +115,23 @@ Partial Class form_ListeUsers
         Me.lstV_visiteur.UseCompatibleStateImageBehavior = False
         Me.lstV_visiteur.View = System.Windows.Forms.View.Details
         '
+        'columnId
+        '
+        Me.columnId.Text = "N°"
+        Me.columnId.Width = 37
+        '
         'ColumnNom
         '
-        Me.ColumnNom.DisplayIndex = 1
         Me.ColumnNom.Text = "Nom"
         Me.ColumnNom.Width = 148
         '
         'ColumnPrenom
         '
-        Me.ColumnPrenom.DisplayIndex = 2
         Me.ColumnPrenom.Text = "Prénom"
         Me.ColumnPrenom.Width = 153
         '
         'ColumnDateEmbauche
         '
-        Me.ColumnDateEmbauche.DisplayIndex = 3
         Me.ColumnDateEmbauche.Text = "Date d'embauche"
         Me.ColumnDateEmbauche.Width = 132
         '
@@ -158,17 +162,33 @@ Partial Class form_ListeUsers
         Me.Button1.Text = "Réinitialiser le mot de passe"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'columnId
+        'txtB_Search
         '
-        Me.columnId.DisplayIndex = 0
-        Me.columnId.Text = "N°"
-        Me.columnId.Width = 37
+        Me.txtB_Search.AccessibleDescription = ""
+        Me.txtB_Search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.txtB_Search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.txtB_Search.Location = New System.Drawing.Point(349, 92)
+        Me.txtB_Search.Name = "txtB_Search"
+        Me.txtB_Search.Size = New System.Drawing.Size(154, 20)
+        Me.txtB_Search.TabIndex = 24
+        Me.txtB_Search.Tag = ""
+        '
+        'lbl_Search
+        '
+        Me.lbl_Search.AutoSize = True
+        Me.lbl_Search.Location = New System.Drawing.Point(277, 97)
+        Me.lbl_Search.Name = "lbl_Search"
+        Me.lbl_Search.Size = New System.Drawing.Size(66, 13)
+        Me.lbl_Search.TabIndex = 25
+        Me.lbl_Search.Text = "Recherche :"
         '
         'form_ListeUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(550, 516)
+        Me.Controls.Add(Me.lbl_Search)
+        Me.Controls.Add(Me.txtB_Search)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lstV_visiteur)
         Me.Controls.Add(Me.GroupBox1)
@@ -199,5 +219,7 @@ Partial Class form_ListeUsers
     Friend WithEvents LacheMoiMToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents columnId As System.Windows.Forms.ColumnHeader
+    Friend WithEvents txtB_Search As System.Windows.Forms.TextBox
+    Friend WithEvents lbl_Search As System.Windows.Forms.Label
 
 End Class
