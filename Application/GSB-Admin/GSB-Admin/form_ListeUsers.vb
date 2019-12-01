@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class form_ListeUsers
+    Public unUtilisateur As user
     Dim item As ListViewItem
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs)
         form_CreateUser.Show()
@@ -9,9 +10,12 @@ Public Class form_ListeUsers
 
 
     Private Sub OUiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OUiToolStripMenuItem.Click
-        Dim formU As New form_CreateUser
-        formU.Show()
-        formU.gb_login.Hide()
+        unUtilisateur = trouverUtilisateur(lstV_visiteur.SelectedItems.Item(0).Text)
+        form_modifUser.MdiParent = form_MDIContainer
+
+        form_modifUser.Show()
+        Me.Close()
+
     End Sub
 
     Private Sub LacheMoiMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LacheMoiMToolStripMenuItem.Click
@@ -66,7 +70,7 @@ Public Class form_ListeUsers
 
 
             'On parcourt l'ensemble de notre collection d'utilisateurs
-           
+
             For Each unVisiteur In CollectionVisiteur
                 item = New ListViewItem({unVisiteur.idUser, unVisiteur.nomUser, unVisiteur.prenomUSer, unVisiteur.dateEmbaucheUser})
                 Me.lstV_visiteur.Items.Add(item)
