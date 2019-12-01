@@ -32,6 +32,8 @@
     Private Sub txtB_MDP_TextChanged(sender As Object, e As EventArgs) Handles txtB_MDP.TextChanged
         Dim valueProgressBar = ValidatePassword(txtB_MDP.Text)
         progressBar_Mdp.Value = valueProgressBar
+
+
     End Sub
 
     Private Sub btn_Submit_Click(sender As Object, e As EventArgs) Handles btn_Submit.Click
@@ -76,7 +78,8 @@
                     'Appel de la fonction avec les paramètres dont la méthode a besoin
                     addVehicule_Visiteur(lstV_Voitures.SelectedItems.Item(0).Text, leVisiteur.idUser, dateDebutLoc.Text, dateFinLocation.Text)
 
-
+                    MsgBox(txtB_name.Text + " " + txt_Prenom.Text + " as été ajouté")
+                    Me.Close()
                 Else
 
                     'On le prévient ici qu'aucun véhicule n'a été assigné
@@ -90,9 +93,9 @@
                         createUser(txtB_name.Text, txt_Prenom.Text, txtB_Login.Text, txtB_MDP.Text, txtB_Adresse.Text,
                                     txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text)
 
+                        MsgBox(txtB_name.Text + " " + txt_Prenom.Text + " as été ajouté")
                         Me.Close()
                     End If
-
                 End If
 
             Else
@@ -100,6 +103,7 @@
                 'On crée ici le comptable
                 createUser(txtB_name.Text, txt_Prenom.Text, txtB_Login.Text, txtB_MDP.Text, txtB_Adresse.Text,
 txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text, 0)
+                MsgBox(txtB_name.Text + " " + txt_Prenom.Text + " as été ajouté")
             End If
         End If
 
@@ -137,4 +141,20 @@ txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text, 0)
     End Sub
 
 
+    'Permet de générer un login 
+    Private Sub txtB_Login_Click(sender As Object, e As EventArgs) Handles txtB_Login.Click
+        If txt_Prenom.TextLength > 0 And txtB_name.TextLength > 0 Then
+            txtB_Login.Text = txtB_name.Text.Substring(0, 1) + txt_Prenom.Text
+        End If
+    End Sub
+
+
+    'Permet d'afficher ou non le mot de passe
+    Private Sub chkBox_Show_CheckedChanged(sender As Object, e As EventArgs) Handles chkBox_Show.CheckedChanged
+        If chkBox_Show.Checked = True Then
+            txtB_MDP.UseSystemPasswordChar = False
+        Else
+            txtB_MDP.UseSystemPasswordChar = True
+        End If
+    End Sub
 End Class

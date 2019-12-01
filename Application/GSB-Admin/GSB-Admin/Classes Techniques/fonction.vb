@@ -365,19 +365,39 @@ Module fonction
     'Procédure qui va permettre de gérer l'association entre un visiteur et un véhicule
     Sub addVehicule_Visiteur(immat As String, id As Integer, dateDebut As Date, dateFin As Date)
 
-        Try
-            ConnexionSQL.verifDispoVehicule(immat, dateDebut)
-        Catch ex As Exception
-            MsgBox(ex.Message) 'On affiche ici le message renvoyé par la fonction
-        End Try
+        'On récupére ici les informations retournés par la PS
+        Dim verifDspo = ConnexionSQL.verifDispoVehicule(immat, dateDebut, dateFin)
 
+        If verifDspo(0) = 1 Then
 
-        'Si l'exception n'a pas été levé alors on crée notre objet
-        Dim voitureUtilise As New voitureUtilise(trouverVehicule(immat), trouverVisiteur(id), dateDebut, dateFin)
-        CollectionVoitureUtiliser.Add(voitureUtilise)
+            'Si l'exception n'a pas été levé alors on crée notre objet
+            Dim voitureUtilise As New voitureUtilise(trouverVehicule(immat), trouverVisiteur(id), dateDebut, dateFin)
+            CollectionVoitureUtiliser.Add(voitureUtilise)
 
-        'On met en lien le véhicule avec le visiteur dans la BDD afin de faire persister les données
-        ConnexionSQL.insertUtiliser(immat, dateDebut, id, dateFin)
+            'On met en lien le véhicule avec le visiteur dans la BDD afin de faire persister les données
+            ConnexionSQL.insertUtiliser(immat, dateDebut, id, dateFin)
+            MsgBox("La voiture as bien été attribué pour le " + verifDspo(2))
+
+        ElseIf verifDspo(0) = 0 Then
+
+            Dim Reponse As DialogResult 'Déclaration de la variavle "Reponse" en local
+            'On le prévient ici qu'aucun véhicule n'a été assigné
+            Reponse = MessageBox.Show("La voiture ne sera disponible qu'au " + verifDspo(2) + " jusqu'au " + verifDspo(3) +
+                                      vbCr + "Validez pour cette date?", "Information", _
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question) 'Affichage de la message box avec un choix 
+            If Reponse = DialogResult.Yes Then
+
+                'Si l'exception n'a pas été levé alors on crée notre objet
+                Dim voitureUtilise As New voitureUtilise(trouverVehicule(immat), trouverVisiteur(id), verifDspo(2), verifDspo(3))
+                CollectionVoitureUtiliser.Add(voitureUtilise)
+
+                'On met en lien le véhicule avec le visiteur dans la BDD afin de faire persister les données
+                ConnexionSQL.insertUtiliser(immat, verifDspo(2), id, verifDspo(3))
+                MsgBox(verifDspo(1))
+            Else
+                MsgBox("La voiture n'a pas été attribué")
+            End If
+        End If
     End Sub
 
 
@@ -394,6 +414,30 @@ Module fonction
         Dim valueDecrypte = deryptValue(value) 'On décrypte une première fois avec le décryptage du système
         valueDecrypte = décryptage_carré_Vigenére(valueDecrypte) 'On décrypte ensuite avec le décryptage du crré de vigenére
         Return valueDecrypte 'on retourne enfin la valeur décrypter
+    End Function
+
+
+
+
+
+    'Fonction permetttant de vérifier la complexité d'un mot de passe
+    Function VerifPassword(ByVal pwd As String,
+    Optional ByVal minLength As Integer = 8,
+    Optional ByVal numUpper As Integer = 2,
+    Optional ByVal numLower As Integer = 2,
+    Optional ByVal numNumbers As Integer = 2,
+    Optional ByVal numSpecial As Integer = 2) As Integer
+
+        'Valeur de retour
+        Dim valueReturn As Integer = 100
+
+        Dim upper As New System.Text.RegularExpressions.Regex("[A-Z]")
+
+        ' Check for minimum number of occurrences.
+        If upper.Matches(pwd).Count < numUpper Then valueReturn -= 20
+
+        ' Passed all checks.
+        Return valueReturn
     End Function
 End Module
 

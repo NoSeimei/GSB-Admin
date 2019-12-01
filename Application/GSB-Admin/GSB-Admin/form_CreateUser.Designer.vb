@@ -52,6 +52,7 @@ Partial Class form_CreateUser
         Me.lbl_Voitures = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.gb_login = New System.Windows.Forms.GroupBox()
+        Me.chkBox_Show = New System.Windows.Forms.CheckBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtB_ConfirmMDP = New System.Windows.Forms.TextBox()
@@ -142,6 +143,7 @@ Partial Class form_CreateUser
         Me.txtB_MDP.Name = "txtB_MDP"
         Me.txtB_MDP.Size = New System.Drawing.Size(148, 20)
         Me.txtB_MDP.TabIndex = 9
+        Me.txtB_MDP.UseSystemPasswordChar = True
         '
         'lbl_Mdp
         '
@@ -322,6 +324,7 @@ Partial Class form_CreateUser
         '
         'gb_login
         '
+        Me.gb_login.Controls.Add(Me.chkBox_Show)
         Me.gb_login.Controls.Add(Me.Label8)
         Me.gb_login.Controls.Add(Me.Label7)
         Me.gb_login.Controls.Add(Me.txtB_ConfirmMDP)
@@ -336,10 +339,20 @@ Partial Class form_CreateUser
         Me.gb_login.Controls.Add(Me.progressBar_Mdp)
         Me.gb_login.Location = New System.Drawing.Point(25, 341)
         Me.gb_login.Name = "gb_login"
-        Me.gb_login.Size = New System.Drawing.Size(321, 267)
+        Me.gb_login.Size = New System.Drawing.Size(376, 267)
         Me.gb_login.TabIndex = 26
         Me.gb_login.TabStop = False
         Me.gb_login.Text = "Authentification"
+        '
+        'chkBox_Show
+        '
+        Me.chkBox_Show.AutoSize = True
+        Me.chkBox_Show.Location = New System.Drawing.Point(313, 65)
+        Me.chkBox_Show.Name = "chkBox_Show"
+        Me.chkBox_Show.Size = New System.Drawing.Size(62, 17)
+        Me.chkBox_Show.TabIndex = 45
+        Me.chkBox_Show.Text = "Afficher"
+        Me.chkBox_Show.UseVisualStyleBackColor = True
         '
         'Label8
         '
@@ -367,6 +380,7 @@ Partial Class form_CreateUser
         Me.txtB_ConfirmMDP.Name = "txtB_ConfirmMDP"
         Me.txtB_ConfirmMDP.Size = New System.Drawing.Size(148, 20)
         Me.txtB_ConfirmMDP.TabIndex = 43
+        Me.txtB_ConfirmMDP.UseSystemPasswordChar = True
         '
         'Label5
         '
@@ -529,4 +543,5 @@ Partial Class form_CreateUser
     Friend WithEvents txtB_ConfirmMDP As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents checkBox_AffichAllVehicule As System.Windows.Forms.CheckBox
+    Friend WithEvents chkBox_Show As System.Windows.Forms.CheckBox
 End Class

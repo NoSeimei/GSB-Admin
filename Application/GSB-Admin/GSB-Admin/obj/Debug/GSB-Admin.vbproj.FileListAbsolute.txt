@@ -166,3 +166,4 @@ C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_A
 C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
 C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
 C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
+C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_modifUser.resources

@@ -249,7 +249,7 @@ Public Class Connexion
 
 
     'Permet de vérifier que la valeur qui va être enregistrer dans la table utiliser pourra l'être 
-    Public Function verifDispoVehicule(immat As String, dateDebut As Date)
+    Public Function verifDispoVehicule(immat As String, dateDebut As Date, dateFin As Date)
 
         OpenConnexion() 'Ouverture de la connexion
 
@@ -260,6 +260,7 @@ Public Class Connexion
         'On spécifie les paramètres nécessaires
         Mycommand.Parameters.AddWithValue("@immat", immat)
         Mycommand.Parameters.AddWithValue("@dateDebut", dateDebut)
+        Mycommand.Parameters.AddWithValue("@dateFin", dateFin)
 
         'On exécute la requête en DataReader afin de pouvoir lire ce que la procédure nous renvoit
         Dim valueReturn As SqlDataReader = Mycommand.ExecuteReader()
@@ -271,21 +272,16 @@ Public Class Connexion
             MsgBox(ex.Message)
         End Try
 
-
-        'On récupére les valeurs avant la fermeture de la connexion
-        Dim valueFirstColumn = valueReturn.GetValue(0)
-        Dim valueSecondColumn = valueReturn.GetValue(1)
+        Dim tabValue As New ArrayList
+        tabValue.Add(valueReturn.GetValue(0))
+        tabValue.Add(valueReturn.GetValue(1))
+        tabValue.Add(valueReturn.GetValue(2))
+        tabValue.Add(valueReturn.GetValue(3))
 
         valueReturn.Close()
         CloseConnexion() 'Fermeture de la connexion
 
-        'On effectue nos test sur la valeur renvoyé par notre procédure et on renvoit la valeur
-        If valueFirstColumn = 1 Then
-            Return True
-        Else
-            Throw New Exception(valueSecondColumn) 'On récupére le message et on génére une erreur
-        End If
-
+        Return tabValue
 
     End Function
 
