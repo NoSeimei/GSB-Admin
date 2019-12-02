@@ -382,7 +382,7 @@ Module fonction
     End Function
 
 
-    'Permet de retourner le comptable s'il existe
+    'Permet de retourner un tableau des voitures utilisé par le visiteur ayant pour id=x
     Function trouverVoitureUtilise_ParVisiteur(id As Integer)
 
         Dim unTab As New ArrayList 'Création de notre collection
@@ -395,6 +395,7 @@ Module fonction
 
         Return unTab
     End Function
+
 
     'Retourne le visiteur ou le comptable en fonction de l'Id
     Sub DeleteUserCorrespondant(id As Integer)
@@ -527,6 +528,7 @@ Module fonction
         Dim typeUser = trouverUser(id) 'On récupére ici le type de user
         Dim unUser 'Variable destiné à acceuillir le type de visiteur
         Dim voitureUtilise As New ArrayList
+        Dim color As New Color
 
         If typeUser = "Visiteur" Then
             unUser = trouverVisiteur(id) 'On récupére ici le visiteur
@@ -546,24 +548,30 @@ Module fonction
 
         'On change de couleur en fonction du type de visiteur
         If typeUser = "Visiteur" Then
-            afficheInfo_User.BackColor = Color.Wheat
+            color = color.DarkCyan
         Else
-            afficheInfo_User.BackColor = Color.Salmon
+            color = color.LightSalmon
         End If
 
-        'Titre du formulaire
+
+
+        'Titre du FORMULAIRE
         afficheInfo_User.Text = "Formulaire du " + typeUser + " " + unUser.nomUser + " " + unUser.prenomUser
-        'Taille et position du formulaire
-        afficheInfo_User.Width = 800
-        afficheInfo_User.Height = 600
+        'Taille et position du FORMULAIRE
+        afficheInfo_User.Width = 420
+        afficheInfo_User.Height = 450
         afficheInfo_User.StartPosition = 1
+        afficheInfo_User.BackColor = color
+        afficheInfo_User.MdiParent = form_MDIContainer
+        afficheInfo_User.FormBorderStyle = FormBorderStyle.FixedToolWindow
+
 
 
         'Label TITRE
         Dim lbTitre As New Label
         lbTitre.BackColor = Color.Wheat
         lbTitre.Location = New Point(5, 10)
-        lbTitre.Font = New Font("arial", 12)
+        lbTitre.Font = New Font("arial", 12, FontStyle.Bold)
         lbTitre.Width = 450
         lbTitre.Text = "Informations de " + unUser.nomUser + " " + unUser.prenomUser
         afficheInfo_User.Controls.Add(lbTitre)
@@ -571,8 +579,7 @@ Module fonction
 
         'Label ADRESSE
         Dim lbAdresse As New Label
-        lbAdresse.BackColor = Color.Wheat
-        lbAdresse.Location = New Point(5, 35)
+        lbAdresse.Location = New Point(5, 65)
         lbAdresse.Font = New Font("arial", 12)
         lbAdresse.Width = 250
         lbAdresse.Text = "Adresse : " + unUser.adrUser
@@ -581,8 +588,7 @@ Module fonction
 
         'Lable CODE POSTAL
         Dim lbCodePostal As New Label
-        lbCodePostal.BackColor = Color.Wheat
-        lbCodePostal.Location = New Point(5, 85)
+        lbCodePostal.Location = New Point(5, 90)
         lbCodePostal.Font = New Font("arial", 12)
         lbCodePostal.Width = 200
         lbCodePostal.Text = "Code postal : " + unUser.cpUser
@@ -591,8 +597,7 @@ Module fonction
 
         'Label VILLE
         Dim lbVilleUser As New Label
-        lbVilleUser.BackColor = Color.Wheat
-        lbVilleUser.Location = New Point(5, 110)
+        lbVilleUser.Location = New Point(5, 115)
         lbVilleUser.Font = New Font("arial", 12)
         lbVilleUser.Width = 200
         lbVilleUser.Text = "Ville : " + unUser.villeUser
@@ -601,11 +606,10 @@ Module fonction
 
         'Label DATE EMBAUCHE
         Dim lbDateEmbauche As New Label
-        lbDateEmbauche.BackColor = Color.Wheat
-        lbDateEmbauche.Location = New Point(5, 145)
+        lbDateEmbauche.Location = New Point(5, 140)
         lbDateEmbauche.Font = New Font("arial", 12)
-        lbDateEmbauche.Width = 200
-        lbDateEmbauche.Text = "Date d'embauche : " + unUser.dateEmbaucheUser.ToString
+        lbDateEmbauche.Width = 300
+        lbDateEmbauche.Text = "Date d'embauche : " + unUser.dateEmbaucheUser
         afficheInfo_User.Controls.Add(lbDateEmbauche)
 
 
@@ -614,85 +618,149 @@ Module fonction
 
             'Label DATE EMBAUCHE
             Dim lbnbFiche As New Label
-            lbnbFiche.BackColor = Color.Wheat
             lbnbFiche.Location = New Point(5, 180)
             lbnbFiche.Font = New Font("arial", 12)
-            lbnbFiche.Width = 200
+            lbnbFiche.Width = 300
             lbnbFiche.Text = "Nombre(s) de fiche(s) refusée(s) : " + unUser.nbFicheComptable.ToString
             afficheInfo_User.Controls.Add(lbnbFiche)
+            afficheInfo_User.Height = 250
+
 
         Else
-
-            'Label des voitures utilisés par le visiteur
 
             'Variables pour parcourir les produits de la commande
             Dim i As Integer = 1
             'ordo pour positionner les contrôles en hauteur
-            Dim ordo As Integer = 180
+            Dim ordo As Integer = 200
             Dim unLabel As Label 'Création ici du label
 
 
-            For Each uneVoitureUtilise In voitureUtilise 'On parourt ici l'ensemble des voitures utilisés
+            'On vérifie tout d'abord si le visiteur as des voitures ou non
 
+            If trouverVoitureUtilise_ParVisiteur(unUser.idUser).count > 0 Then
+
+                'Label des voitures utilisés par le visiteur
                 'LABEL IMMATRICULATION DE LA VOITURE
                 unLabel = New Label
-                unLabel.BackColor = Color.Wheat
                 unLabel.Location = New Point(5, ordo)
-                unLabel.Font = New Font("arial", 12)
-                unLabel.Width = 210
+                unLabel.Font = New Font("arial", 12, FontStyle.Italic)
+                unLabel.Width = 110
                 unLabel.TextAlign = ContentAlignment.MiddleLeft
-                unLabel.Text = uneVoitureUtilise.vehiculeVoiture.Lireimmat
+                unLabel.Text = "Matricule"
                 afficheInfo_User.Controls.Add(unLabel)
+
 
 
                 'LABEL DATE DE DEBUT DE L'EMPRUNT
                 unLabel = New Label
-                unLabel.BackColor = Color.Wheat
-                unLabel.Location = New Point(105, ordo)
-                unLabel.Font = New Font("arial", 12)
-                unLabel.Width = 200
+                unLabel.Location = New Point(120, ordo)
+                unLabel.Font = New Font("arial", 12, FontStyle.Italic)
+                unLabel.Width = 150
                 unLabel.TextAlign = ContentAlignment.MiddleRight
-                unLabel.Text = uneVoitureUtilise.dateDebut.ToString
+                unLabel.Text = "Début de l'emprunt"
                 afficheInfo_User.Controls.Add(unLabel)
+
+
 
                 'LABEL DATE DE FIN DE L'EMPRUNT
                 unLabel = New Label
-                unLabel.BackColor = Color.Wheat
-                unLabel.Location = New Point(205, ordo)
-                unLabel.Font = New Font("arial", 12)
-                unLabel.Width = 200
+                unLabel.Location = New Point(250, ordo)
+                unLabel.Font = New Font("arial", 12, FontStyle.Italic)
+                unLabel.Width = 150
                 unLabel.TextAlign = ContentAlignment.MiddleRight
-                unLabel.Text = uneVoitureUtilise.dateFin.ToString
+                unLabel.Text = "Fin de l'emprunt"
                 afficheInfo_User.Controls.Add(unLabel)
 
 
-                'au delà de 8 voitures il faut agrandir la fenêtre
-                If i > 8 Then
-                    afficheInfo_User.Height = afficheInfo_User.Height + 30
-                End If
-                'voiture suivante
-                i = i + 1
-                'pour passer à la ligne du dessous
-                ordo = ordo + 25
-            Next
+                ordo = ordo + 30
+                'affichage d'un trait
+                unLabel = New Label
+                unLabel.BackColor = color.Black
+                unLabel.Location = New Point(5, ordo)
+                unLabel.Font = New Font("arial", 4)
+                unLabel.Width = 380
+                unLabel.Height = 5
+                afficheInfo_User.Controls.Add(unLabel)
 
 
-            'augmenter la taille de la fenêtre si plus de 5 produit
-            If i > 5 Then
-                afficheInfo_User.Height = afficheInfo_User.Height + 100
+                ordo = ordo + 10
+
+
+                For Each uneVoitureUtilise In voitureUtilise 'On parourt ici l'ensemble des voitures utilisés
+                    Dim fontColor As New Color
+                    Dim FinEmprunt = uneVoitureUtilise.dateFin
+                    Dim DebutEmprunt = uneVoitureUtilise.dateDebut
+
+                    If uneVoitureUtilise.dateFin > Date.Today Then
+                        fontColor = Drawing.Color.AntiqueWhite
+                    Else
+                        fontColor = color
+                    End If
+
+
+                    'LABEL IMMATRICULATION DE LA VOITURE
+                    unLabel = New Label
+                    unLabel.BackColor = fontColor
+                    unLabel.Location = New Point(5, ordo)
+                    unLabel.Font = New Font("arial", 12)
+                    unLabel.Width = 150
+                    unLabel.TextAlign = ContentAlignment.MiddleLeft
+                    unLabel.Text = uneVoitureUtilise.vehiculeVoiture.Lireimmat
+                    afficheInfo_User.Controls.Add(unLabel)
+
+
+
+                    'LABEL DATE DE DEBUT DE L'EMPRUNT
+                    unLabel = New Label
+                    unLabel.BackColor = fontColor
+                    unLabel.Location = New Point(150, ordo)
+                    unLabel.Font = New Font("arial", 12)
+                    unLabel.Width = 100
+                    unLabel.TextAlign = ContentAlignment.MiddleRight
+                    unLabel.Text = DebutEmprunt
+                    afficheInfo_User.Controls.Add(unLabel)
+
+
+
+                    'LABEL DATE DE FIN DE L'EMPRUNT
+                    unLabel = New Label
+                    unLabel.BackColor = fontColor
+                    unLabel.Location = New Point(250, ordo)
+                    unLabel.Font = New Font("arial", 12)
+                    unLabel.Width = 150
+                    unLabel.TextAlign = ContentAlignment.MiddleRight
+                    unLabel.Text = FinEmprunt
+                    afficheInfo_User.Controls.Add(unLabel)
+
+
+                    'au delà de 8 voitures il faut agrandir la fenêtre
+                    If i > 8 Then
+                        afficheInfo_User.Height = afficheInfo_User.Height + 30
+                    End If
+                    'voiture suivante
+                    i = i + 1
+                    'pour passer à la ligne du dessous
+                    ordo = ordo + 25
+                Next
+
+            Else
+
+                'Label des voitures utilisés par le visiteur
+                'LABEL IMMATRICULATION DE LA VOITURE
+                unLabel = New Label
+                unLabel.Location = New Point(5, 180)
+                unLabel.Font = New Font("arial", 12, FontStyle.Bold)
+                unLabel.Width = afficheInfo_User.Width
+                unLabel.TextAlign = ContentAlignment.MiddleLeft
+                unLabel.Text = unUser.nomUser + " " + unUser.prenomUser + " n'a pas emprunté(e) de voiture"
+                afficheInfo_User.Controls.Add(unLabel)
+                afficheInfo_User.Height = 250
+
             End If
 
-
-            'affichage d'un trait
-            unLabel = New Label
-            unLabel.BackColor = Color.Black
-            unLabel.Location = New Point(5, ordo)
-            unLabel.Font = New Font("arial", 4)
-            unLabel.Width = 380
-            unLabel.Height = 5
-            afficheInfo_User.Controls.Add(unLabel)
-
         End If
+
+
 
         'Affichage du formulaire 
         afficheInfo_User.Show()
