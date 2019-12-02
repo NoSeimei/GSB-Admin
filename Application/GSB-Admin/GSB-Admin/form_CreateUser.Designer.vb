@@ -475,7 +475,7 @@ Partial Class form_CreateUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(421, 705)
+        Me.ClientSize = New System.Drawing.Size(958, 705)
         Me.Controls.Add(Me.checkBox_AffichAllVehicule)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.gb_login)

@@ -23,26 +23,49 @@ Partial Class form_ListeUsers
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ClicDroit = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.OUiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LacheMoiMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lbl_InfoMdp = New System.Windows.Forms.Label()
         Me.rb_AllUser = New System.Windows.Forms.RadioButton()
-        Me.rb_Visiteur = New System.Windows.Forms.RadioButton()
         Me.rb_Comptable = New System.Windows.Forms.RadioButton()
+        Me.rb_Visiteur = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.lstV_visiteur = New System.Windows.Forms.ListView()
         Me.columnId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnNom = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnPrenom = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnDateEmbauche = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ClicDroit = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.OUiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LacheMoiMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.lstV_visiteur = New System.Windows.Forms.ListView()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txtB_Search = New System.Windows.Forms.TextBox()
         Me.lbl_Search = New System.Windows.Forms.Label()
-        Me.GroupBox1.SuspendLayout()
         Me.ClicDroit.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        '
+        'ClicDroit
+        '
+        Me.ClicDroit.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OUiToolStripMenuItem, Me.LacheMoiMToolStripMenuItem})
+        Me.ClicDroit.Name = "ContextMenuStrip2"
+        Me.ClicDroit.Size = New System.Drawing.Size(130, 48)
+        '
+        'OUiToolStripMenuItem
+        '
+        Me.OUiToolStripMenuItem.Name = "OUiToolStripMenuItem"
+        Me.OUiToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.OUiToolStripMenuItem.Text = "Modifier"
+        '
+        'LacheMoiMToolStripMenuItem
+        '
+        Me.LacheMoiMToolStripMenuItem.Name = "LacheMoiMToolStripMenuItem"
+        Me.LacheMoiMToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.LacheMoiMToolStripMenuItem.Text = "Supprimer"
         '
         'lbl_InfoMdp
         '
@@ -64,16 +87,6 @@ Partial Class form_ListeUsers
         Me.rb_AllUser.Text = "Tous"
         Me.rb_AllUser.UseVisualStyleBackColor = True
         '
-        'rb_Visiteur
-        '
-        Me.rb_Visiteur.AutoSize = True
-        Me.rb_Visiteur.Location = New System.Drawing.Point(86, 21)
-        Me.rb_Visiteur.Name = "rb_Visiteur"
-        Me.rb_Visiteur.Size = New System.Drawing.Size(59, 17)
-        Me.rb_Visiteur.TabIndex = 7
-        Me.rb_Visiteur.Text = "Visiteur"
-        Me.rb_Visiteur.UseVisualStyleBackColor = True
-        '
         'rb_Comptable
         '
         Me.rb_Comptable.AutoSize = True
@@ -83,6 +96,16 @@ Partial Class form_ListeUsers
         Me.rb_Comptable.TabIndex = 8
         Me.rb_Comptable.Text = "Comptable"
         Me.rb_Comptable.UseVisualStyleBackColor = True
+        '
+        'rb_Visiteur
+        '
+        Me.rb_Visiteur.AutoSize = True
+        Me.rb_Visiteur.Location = New System.Drawing.Point(86, 21)
+        Me.rb_Visiteur.Name = "rb_Visiteur"
+        Me.rb_Visiteur.Size = New System.Drawing.Size(59, 17)
+        Me.rb_Visiteur.TabIndex = 7
+        Me.rb_Visiteur.Text = "Visiteur"
+        Me.rb_Visiteur.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -95,25 +118,6 @@ Partial Class form_ListeUsers
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Les utilisateurs"
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
-        '
-        'lstV_visiteur
-        '
-        Me.lstV_visiteur.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.columnId, Me.ColumnNom, Me.ColumnPrenom, Me.ColumnDateEmbauche})
-        Me.lstV_visiteur.ContextMenuStrip = Me.ClicDroit
-        Me.lstV_visiteur.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lstV_visiteur.FullRowSelect = True
-        Me.lstV_visiteur.Location = New System.Drawing.Point(25, 124)
-        Me.lstV_visiteur.MultiSelect = False
-        Me.lstV_visiteur.Name = "lstV_visiteur"
-        Me.lstV_visiteur.Size = New System.Drawing.Size(598, 364)
-        Me.lstV_visiteur.TabIndex = 22
-        Me.lstV_visiteur.UseCompatibleStateImageBehavior = False
-        Me.lstV_visiteur.View = System.Windows.Forms.View.Details
         '
         'columnId
         '
@@ -135,23 +139,19 @@ Partial Class form_ListeUsers
         Me.ColumnDateEmbauche.Text = "Date d'embauche"
         Me.ColumnDateEmbauche.Width = 132
         '
-        'ClicDroit
+        'lstV_visiteur
         '
-        Me.ClicDroit.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OUiToolStripMenuItem, Me.LacheMoiMToolStripMenuItem})
-        Me.ClicDroit.Name = "ContextMenuStrip2"
-        Me.ClicDroit.Size = New System.Drawing.Size(130, 48)
-        '
-        'OUiToolStripMenuItem
-        '
-        Me.OUiToolStripMenuItem.Name = "OUiToolStripMenuItem"
-        Me.OUiToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
-        Me.OUiToolStripMenuItem.Text = "Modifier"
-        '
-        'LacheMoiMToolStripMenuItem
-        '
-        Me.LacheMoiMToolStripMenuItem.Name = "LacheMoiMToolStripMenuItem"
-        Me.LacheMoiMToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
-        Me.LacheMoiMToolStripMenuItem.Text = "Supprimer"
+        Me.lstV_visiteur.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.columnId, Me.ColumnNom, Me.ColumnPrenom, Me.ColumnDateEmbauche})
+        Me.lstV_visiteur.ContextMenuStrip = Me.ClicDroit
+        Me.lstV_visiteur.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lstV_visiteur.FullRowSelect = True
+        Me.lstV_visiteur.Location = New System.Drawing.Point(25, 124)
+        Me.lstV_visiteur.MultiSelect = False
+        Me.lstV_visiteur.Name = "lstV_visiteur"
+        Me.lstV_visiteur.Size = New System.Drawing.Size(598, 364)
+        Me.lstV_visiteur.TabIndex = 22
+        Me.lstV_visiteur.UseCompatibleStateImageBehavior = False
+        Me.lstV_visiteur.View = System.Windows.Forms.View.Details
         '
         'Button1
         '
@@ -197,28 +197,28 @@ Partial Class form_ListeUsers
         Me.Name = "form_ListeUsers"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Liste des utilisateurs"
+        Me.ClicDroit.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.ClicDroit.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents lbl_InfoMdp As System.Windows.Forms.Label
-    Friend WithEvents rb_AllUser As System.Windows.Forms.RadioButton
-    Friend WithEvents rb_Visiteur As System.Windows.Forms.RadioButton
-    Friend WithEvents rb_Comptable As System.Windows.Forms.RadioButton
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
-    Friend WithEvents lstV_visiteur As System.Windows.Forms.ListView
-    Friend WithEvents ColumnNom As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnPrenom As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnDateEmbauche As System.Windows.Forms.ColumnHeader
     Friend WithEvents ClicDroit As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents OUiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LacheMoiMToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents lbl_InfoMdp As System.Windows.Forms.Label
+    Friend WithEvents rb_AllUser As System.Windows.Forms.RadioButton
+    Friend WithEvents rb_Comptable As System.Windows.Forms.RadioButton
+    Friend WithEvents rb_Visiteur As System.Windows.Forms.RadioButton
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents columnId As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnNom As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnPrenom As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnDateEmbauche As System.Windows.Forms.ColumnHeader
+    Friend WithEvents lstV_visiteur As System.Windows.Forms.ListView
+    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents txtB_Search As System.Windows.Forms.TextBox
     Friend WithEvents lbl_Search As System.Windows.Forms.Label
 
