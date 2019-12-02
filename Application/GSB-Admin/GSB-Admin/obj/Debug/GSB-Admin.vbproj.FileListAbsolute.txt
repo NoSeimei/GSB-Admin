@@ -167,3 +167,37 @@ C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_A
 C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
 C:\Users\badbo\Desktop\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
 C:\Users\trepo\Documents\GitHub\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_modifUser.resources
+C:\Users\treportel\Downloads\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
+C:\Users\treportel\Downloads\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
+C:\Users\treportel\Downloads\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
+C:\Users\treportel\Downloads\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+C:\Users\treportel\Downloads\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe
+C:\Users\treportel\Downloads\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.pdb
+C:\Users\treportel\Downloads\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.xml
+C:\Users\treportel\Downloads\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbprojResolveAssemblyReference.cache
+C:\Users\treportel\Downloads\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_aProposDe.resources
+C:\Users\treportel\Downloads\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Connexion.resources
+C:\Users\treportel\Downloads\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_modifUser.resources
+C:\Users\treportel\Downloads\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Form_resetMDP.resources
+C:\Users\treportel\Downloads\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_CreateUser.resources
+C:\Users\treportel\Downloads\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_ListeUsers.resources
+C:\Users\treportel\Downloads\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
+C:\Users\treportel\Downloads\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
+C:\Users\treportel\Downloads\GSB-Admin-master\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
+G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
+G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
+G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
+G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe
+G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.pdb
+G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.xml
+G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbprojResolveAssemblyReference.cache
+G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_aProposDe.resources
+G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Connexion.resources
+G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_modifUser.resources
+G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Form_resetMDP.resources
+G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_CreateUser.resources
+G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_ListeUsers.resources
+G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
+G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
+G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache

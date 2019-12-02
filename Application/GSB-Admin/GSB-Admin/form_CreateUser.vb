@@ -15,9 +15,9 @@
 
     Private Sub rb_Visiteur_CheckedChanged(sender As Object, e As EventArgs) Handles rb_Visiteur.CheckedChanged
         If rb_Visiteur.Checked = True Then
-            Me.Size = New Size(780, Me.Size.Height)
+            Me.Size = New Size(800, Me.Size.Height)
         Else
-            Me.Size = New Size(370, Me.Size.Height)
+            Me.Size = New Size(432, Me.Size.Height)
         End If
 
     End Sub
@@ -79,6 +79,8 @@
                     addVehicule_Visiteur(lstV_Voitures.SelectedItems.Item(0).Text, leVisiteur.idUser, dateDebutLoc.Text, dateFinLocation.Text)
 
                     MsgBox(txtB_name.Text + " " + txt_Prenom.Text + " as été ajouté")
+                    form_ListeUsers.Close()
+                    form_ListeUsers.Show()
                     Me.Close()
                 Else
 
@@ -94,6 +96,8 @@
                                     txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text)
 
                         MsgBox(txtB_name.Text + " " + txt_Prenom.Text + " as été ajouté")
+                        form_ListeUsers.Close()
+                        form_ListeUsers.Show()
                         Me.Close()
                     End If
                 End If
@@ -103,7 +107,11 @@
                 'On crée ici le comptable
                 createUser(txtB_name.Text, txt_Prenom.Text, txtB_Login.Text, txtB_MDP.Text, txtB_Adresse.Text,
 txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text, 0)
+                'Affichage de la message box d'information
                 MsgBox(txtB_name.Text + " " + txt_Prenom.Text + " as été ajouté")
+                form_ListeUsers.Close()
+                form_ListeUsers.Show()
+                Me.Close()
             End If
         End If
 

@@ -4,11 +4,14 @@ Public Class Connexion
     Private m_Connexion As SqlConnection
 
 
+
+    '------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'CONSTRUCTEUR
     'Constructeur qui va permettre de spécifier la connexion à la bdd et va faire appel aux méthodes de construction des objets
     Sub New()
         'On ce connecte à la base de données BIBI
-        '   m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";Initial Catalog=" + Database.Item("baseDeDonnees") & _
-        '  ";User Id=" + Database.Item("user") + ";Password=" + Database.Item("mdpUser") + ";")
+        ' m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";Initial Catalog=" + Database.Item("baseDeDonnees") & _
+        '";User Id=" + Database.Item("user") + ";Password=" + Database.Item("mdpUser") + ";")
 
         'LOCAL
         m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";" & _
@@ -28,9 +31,15 @@ Public Class Connexion
         'Enfin on ferme la connexion
         CloseConnexion()
     End Sub
+    'FIN CONSTRUCTEUR
+    '------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
+
+
+    '------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'FONCTION D'OUVERTURE ET DE FERMETURE DE LA CONNEXION
     'Permet d'ouvrir la connexion
     Public Sub OpenConnexion()
         'On tente d'ouvrir la connexion, sinon on prévient l'utilisateur
@@ -53,6 +62,17 @@ Public Class Connexion
             MsgBox("La connexion n'a pas pu être fermée")
         End Try
     End Sub
+    'FIN FONCTIOND'OUVERTURE ET DE FERMETURE DE LA CONNEXION
+    '------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+    '------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'DEBUT FONCTION DE REMPLISSAGE DES COLLECTIONS
+
 
 
     'Permet la création des objets vehicule et le remplissage de la collection
@@ -203,10 +223,10 @@ Public Class Connexion
 
 
 
+
+
     '----------------------------------------------------------------------------------------------------------------------------------------------------------------
     'DEBUT DE LA PARTIE PERSISTANCE DES DONNEES
-
-
 
     'Permet la création des objets voitureUtiliser et le remplissage de la collection
     Public Sub deleteUser(idUser As Integer)
@@ -293,11 +313,16 @@ Public Class Connexion
                         ville As String, dateEbauche As Date, nbFiche As Integer)
 
 
+        'On utilise la fonction de double cryptage afin de crypter nos informations
+        login = doubleCryptage(login)
+        mdp = doubleCryptage(mdp)
+
         OpenConnexion() 'Ouverture de la connexion
 
         Dim Mycommand As SqlCommand = m_Connexion.CreateCommand() 'On crée notre objet Command
         Mycommand.CommandText = "Insert_Update_User" 'On Spécifie notre procédure stockée
         Mycommand.CommandType = CommandType.StoredProcedure 'On spcifie que c'est une procédure stockée
+
 
         'On spécifie les paramètres nécessaires
         Mycommand.Parameters.AddWithValue("@param_id", id)
@@ -309,7 +334,16 @@ Public Class Connexion
         Mycommand.Parameters.AddWithValue("@param_cp", cp)
         Mycommand.Parameters.AddWithValue("@param_ville", ville)
         Mycommand.Parameters.AddWithValue("@param_dateEmbauche", dateEbauche)
-        Mycommand.Parameters.AddWithValue("@param_nbFichesRefuse", nbFiche)
+
+        ' On effectue un test afin de vérifier quel paramètres on envoie
+        If nbFiche <> -1 Then
+            Mycommand.Parameters.AddWithValue("@param_nbFichesRefuse", nbFiche)
+        Else
+            Mycommand.Parameters.AddWithValue("@param_nbFichesRefuse", DBNull.Value)
+        End If
+
+
+
 
         Try
             'On exécute la commande
@@ -322,4 +356,7 @@ Public Class Connexion
         CloseConnexion() 'Fermeture de la connexion
 
     End Sub
+
+    'FIN DE LA PARTIE PERSISTANCE DES DONNEES
+    '------------------------------------------------------------------------------------------------------------------------------------------------------------
 End Class

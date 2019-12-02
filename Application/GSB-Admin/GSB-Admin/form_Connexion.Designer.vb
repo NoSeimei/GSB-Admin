@@ -119,7 +119,7 @@ Partial Class form_Connexion
         Me.Controls.Add(Me.lbl_Login)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "form_Connexion"
-        Me.Text = "connexion"
+        Me.Text = "Connexion"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

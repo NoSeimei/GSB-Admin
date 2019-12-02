@@ -110,7 +110,7 @@ Partial Class form_ListeUsers
         Me.lstV_visiteur.Location = New System.Drawing.Point(25, 124)
         Me.lstV_visiteur.MultiSelect = False
         Me.lstV_visiteur.Name = "lstV_visiteur"
-        Me.lstV_visiteur.Size = New System.Drawing.Size(478, 321)
+        Me.lstV_visiteur.Size = New System.Drawing.Size(598, 364)
         Me.lstV_visiteur.TabIndex = 22
         Me.lstV_visiteur.UseCompatibleStateImageBehavior = False
         Me.lstV_visiteur.View = System.Windows.Forms.View.Details
@@ -123,12 +123,12 @@ Partial Class form_ListeUsers
         'ColumnNom
         '
         Me.ColumnNom.Text = "Nom"
-        Me.ColumnNom.Width = 148
+        Me.ColumnNom.Width = 224
         '
         'ColumnPrenom
         '
         Me.ColumnPrenom.Text = "Prénom"
-        Me.ColumnPrenom.Width = 153
+        Me.ColumnPrenom.Width = 198
         '
         'ColumnDateEmbauche
         '
@@ -155,7 +155,7 @@ Partial Class form_ListeUsers
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(393, 481)
+        Me.Button1.Location = New System.Drawing.Point(478, 511)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(145, 23)
         Me.Button1.TabIndex = 23
@@ -167,16 +167,16 @@ Partial Class form_ListeUsers
         Me.txtB_Search.AccessibleDescription = ""
         Me.txtB_Search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
         Me.txtB_Search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.txtB_Search.Location = New System.Drawing.Point(349, 92)
+        Me.txtB_Search.Location = New System.Drawing.Point(383, 92)
         Me.txtB_Search.Name = "txtB_Search"
-        Me.txtB_Search.Size = New System.Drawing.Size(154, 20)
+        Me.txtB_Search.Size = New System.Drawing.Size(240, 20)
         Me.txtB_Search.TabIndex = 24
         Me.txtB_Search.Tag = ""
         '
         'lbl_Search
         '
         Me.lbl_Search.AutoSize = True
-        Me.lbl_Search.Location = New System.Drawing.Point(277, 97)
+        Me.lbl_Search.Location = New System.Drawing.Point(311, 95)
         Me.lbl_Search.Name = "lbl_Search"
         Me.lbl_Search.Size = New System.Drawing.Size(66, 13)
         Me.lbl_Search.TabIndex = 25
@@ -186,7 +186,7 @@ Partial Class form_ListeUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(550, 516)
+        Me.ClientSize = New System.Drawing.Size(635, 546)
         Me.Controls.Add(Me.lbl_Search)
         Me.Controls.Add(Me.txtB_Search)
         Me.Controls.Add(Me.Button1)
@@ -196,7 +196,7 @@ Partial Class form_ListeUsers
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "form_ListeUsers"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "GSB-Admin"
+        Me.Text = "Liste des utilisateurs"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ClicDroit.ResumeLayout(False)

@@ -33,6 +33,15 @@ Public Class form_ListeUsers
             'On remet à jour la listView des users
             Me.lstV_visiteur.Items.Clear()
             Me.lstV_visiteur.Refresh()
+
+            rb_AllUser.Checked = True
+
+            For Each unUser In CollectionUser
+                item = New ListViewItem({unUser.idUser, unUser.nomUser, unUser.prenomUSer, unUser.dateEmbaucheUser})
+                Me.lstV_visiteur.Items.Add(item)
+                Me.lstV_visiteur.Refresh()
+            Next
+
         End If
     End Sub
 
@@ -57,6 +66,8 @@ Public Class form_ListeUsers
             Me.lstV_visiteur.Items.Add(item)
             Me.lstV_visiteur.Refresh()
             collec.Add(unUser.nomUser)
+            collec.Add(unUser.prenomUser)
+            collec.Add(unUser.dateEmbaucheUser)
         Next
 
         txtB_Search.AutoCompleteCustomSource = collec
@@ -72,6 +83,8 @@ Public Class form_ListeUsers
                 Me.lstV_visiteur.Items.Add(item)
                 Me.lstV_visiteur.Refresh()
                 collec.Add(unVisiteur.nomUser)
+                collec.Add(unVisiteur.prenomUSer)
+                collec.Add(unVisiteur.dateEmbaucheUser)
             Next
             txtB_Search.AutoCompleteCustomSource = collec
 
@@ -89,6 +102,8 @@ Public Class form_ListeUsers
                 Me.lstV_visiteur.Items.Add(item)
                 Me.lstV_visiteur.Refresh()
                 collec.Add(unComptable.nomUser)
+                collec.Add(unComptable.prenomUSer)
+                collec.Add(unComptable.dateEmbaucheUser)
 
             Next
 
@@ -103,6 +118,8 @@ Public Class form_ListeUsers
         'On parcourt maintenant tout nos utilisateurs afin de remplir notre collection
         For Each unUser In CollectionUser
             collec.Add(unUser.nomUser)
+            collec.Add(unUser.prenomUSer)
+            collec.Add(unUser.dateEmbaucheUser)
         Next
 
         'On met dans notre txtbox la source d'auto-complétion
@@ -123,7 +140,7 @@ Public Class form_ListeUsers
             'On parcourt l'ensemble de notre collection d'utilisateurs
             For Each unUser In CollectionUser
                 'On vérifie ici grâce à notre fonction que ce que l'on recherche 
-                If searchUser(txtB_Search.Text, unUser.nomUser) Then
+                If searchUser(txtB_Search.Text, unUser.nomUser) Or searchUser(txtB_Search.Text, unUser.prenomUSer) Or searchUser(txtB_Search.Text, unUser.dateEmbaucheUser) Then
                     item = New ListViewItem({unUser.idUser, unUser.nomUser, unUser.prenomUSer, unUser.dateEmbaucheUser})
                     lstV_visiteur.Items.Add(item)
                     lstV_visiteur.Refresh()

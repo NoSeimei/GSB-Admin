@@ -60,7 +60,7 @@
             Return m_login
         End Get
         Set(value)
-            'Faire le cryptage de la value pour le SET
+
         End Set
     End Property
 
@@ -69,7 +69,6 @@
             Return m_mdp
         End Get
         Set(value)
-            'Idem ici
 
         End Set
     End Property

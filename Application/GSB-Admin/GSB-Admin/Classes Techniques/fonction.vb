@@ -8,6 +8,11 @@ Module fonction
     Private key As String = "GSB-Admin"
 
 
+    '--------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'DEBUT DES FONCTIONS PERMETTANT D'EFFECTUER DES EXPRESSIONS REGULIERES
+
+
+
     'Fonction permetttant de vérifier la complexité d'un mot de passe
     Function ValidatePassword(ByVal pwd As String,
     Optional ByVal minLength As Integer = 8,
@@ -39,6 +44,24 @@ Module fonction
     End Function
 
 
+    'Fonction qui permet de vérifier que la valeur recherchés x est bien au début de la valeur y envoyé
+    Function searchUser(valueSearch As String, value As String)
+
+        'Permet de vérifier que la valeur envoyé commence bien par ce que l'on recherche
+        Dim validateValue As New System.Text.RegularExpressions.Regex("^" + valueSearch)
+        Return validateValue.IsMatch(value) 'On retourne ici si la valeur recherché entre bien dans ce cadre
+
+    End Function
+    'FIN DES FONCTIONS PERMETTANT D'EFFECTUER DES EXPRESSIONS REGULIERES
+    '--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+    '--------------------------------------------------------------------------------------------------------------------------------------------------------------
+    'FONCTION PERMETTANT DE LIRE DES FICHIERS 
 
 
    'Fonction permettant de récupérer les informations dans le fichier .ini et décrypte les valeurs 
@@ -84,6 +107,61 @@ Module fonction
 
     End Sub
 
+
+
+    'Méthode permettant de remplir le tableau sur lequel on va travailler
+    Sub remplir_Tableau_Vigenere()
+        'Récupération du fichier du fichier texte permettant le cryptage
+        Dim Lignes() As String = File.ReadAllLines("CryptFile/all_touche.txt", Encoding.Default)
+        'Tableau contenant notre première ligne du carré de vigenère
+
+
+        'Pour chaque caractère x correspondant à la clé 
+        For i As Integer = 0 To Lignes.Length - 1
+            Dim index As Integer = 0
+            Dim value = i
+            Dim ligneTab As New ArrayList
+
+            'On ajoute la valeur en commençant par la clé x
+            While (index < Lignes.Length)
+                'On vérifie que la limite de la ligne n'a pas déjà été atteinte
+                If value = Lignes.Length Then
+                    value = 0
+                End If
+
+                ligneTab.Add(Lignes(value))
+
+                'On incrémente +1
+                value = value + 1
+                index = index + 1
+            End While
+
+            'On ajoute à la clé x l'ensemble de sa ligne le correspondant
+            tabVigene.Add(Lignes(i), ligneTab)
+        Next
+
+    End Sub
+
+    'FIN PERMETTANT DE LIRE DES FICHIERS 
+    '--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    '----------------------------------------------------------------------------------------------------------------------------------------------
+    'METHODE DE CRYPTAGE ET DE DECRYPTAGE
+    'Déryptage grâce au décryptage du système
     Function deryptValue(text As String)
         'Décrypte la valeur
         Dim ResultatBytes() As Byte = Convert.FromBase64String(text)
@@ -103,6 +181,8 @@ Module fonction
     End Function
 
 
+
+    'Cryptage grâce au cryptage du système
     Function cryptValue(text As String)
         'Crypte la valeur
         Dim TexteEnBytes() As Byte = Encoding.UTF8.GetBytes(text)
@@ -121,6 +201,113 @@ Module fonction
 
 
 
+    'Fonction pour permettre le cryptage d'une donnée grâce à la méthode du carre de vigenère
+    Function cryptage_carré_Vigenére(valeur As String)
+        'Tout d'abord, on rempit notre tableau de vigenére
+        remplir_Tableau_Vigenere()
+
+        Dim valeurCrypte As String = ""
+        Dim premiereLigne = tabVigene.Item("²")
+        Dim caractereKey As String
+        Dim indexCaracteresKey As Integer = 0
+        'On crypte maintenant toutes les données de notre chaîne de caractères
+        For i As Integer = 0 To valeur.Length - 1
+
+            'On reprend de 0 si la limite as été atteinte
+            If indexCaracteresKey = key.Length Then
+                indexCaracteresKey = 0
+            End If
+
+            'On récupére l'emplacement du caractères i de la chaîne envoyé
+            Dim place_caracteres = premiereLigne.IndexOf(valeur.Substring(i, 1))
+            'Et onrécupére le caractère de notre clé de cryptage
+            caractereKey = key.Substring(indexCaracteresKey, 1)
+
+            'On récupére maintenant la ligne correspondant au caractères x de la clé 
+            Dim cléLigne = tabVigene.Item(caractereKey)
+            'Enfin on récupére l'emplacement i contenu dans notre ligne correspondant au caractères x de la clé
+            Dim caracteresCrypté = cléLigne.Item(place_caracteres)
+
+            'on l'incrémente dans notre chaîne de caractères
+            valeurCrypte = valeurCrypte + caracteresCrypté
+            'On incrémente pour passer au caractères suivant de notre clé de cryptage
+            indexCaracteresKey = indexCaracteresKey + 1
+        Next
+
+        'On vide le tableau à la fin
+        tabVigene.Clear()
+
+        Return valeurCrypte
+    End Function
+
+
+
+    'Fonction pour permettre le décryptage d'une donnée grâce à la méthode du carre de vigenère
+    Function décryptage_carré_Vigenére(valeur As String)
+        'Tout d'abord, on rempit notre tableau de vigenére
+        remplir_Tableau_Vigenere()
+
+        Dim valeurDecrypte As String = ""
+        Dim premiereLigne = tabVigene.Item("²")
+        Dim caractereLigne As String
+        Dim indexCaracteresKey As Integer = 0
+        'On crypte maintenant toutes les données de notre chaîne de caractères
+        For i As Integer = 0 To valeur.Length - 1
+
+            'On reprend de 0 si la limite as été atteinte
+            If indexCaracteresKey = key.Length Then
+                indexCaracteresKey = 0
+            End If
+
+            'On commence par récupérer la ligne du caractère c de la clé
+            Dim ligneCrypte = tabVigene.Item(key.Substring(indexCaracteresKey, 1))
+            'On récupére l'emplacement du caractère crypté
+            Dim emplacementCrypte = ligneCrypte.IndexOf(valeur.Substring(i, 1))
+            'Ensuite on récupére l'emplacement correspondant à notre premier caractère de la chaîne
+            caractereLigne = premiereLigne.Item(emplacementCrypte)
+
+            'on l'incrémente dans notre chaîne de caractères
+            valeurDecrypte = valeurDecrypte + caractereLigne
+            'On incrémente pour passer au caractères suivant de notre clé de cryptage
+            indexCaracteresKey = indexCaracteresKey + 1
+        Next
+
+        'On vide le tableau à la fin
+        tabVigene.Clear()
+
+        Return valeurDecrypte
+    End Function
+
+
+
+
+    'Fonction qui fait appel au deux type de cryptage
+    Function doubleCryptage(value As String)
+        Dim valueCrypte = cryptage_carré_Vigenére(value) 'On crypte une première fois avec le carré de vigenére
+        valueCrypte = cryptValue(valueCrypte) 'On recrypte grâce au cryptage du système
+        Return valueCrypte 'on reourne la valeur
+    End Function
+
+
+    'Fonction qui permet de faire appel aux deux types de décryptage
+    Function doubleDecryptage(value As String)
+        Dim valueDecrypte = deryptValue(value) 'On décrypte une première fois avec le décryptage du système
+        valueDecrypte = décryptage_carré_Vigenére(valueDecrypte) 'On décrypte ensuite avec le décryptage du crré de vigenére
+        Return valueDecrypte 'on retourne enfin la valeur décrypter
+    End Function
+
+    'FIN DES METHOEDS DE CRYPTAGE ET DECRYPTAGE
+    '----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+    '----------------------------------------------------------------------------------------------------------------------------------------------
+    'DEBUT DES METHODES DE MANIPULATION DES COLLECTIONS
     'Permet de retourner le visiteur s'il existe
     Function trouverVisiteur(idVisiteur As Integer)
         For Each unVisiteur In CollectionVisiteur
@@ -209,8 +396,6 @@ Module fonction
         Return unTab
     End Function
 
-
-
     'Retourne le visiteur ou le comptable en fonction de l'Id
     Sub DeleteUserCorrespondant(id As Integer)
 
@@ -221,6 +406,8 @@ Module fonction
         End If
     End Sub
 
+
+    'Octroie une clé primaire qui n'existe pas
     Public Function IncreUser() As Integer
         Dim i As Integer = 0
         For Each UnUser In CollectionUser
@@ -231,127 +418,22 @@ Module fonction
         Return i + 1
     End Function
 
-
-
-    '----------------------------------------------------------------------------------------------------------------------------------------------
-    'Méthode nécessaire au cryptage du carré de Vigenére
-
-    'Fonction pour permettre le cryptage d'une donnée grâce à la méthode du carre de vigenère
-    Function cryptage_carré_Vigenére(valeur As String)
-        'Tout d'abord, on rempit notre tableau de vigenére
-        remplir_Tableau_Vigenere()
-
-        Dim valeurCrypte As String = ""
-        Dim premiereLigne = tabVigene.Item("²")
-        Dim caractereKey As String
-        Dim indexCaracteresKey As Integer = 0
-        'On crypte maintenant toutes les données de notre chaîne de caractères
-        For i As Integer = 0 To valeur.Length - 1
-
-            'On reprend de 0 si la limite as été atteinte
-            If indexCaracteresKey = key.Length Then
-                indexCaracteresKey = 0
-            End If
-
-            'On récupére l'emplacement du caractères i de la chaîne envoyé
-            Dim place_caracteres = premiereLigne.IndexOf(valeur.Substring(i, 1))
-            'Et onrécupére le caractère de notre clé de cryptage
-            caractereKey = key.Substring(indexCaracteresKey, 1)
-
-            'On récupére maintenant la ligne correspondant au caractères x de la clé 
-            Dim cléLigne = tabVigene.Item(caractereKey)
-            'Enfin on récupére l'emplacement i contenu dans notre ligne correspondant au caractères x de la clé
-            Dim caracteresCrypté = cléLigne.Item(place_caracteres)
-
-            'on l'incrémente dans notre chaîne de caractères
-            valeurCrypte = valeurCrypte + caracteresCrypté
-            'On incrémente pour passer au caractères suivant de notre clé de cryptage
-            indexCaracteresKey = indexCaracteresKey + 1
-        Next
-
-        'On vide le tableau à la fin
-        tabVigene.Clear()
-
-        Return valeurCrypte
-    End Function
-
-
-
-    'Fonction pour permettre le décryptage d'une donnée grâce à la méthode du carre de vigenère
-    Function décryptage_carré_Vigenére(valeur As String)
-        'Tout d'abord, on rempit notre tableau de vigenére
-        remplir_Tableau_Vigenere()
-
-        Dim valeurDecrypte As String = ""
-        Dim premiereLigne = tabVigene.Item("²")
-        Dim caractereLigne As String
-        Dim indexCaracteresKey As Integer = 0
-        'On crypte maintenant toutes les données de notre chaîne de caractères
-        For i As Integer = 0 To valeur.Length - 1
-
-            'On reprend de 0 si la limite as été atteinte
-            If indexCaracteresKey = key.Length Then
-                indexCaracteresKey = 0
-            End If
-
-            'On commence par récupérer la ligne du caractère c de la clé
-            Dim ligneCrypte = tabVigene.Item(key.Substring(indexCaracteresKey, 1))
-            'On récupére l'emplacement du caractère crypté
-            Dim emplacementCrypte = ligneCrypte.IndexOf(valeur.Substring(i, 1))
-            'Ensuite on récupére l'emplacement correspondant à notre premier caractère de la chaîne
-            caractereLigne = premiereLigne.Item(emplacementCrypte)
-
-            'on l'incrémente dans notre chaîne de caractères
-            valeurDecrypte = valeurDecrypte + caractereLigne
-            'On incrémente pour passer au caractères suivant de notre clé de cryptage
-            indexCaracteresKey = indexCaracteresKey + 1
-        Next
-
-        'On vide le tableau à la fin
-        tabVigene.Clear()
-
-        Return valeurDecrypte
-    End Function
-
-
-    'Méthode permettant de remplir le tableau sur lequel on va travailler
-    Sub remplir_Tableau_Vigenere()
-        'Récupération du fichier du fichier texte permettant le cryptage
-        Dim Lignes() As String = File.ReadAllLines("CryptFile/all_touche.txt", Encoding.Default)
-        'Tableau contenant notre première ligne du carré de vigenère
-
-
-        'Pour chaque caractère x correspondant à la clé 
-        For i As Integer = 0 To Lignes.Length - 1
-            Dim index As Integer = 0
-            Dim value = i
-            Dim ligneTab As New ArrayList
-
-            'On ajoute la valeur en commençant par la clé x
-            While (index < Lignes.Length)
-                'On vérifie que la limite de la ligne n'a pas déjà été atteinte
-                If value = Lignes.Length Then
-                    value = 0
-                End If
-
-                ligneTab.Add(Lignes(value))
-
-                'On incrémente +1
-                value = value + 1
-                index = index + 1
-            End While
-
-            'On ajoute à la clé x l'ensemble de sa ligne le correspondant
-            tabVigene.Add(Lignes(i), ligneTab)
-        Next
-
-    End Sub
-    'Méthode précédente du carré de Vigenére
+    'FIN DES METHODES DE MANIPULATION DES COLLECTIONS
     '----------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
 
+
+
+
+
+
+
+
+
+    '----------------------------------------------------------------------------------------------------------------------------------------------
+    'DEBUT DES METHODES DE CRUD SUR LES OBJETS ET DE PERSISTANCE DES DONNEES AVE CLA BDD
     'Procédure qui va permettre de gérer la création d'un user ou d'un comptable mais aussi de l'insérer dans la BDD
     Sub createUser(name As String, surname As String, login As String, mdp As String, adr As String, cp As String,
                         ville As String, dateEbauche As Date, Optional nbFiche As Integer = -1)
@@ -415,35 +497,18 @@ Module fonction
             End If
         End If
     End Sub
+    'FIN DES METHODES DE CRUD SUR LES OBJETS ET DE PERSISTANCE DES DONNEES AVE CLA BDD
+    '----------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
-    'Fonction qui fait appel au deux type de cryptage
-    Function doubleCryptage(value As String)
-        Dim valueCrypte = cryptage_carré_Vigenére(value) 'On crypte une première fois avec le carré de vigenére
-        valueCrypte = cryptValue(valueCrypte) 'On recrypte grâce au cryptage du système
-        Return valueCrypte 'on reourne la valeur
-    End Function
 
 
-    'Fonction qui permet de faire appel aux deux types de décryptage
-    Function doubleDecryptage(value As String)
-        Dim valueDecrypte = deryptValue(value) 'On décrypte une première fois avec le décryptage du système
-        valueDecrypte = décryptage_carré_Vigenére(valueDecrypte) 'On décrypte ensuite avec le décryptage du crré de vigenére
-        Return valueDecrypte 'on retourne enfin la valeur décrypter
-    End Function
 
 
-    'Fonction qui permet de vérifier que la valeur recherchés x est bien au début de la valeur y envoyé
-    Function searchUser(valueSearch As String, value As String)
 
-        'Permet de vérifier que la valeur envoyé commence bien par ce que l'on recherche
-        Dim validateValue As New System.Text.RegularExpressions.Regex("^" + valueSearch)
-        Return validateValue.IsMatch(value) 'On retourne ici si la valeur recherché entre bien dans ce cadre
-
-    End Function
-
-
+    '----------------------------------------------------------------------------------------------------------------------------------------------
+    'DEBUT DES METHOEDS PERMETTANT D'AFFICHER UN FORMULAIRE DYNAMIQUE
     'Fonction qui permet de retrouver la personne ayant pour id=x et d'afficher ses informations en fonction de cela
     Sub showInfo_User(id As Integer)
 
@@ -457,7 +522,7 @@ Module fonction
 
         'Met une couleur à la voiture utilisé en cours
 
-        '------------------------------------------------------------------------------------------------------------------------------------------
+        '**********************************************************************************************************************************************
         'TRAITEMENT ET RECUPERATION DES INFORMATIONS
         Dim typeUser = trouverUser(id) 'On récupére ici le type de user
         Dim unUser 'Variable destiné à acceuillir le type de visiteur
@@ -470,11 +535,10 @@ Module fonction
             unUser = trouverComptable(id) 'Ici on récupére le comptable
         End If
         'FIN DU TRAITEMENT ET RECUPERATION DES INFORMATIONS
-        '------------------------------------------------------------------------------------------------------------------------------------------
+'**********************************************************************************************************************************************
 
 
-
-        '------------------------------------------------------------------------------------------------------------------------------------------
+        '**********************************************************************************************************************************************
         'DEBUT DE CREATION DU FORMULAIRE
         'création du formulaire
         Dim afficheInfo_User As New Form
@@ -634,6 +698,8 @@ Module fonction
         afficheInfo_User.Show()
 
     End Sub
+    'FIN DES METHOEDS PERMETTANT D'AFFICHER UN FORMULAIRE DYNAMIQUE
+    '----------------------------------------------------------------------------------------------------------------------------------------------
 
 
 End Module

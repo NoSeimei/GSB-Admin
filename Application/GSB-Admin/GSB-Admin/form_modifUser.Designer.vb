@@ -474,7 +474,7 @@ Partial Class form_modifUser
         Me.Controls.Add(Me.btn_return)
         Me.Controls.Add(Me.btn_Submit)
         Me.Name = "form_modifUser"
-        Me.Text = "form_modifUser"
+        Me.Text = "Modification d'un utilisateur"
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.gb_login.ResumeLayout(False)
