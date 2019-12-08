@@ -23,7 +23,6 @@ Partial Class form_CreateUser
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.btn_Submit = New System.Windows.Forms.Button()
-        Me.btn_return = New System.Windows.Forms.Button()
         Me.lbl_Name = New System.Windows.Forms.Label()
         Me.txtB_name = New System.Windows.Forms.TextBox()
         Me.txt_Prenom = New System.Windows.Forms.TextBox()
@@ -53,18 +52,20 @@ Partial Class form_CreateUser
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.gb_login = New System.Windows.Forms.GroupBox()
         Me.chkBox_Show = New System.Windows.Forms.CheckBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtB_ConfirmMDP = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.dateDebutLoc = New System.Windows.Forms.DateTimePicker()
         Me.dateFinLocation = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.checkBox_AffichAllVehicule = New System.Windows.Forms.CheckBox()
+        Me.lb_minus = New System.Windows.Forms.Label()
+        Me.lb_upper = New System.Windows.Forms.Label()
+        Me.lb_symbols = New System.Windows.Forms.Label()
+        Me.lb_number = New System.Windows.Forms.Label()
+        Me.lb_carac = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.grpb_TypeUser.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.gb_login.SuspendLayout()
@@ -79,15 +80,6 @@ Partial Class form_CreateUser
         Me.btn_Submit.TabIndex = 0
         Me.btn_Submit.Text = "Valider"
         Me.btn_Submit.UseVisualStyleBackColor = True
-        '
-        'btn_return
-        '
-        Me.btn_return.Location = New System.Drawing.Point(10, 672)
-        Me.btn_return.Name = "btn_return"
-        Me.btn_return.Size = New System.Drawing.Size(75, 23)
-        Me.btn_return.TabIndex = 1
-        Me.btn_return.Text = "&Annuler"
-        Me.btn_return.UseVisualStyleBackColor = True
         '
         'lbl_Name
         '
@@ -235,12 +227,10 @@ Partial Class form_CreateUser
         'rb_Comptable
         '
         Me.rb_Comptable.AutoSize = True
-        Me.rb_Comptable.Checked = True
         Me.rb_Comptable.Location = New System.Drawing.Point(89, 28)
         Me.rb_Comptable.Name = "rb_Comptable"
         Me.rb_Comptable.Size = New System.Drawing.Size(75, 17)
         Me.rb_Comptable.TabIndex = 8
-        Me.rb_Comptable.TabStop = True
         Me.rb_Comptable.Text = "Comptable"
         Me.rb_Comptable.UseVisualStyleBackColor = True
         '
@@ -324,13 +314,15 @@ Partial Class form_CreateUser
         '
         'gb_login
         '
+        Me.gb_login.Controls.Add(Me.lb_minus)
+        Me.gb_login.Controls.Add(Me.lb_upper)
+        Me.gb_login.Controls.Add(Me.lb_symbols)
+        Me.gb_login.Controls.Add(Me.lb_number)
+        Me.gb_login.Controls.Add(Me.lb_carac)
+        Me.gb_login.Controls.Add(Me.Label3)
         Me.gb_login.Controls.Add(Me.chkBox_Show)
-        Me.gb_login.Controls.Add(Me.Label8)
         Me.gb_login.Controls.Add(Me.Label7)
         Me.gb_login.Controls.Add(Me.txtB_ConfirmMDP)
-        Me.gb_login.Controls.Add(Me.Label5)
-        Me.gb_login.Controls.Add(Me.Label4)
-        Me.gb_login.Controls.Add(Me.Label6)
         Me.gb_login.Controls.Add(Me.lbl_Login)
         Me.gb_login.Controls.Add(Me.txtB_Login)
         Me.gb_login.Controls.Add(Me.lbl_Mdp)
@@ -354,17 +346,6 @@ Partial Class form_CreateUser
         Me.chkBox_Show.Text = "Afficher"
         Me.chkBox_Show.UseVisualStyleBackColor = True
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.Color.DimGray
-        Me.Label8.Location = New System.Drawing.Point(66, 180)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(74, 13)
-        Me.Label8.TabIndex = 44
-        Me.Label8.Text = "·2 majuscules "
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -381,38 +362,6 @@ Partial Class form_CreateUser
         Me.txtB_ConfirmMDP.Size = New System.Drawing.Size(148, 20)
         Me.txtB_ConfirmMDP.TabIndex = 43
         Me.txtB_ConfirmMDP.UseSystemPasswordChar = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.ForeColor = System.Drawing.Color.DimGray
-        Me.Label5.Location = New System.Drawing.Point(66, 208)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(100, 13)
-        Me.Label5.TabIndex = 41
-        Me.Label5.Text = "·2 caractère spécial"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.ForeColor = System.Drawing.Color.DimGray
-        Me.Label4.Location = New System.Drawing.Point(66, 194)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(53, 13)
-        Me.Label4.TabIndex = 40
-        Me.Label4.Text = "·2 chiffres"
-        '
-        'Label6
-        '
-        Me.Label6.ForeColor = System.Drawing.Color.DimGray
-        Me.Label6.Location = New System.Drawing.Point(47, 150)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(206, 30)
-        Me.Label6.TabIndex = 38
-        Me.Label6.Text = "Le mot de passe doit contenir minimum " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "8 caractères avec:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'dateDebutLoc
         '
@@ -471,11 +420,76 @@ Partial Class form_CreateUser
         Me.checkBox_AffichAllVehicule.Text = "Afficher uniquement les voitures disponibles"
         Me.checkBox_AffichAllVehicule.UseVisualStyleBackColor = True
         '
+        'lb_minus
+        '
+        Me.lb_minus.AutoSize = True
+        Me.lb_minus.ForeColor = System.Drawing.Color.DimGray
+        Me.lb_minus.Location = New System.Drawing.Point(44, 198)
+        Me.lb_minus.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lb_minus.Name = "lb_minus"
+        Me.lb_minus.Size = New System.Drawing.Size(74, 13)
+        Me.lb_minus.TabIndex = 66
+        Me.lb_minus.Text = "·2 minuscules "
+        '
+        'lb_upper
+        '
+        Me.lb_upper.AutoSize = True
+        Me.lb_upper.ForeColor = System.Drawing.Color.DimGray
+        Me.lb_upper.Location = New System.Drawing.Point(44, 211)
+        Me.lb_upper.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lb_upper.Name = "lb_upper"
+        Me.lb_upper.Size = New System.Drawing.Size(74, 13)
+        Me.lb_upper.TabIndex = 65
+        Me.lb_upper.Text = "·2 majuscules "
+        '
+        'lb_symbols
+        '
+        Me.lb_symbols.AutoSize = True
+        Me.lb_symbols.ForeColor = System.Drawing.Color.DimGray
+        Me.lb_symbols.Location = New System.Drawing.Point(44, 239)
+        Me.lb_symbols.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lb_symbols.Name = "lb_symbols"
+        Me.lb_symbols.Size = New System.Drawing.Size(100, 13)
+        Me.lb_symbols.TabIndex = 64
+        Me.lb_symbols.Text = "·2 caractère spécial"
+        '
+        'lb_number
+        '
+        Me.lb_number.AutoSize = True
+        Me.lb_number.ForeColor = System.Drawing.Color.DimGray
+        Me.lb_number.Location = New System.Drawing.Point(44, 225)
+        Me.lb_number.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lb_number.Name = "lb_number"
+        Me.lb_number.Size = New System.Drawing.Size(53, 13)
+        Me.lb_number.TabIndex = 63
+        Me.lb_number.Text = "·2 chiffres"
+        '
+        'lb_carac
+        '
+        Me.lb_carac.AutoSize = True
+        Me.lb_carac.ForeColor = System.Drawing.Color.DimGray
+        Me.lb_carac.Location = New System.Drawing.Point(44, 178)
+        Me.lb_carac.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lb_carac.Name = "lb_carac"
+        Me.lb_carac.Size = New System.Drawing.Size(69, 13)
+        Me.lb_carac.TabIndex = 62
+        Me.lb_carac.Text = "·8 caractères"
+        '
+        'Label3
+        '
+        Me.Label3.ForeColor = System.Drawing.Color.DimGray
+        Me.Label3.Location = New System.Drawing.Point(31, 155)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(206, 23)
+        Me.Label3.TabIndex = 61
+        Me.Label3.Text = "Le mot de passe doit contenir minimum :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
         'form_CreateUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(958, 705)
+        Me.ClientSize = New System.Drawing.Size(407, 705)
         Me.Controls.Add(Me.checkBox_AffichAllVehicule)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.gb_login)
@@ -483,7 +497,6 @@ Partial Class form_CreateUser
         Me.Controls.Add(Me.lbl_Voitures)
         Me.Controls.Add(Me.lstV_Voitures)
         Me.Controls.Add(Me.grpb_TypeUser)
-        Me.Controls.Add(Me.btn_return)
         Me.Controls.Add(Me.btn_Submit)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "form_CreateUser"
@@ -502,7 +515,6 @@ Partial Class form_CreateUser
 
     End Sub
     Friend WithEvents btn_Submit As System.Windows.Forms.Button
-    Friend WithEvents btn_return As System.Windows.Forms.Button
     Friend WithEvents lbl_Name As System.Windows.Forms.Label
     Friend WithEvents txtB_name As System.Windows.Forms.TextBox
     Friend WithEvents txt_Prenom As System.Windows.Forms.TextBox
@@ -536,12 +548,14 @@ Partial Class form_CreateUser
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents txtB_ConfirmMDP As System.Windows.Forms.TextBox
-    Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents checkBox_AffichAllVehicule As System.Windows.Forms.CheckBox
     Friend WithEvents chkBox_Show As System.Windows.Forms.CheckBox
+    Friend WithEvents lb_minus As System.Windows.Forms.Label
+    Friend WithEvents lb_upper As System.Windows.Forms.Label
+    Friend WithEvents lb_symbols As System.Windows.Forms.Label
+    Friend WithEvents lb_number As System.Windows.Forms.Label
+    Friend WithEvents lb_carac As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class

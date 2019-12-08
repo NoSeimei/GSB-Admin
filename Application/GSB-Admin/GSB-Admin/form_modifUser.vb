@@ -41,7 +41,7 @@
 
     Private Sub btn_return_Click(sender As Object, e As EventArgs) Handles btn_return.Click
         Dim Reponse As DialogResult 'Déclaration de la variavle "Reponse" en local
-        Reponse = MessageBox.Show("Voulez-vous vraiment annuler l'ajout de cet utilisateur ?", "Annuler", _
+        Reponse = MessageBox.Show("Voulez-vous vraiment annuler la modification de cet utilisateur ?", "Annuler", _
         MessageBoxButtons.YesNo, MessageBoxIcon.Question) 'Affichage de la message box avec le choix de quitter ou de rester
         If Reponse = DialogResult.Yes Then
             form_ListeUsers.lstV_visiteur.Refresh()

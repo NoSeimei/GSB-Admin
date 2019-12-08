@@ -10,12 +10,12 @@ Public Class Connexion
     'Constructeur qui va permettre de spécifier la connexion à la bdd et va faire appel aux méthodes de construction des objets
     Sub New()
         'On ce connecte à la base de données BIBI
-        ' m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";Initial Catalog=" + Database.Item("baseDeDonnees") & _
-        '";User Id=" + Database.Item("user") + ";Password=" + Database.Item("mdpUser") + ";")
+        m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";Initial Catalog=" + Database.Item("baseDeDonnees") & _
+   ";User Id=" + Database.Item("user") + ";Password=" + Database.Item("mdpUser") + ";")
 
         'LOCAL
-        m_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";" & _
-       "Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
+        'm_Connexion = New SqlConnection("Data Source=" + Database.Item("serveur") + ";" & _
+        '"Integrated Security=SSPI;Initial Catalog=" + Database.Item("baseDeDonnees"))
 
 
         'On ouvre la connexion
@@ -114,8 +114,8 @@ Public Class Connexion
         Do While myReader.Read()
 
             'On instancie un objet utilisateur
-            Dim unUser As New user(myReader.GetInt32(0), myReader.GetString(1), myReader.GetString(2), myReader.GetString(3),
-                                           myReader.GetString(4), myReader.GetString(5), myReader.GetString(6),
+            Dim unUser As New user(myReader.GetInt32(0), myReader.GetString(1), myReader.GetString(2), doubleDecryptage(myReader.GetString(3)),
+                                           doubleDecryptage(myReader.GetString(4)), myReader.GetString(5), myReader.GetString(6),
                                            myReader.GetString(7), myReader.GetDateTime(8))
 
             'On l'ajoute à notre collection d'utilisateur

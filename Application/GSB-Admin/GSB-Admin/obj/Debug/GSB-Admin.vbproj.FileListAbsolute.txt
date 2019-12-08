@@ -201,3 +201,20 @@ G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB
 G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
 G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
 G:\BTS-SIO\PPE - Projets personnalisés encadrés\PPE6\GSB-Admin\Application\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
+C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
+C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
+C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
+C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe
+C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.pdb
+C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.xml
+C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbprojResolveAssemblyReference.cache
+C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_aProposDe.resources
+C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Connexion.resources
+C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_modifUser.resources
+C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Form_resetMDP.resources
+C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_CreateUser.resources
+C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_ListeUsers.resources
+C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
+C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
+C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache

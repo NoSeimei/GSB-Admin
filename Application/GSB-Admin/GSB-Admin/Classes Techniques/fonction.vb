@@ -69,7 +69,7 @@ Module fonction
         'Récupération du fichier de configuration au format .ini (LOCAL)
         ' Dim Lignes() As String = File.ReadAllLines("CryptFile/local.ini")
         'Récupération du fichier (PPE)
-        Dim Lignes() As String = File.ReadAllLines("CryptFile/localConfig.ini")
+        Dim Lignes() As String = File.ReadAllLines("CryptFile/configGrant.ini")
         Dim paragraphe As String = ""
 
 
@@ -498,6 +498,31 @@ Module fonction
             End If
         End If
     End Sub
+
+
+    'Fonction permettant de modifier le mot de passe de l'utilisateur et de rendre persistant les données dans la BDD
+    Sub modifMDP(id As Integer, mdp As String)
+        'On récupére le type d'utilisateur
+        Dim typeUser = trouverUser(id)
+        Dim leUser = trouverUtilisateur(id) 'ici on récupére l'uytilisateur
+
+
+        leUser.mdpUser = mdp ' On modifie sa propriété mot de passe
+
+        If typeUser = "Visiteur" Then 'Cas visiteur
+            leUser = trouverVisiteur(id)
+            leUser.mdpUser = mdp
+            'Méthode permettant de modifier des valeurs via une procédure stockée
+            ConnexionSQL.Insert_Update_User(id, leUser.nomUser, leUser.prenomUser, leUser.loginUser,
+                                            mdp, leUser.adrUser, leUser.cpUser, leUser.villeUser, leUser.dateEmbaucheUser, -1)
+        Else 'Cas comptable
+            leUser = trouverComptable(id)
+            leUser.mdpUser = mdp
+            'Méthode permettant de modifier des valeurs via une procédure stockée
+            ConnexionSQL.Insert_Update_User(id, leUser.nomUser, leUser.prenomUser, doubleCryptage(leUser.loginUser),
+                                mdp, leUser.adrUser, leUser.cpUser, leUser.villeUser, leUser.dateEmbaucheUser, leUser.nbFicheComptable)
+        End If
+    End Sub
     'FIN DES METHODES DE CRUD SUR LES OBJETS ET DE PERSISTANCE DES DONNEES AVE CLA BDD
     '----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -512,16 +537,6 @@ Module fonction
     'DEBUT DES METHOEDS PERMETTANT D'AFFICHER UN FORMULAIRE DYNAMIQUE
     'Fonction qui permet de retrouver la personne ayant pour id=x et d'afficher ses informations en fonction de cela
     Sub showInfo_User(id As Integer)
-
-        'Recherche le user dans comptable / visiteur
-
-        'Affiche un formulaire personalisé sur certains points en conséquence
-
-        'Modifie la couleur aussi en fonction
-
-        'Affiche toute les voitures du visiteur dans l'odre avec les dates de début et de fin
-
-        'Met une couleur à la voiture utilisé en cours
 
         '**********************************************************************************************************************************************
         'TRAITEMENT ET RECUPERATION DES INFORMATIONS
@@ -581,7 +596,7 @@ Module fonction
         Dim lbAdresse As New Label
         lbAdresse.Location = New Point(5, 65)
         lbAdresse.Font = New Font("arial", 12)
-        lbAdresse.Width = 250
+        lbAdresse.Width = 450
         lbAdresse.Text = "Adresse : " + unUser.adrUser
         afficheInfo_User.Controls.Add(lbAdresse)
 

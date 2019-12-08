@@ -46,6 +46,7 @@ Public Class form_ListeUsers
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Form_resetMDP.id = lstV_visiteur.SelectedItems.Item(0).Text
         Form_resetMDP.Show()
     End Sub
 
@@ -152,7 +153,7 @@ Public Class form_ListeUsers
             'On parcourt l'ensemble de notre collection d'utilisateurs
             For Each unUser In CollectionComptable
                 'On vérifie ici grâce à notre fonction que ce que l'on recherche 
-                If searchUser(txtB_Search.Text, unUser.nomUser) Then
+                If searchUser(txtB_Search.Text, unUser.nomUser) Or searchUser(txtB_Search.Text, unUser.prenomUSer) Or searchUser(txtB_Search.Text, unUser.dateEmbaucheUser) Then
                     item = New ListViewItem({unUser.idUser, unUser.nomUser, unUser.prenomUSer, unUser.dateEmbaucheUser})
                     lstV_visiteur.Items.Add(item)
                     lstV_visiteur.Refresh()
@@ -164,7 +165,7 @@ Public Class form_ListeUsers
             'On parcourt l'ensemble de notre collection d'utilisateurs
             For Each unUser In CollectionVisiteur
                 'On vérifie ici grâce à notre fonction que ce que l'on recherche 
-                If searchUser(txtB_Search.Text, unUser.nomUser) Then
+                If searchUser(txtB_Search.Text, unUser.nomUser) Or searchUser(txtB_Search.Text, unUser.prenomUSer) Or searchUser(txtB_Search.Text, unUser.dateEmbaucheUser) Then
                     item = New ListViewItem({unUser.idUser, unUser.nomUser, unUser.prenomUSer, unUser.dateEmbaucheUser})
                     lstV_visiteur.Items.Add(item)
                     lstV_visiteur.Refresh()

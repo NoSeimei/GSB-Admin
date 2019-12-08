@@ -2,7 +2,7 @@
 
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     'Bouton de retour au formulaire principal
-    Private Sub btn_return_Click(sender As Object, e As EventArgs) Handles btn_return.Click
+    Private Sub btn_return_Click(sender As Object, e As EventArgs)
         Dim Reponse As DialogResult 'Déclaration de la variavle "Reponse" en local
         Reponse = MessageBox.Show("Voulez-vous vraiment annuler l'ajout de cet utilisateur ?", "Annuler", _
         MessageBoxButtons.YesNo, MessageBoxIcon.Question) 'Affichage de la message box avec le choix de quitter ou de rester
@@ -34,6 +34,49 @@
         progressBar_Mdp.Value = valueProgressBar
 
 
+
+        Dim upper As New System.Text.RegularExpressions.Regex("[A-Z]")
+        Dim lower As New System.Text.RegularExpressions.Regex("[a-z]")
+        Dim number As New System.Text.RegularExpressions.Regex("[0-9]")
+        ' Special is "none of the above".
+        Dim special As New System.Text.RegularExpressions.Regex("[^a-zA-Z0-9]")
+
+
+        'On regarde si le mot de passe correspond aux critères de sécurité, tant que cela ne correspond pas les critères sont en rouge.
+
+        If upper.Matches(txtB_MDP.Text).Count < 2 Then
+            lb_upper.ForeColor = Color.Red
+        Else
+            lb_upper.ForeColor = Color.Green
+        End If
+
+
+        If lower.Matches(txtB_MDP.Text).Count < 2 Then
+            lb_minus.ForeColor = Color.Red
+        Else
+            lb_minus.ForeColor = Color.Green
+        End If
+
+
+        If number.Matches(txtB_MDP.Text).Count < 2 Then
+            lb_number.ForeColor = Color.Red
+        Else
+            lb_number.ForeColor = Color.Green
+        End If
+
+
+        If special.Matches(txtB_MDP.Text).Count < 2 Then
+            lb_symbols.ForeColor = Color.Red
+        Else
+            lb_symbols.ForeColor = Color.Green
+        End If
+
+
+        If txtB_MDP.Text.Count < 8 Then
+            lb_carac.ForeColor = Color.Red
+        Else
+            lb_carac.ForeColor = Color.Green
+        End If
     End Sub
 
     Private Sub btn_Submit_Click(sender As Object, e As EventArgs) Handles btn_Submit.Click
@@ -165,4 +208,6 @@ txtB_CodePostal.Text, txtB_Ville.Text, date_DateEmbauche.Text, 0)
             txtB_MDP.UseSystemPasswordChar = True
         End If
     End Sub
+
+
 End Class

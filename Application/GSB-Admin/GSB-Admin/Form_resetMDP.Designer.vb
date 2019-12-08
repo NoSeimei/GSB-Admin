@@ -28,20 +28,28 @@ Partial Class Form_resetMDP
         Me.btn_Valider = New System.Windows.Forms.Button()
         Me.lbl_InfoMdp = New System.Windows.Forms.Label()
         Me.tb_mdpchange = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.tb_confirmMdp = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.progressBar_Mdp = New System.Windows.Forms.ProgressBar()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lstV_visiteur = New System.Windows.Forms.ListView()
+        Me.ColumnNom = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnPrenom = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnDateEmbauche = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.bt_Select = New System.Windows.Forms.Button()
+        Me.lb_infosUser = New System.Windows.Forms.Label()
+        Me.lb_upper = New System.Windows.Forms.Label()
+        Me.lb_symbols = New System.Windows.Forms.Label()
+        Me.lb_number = New System.Windows.Forms.Label()
+        Me.lb_carac = New System.Windows.Forms.Label()
+        Me.lb_minus = New System.Windows.Forms.Label()
+        Me.ColumnId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'cbx_showhide
         '
         Me.cbx_showhide.AutoSize = True
-        Me.cbx_showhide.Location = New System.Drawing.Point(241, 56)
+        Me.cbx_showhide.Location = New System.Drawing.Point(750, 82)
         Me.cbx_showhide.Name = "cbx_showhide"
         Me.cbx_showhide.Size = New System.Drawing.Size(108, 17)
         Me.cbx_showhide.TabIndex = 30
@@ -51,7 +59,7 @@ Partial Class Form_resetMDP
         'lbl_Mdp
         '
         Me.lbl_Mdp.AutoSize = True
-        Me.lbl_Mdp.Location = New System.Drawing.Point(106, 37)
+        Me.lbl_Mdp.Location = New System.Drawing.Point(615, 63)
         Me.lbl_Mdp.Name = "lbl_Mdp"
         Me.lbl_Mdp.Size = New System.Drawing.Size(71, 13)
         Me.lbl_Mdp.TabIndex = 29
@@ -59,7 +67,7 @@ Partial Class Form_resetMDP
         '
         'btn_Default
         '
-        Me.btn_Default.Location = New System.Drawing.Point(154, 246)
+        Me.btn_Default.Location = New System.Drawing.Point(663, 293)
         Me.btn_Default.Name = "btn_Default"
         Me.btn_Default.Size = New System.Drawing.Size(75, 26)
         Me.btn_Default.TabIndex = 28
@@ -68,7 +76,7 @@ Partial Class Form_resetMDP
         '
         'btn_Valider
         '
-        Me.btn_Valider.Location = New System.Drawing.Point(61, 246)
+        Me.btn_Valider.Location = New System.Drawing.Point(570, 293)
         Me.btn_Valider.Name = "btn_Valider"
         Me.btn_Valider.Size = New System.Drawing.Size(75, 26)
         Me.btn_Valider.TabIndex = 27
@@ -85,41 +93,32 @@ Partial Class Form_resetMDP
         '
         'tb_mdpchange
         '
-        Me.tb_mdpchange.Location = New System.Drawing.Point(61, 53)
+        Me.tb_mdpchange.Location = New System.Drawing.Point(570, 79)
         Me.tb_mdpchange.Name = "tb_mdpchange"
         Me.tb_mdpchange.Size = New System.Drawing.Size(174, 20)
         Me.tb_mdpchange.TabIndex = 24
         Me.tb_mdpchange.UseSystemPasswordChar = True
         '
-        'TextBox1
+        'tb_confirmMdp
         '
-        Me.TextBox1.Location = New System.Drawing.Point(61, 97)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(174, 20)
-        Me.TextBox1.TabIndex = 31
-        Me.TextBox1.UseSystemPasswordChar = True
+        Me.tb_confirmMdp.Location = New System.Drawing.Point(570, 123)
+        Me.tb_confirmMdp.Name = "tb_confirmMdp"
+        Me.tb_confirmMdp.Size = New System.Drawing.Size(174, 20)
+        Me.tb_confirmMdp.TabIndex = 31
+        Me.tb_confirmMdp.UseSystemPasswordChar = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(62, 81)
+        Me.Label1.Location = New System.Drawing.Point(571, 107)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(173, 13)
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Confirmer le nouveau mot de passe"
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(274, 274)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(59, 23)
-        Me.Button1.TabIndex = 33
-        Me.Button1.Text = "&Annuler"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'progressBar_Mdp
         '
-        Me.progressBar_Mdp.Location = New System.Drawing.Point(108, 131)
+        Me.progressBar_Mdp.Location = New System.Drawing.Point(642, 149)
         Me.progressBar_Mdp.Name = "progressBar_Mdp"
         Me.progressBar_Mdp.Size = New System.Drawing.Size(96, 10)
         Me.progressBar_Mdp.TabIndex = 25
@@ -127,58 +126,135 @@ Partial Class Form_resetMDP
         'Label2
         '
         Me.Label2.ForeColor = System.Drawing.Color.DimGray
-        Me.Label2.Location = New System.Drawing.Point(58, 154)
+        Me.Label2.Location = New System.Drawing.Point(567, 162)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(206, 23)
         Me.Label2.TabIndex = 34
         Me.Label2.Text = "Le mot de passe doit contenir minimum :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'Label3
+        'lstV_visiteur
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.ForeColor = System.Drawing.Color.DimGray
-        Me.Label3.Location = New System.Drawing.Point(71, 177)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(69, 13)
-        Me.Label3.TabIndex = 35
-        Me.Label3.Text = "·8 caractères"
+        Me.lstV_visiteur.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnId, Me.ColumnNom, Me.ColumnPrenom, Me.ColumnDateEmbauche})
+        Me.lstV_visiteur.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lstV_visiteur.FullRowSelect = True
+        Me.lstV_visiteur.Location = New System.Drawing.Point(6, 9)
+        Me.lstV_visiteur.MultiSelect = False
+        Me.lstV_visiteur.Name = "lstV_visiteur"
+        Me.lstV_visiteur.Size = New System.Drawing.Size(492, 281)
+        Me.lstV_visiteur.TabIndex = 53
+        Me.lstV_visiteur.UseCompatibleStateImageBehavior = False
+        Me.lstV_visiteur.View = System.Windows.Forms.View.Details
         '
-        'Label4
+        'ColumnNom
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.ForeColor = System.Drawing.Color.DimGray
-        Me.Label4.Location = New System.Drawing.Point(71, 191)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(53, 13)
-        Me.Label4.TabIndex = 36
-        Me.Label4.Text = "·2 chiffres"
+        Me.ColumnNom.Text = "Nom"
+        Me.ColumnNom.Width = 149
         '
-        'Label5
+        'ColumnPrenom
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.ForeColor = System.Drawing.Color.DimGray
-        Me.Label5.Location = New System.Drawing.Point(71, 205)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(100, 13)
-        Me.Label5.TabIndex = 37
-        Me.Label5.Text = "·1 caractère spécial"
+        Me.ColumnPrenom.Text = "Prénom"
+        Me.ColumnPrenom.Width = 159
+        '
+        'ColumnDateEmbauche
+        '
+        Me.ColumnDateEmbauche.Text = "Date d'embauche"
+        Me.ColumnDateEmbauche.Width = 132
+        '
+        'bt_Select
+        '
+        Me.bt_Select.Location = New System.Drawing.Point(197, 310)
+        Me.bt_Select.Name = "bt_Select"
+        Me.bt_Select.Size = New System.Drawing.Size(75, 23)
+        Me.bt_Select.TabIndex = 55
+        Me.bt_Select.Text = "Confirmer"
+        Me.bt_Select.UseVisualStyleBackColor = True
+        '
+        'lb_infosUser
+        '
+        Me.lb_infosUser.AutoSize = True
+        Me.lb_infosUser.Location = New System.Drawing.Point(574, 9)
+        Me.lb_infosUser.Name = "lb_infosUser"
+        Me.lb_infosUser.Size = New System.Drawing.Size(13, 13)
+        Me.lb_infosUser.TabIndex = 56
+        Me.lb_infosUser.Text = "?"
+        '
+        'lb_upper
+        '
+        Me.lb_upper.AutoSize = True
+        Me.lb_upper.ForeColor = System.Drawing.Color.DimGray
+        Me.lb_upper.Location = New System.Drawing.Point(580, 218)
+        Me.lb_upper.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lb_upper.Name = "lb_upper"
+        Me.lb_upper.Size = New System.Drawing.Size(74, 13)
+        Me.lb_upper.TabIndex = 59
+        Me.lb_upper.Text = "·2 majuscules "
+        '
+        'lb_symbols
+        '
+        Me.lb_symbols.AutoSize = True
+        Me.lb_symbols.ForeColor = System.Drawing.Color.DimGray
+        Me.lb_symbols.Location = New System.Drawing.Point(580, 246)
+        Me.lb_symbols.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lb_symbols.Name = "lb_symbols"
+        Me.lb_symbols.Size = New System.Drawing.Size(100, 13)
+        Me.lb_symbols.TabIndex = 58
+        Me.lb_symbols.Text = "·2 caractère spécial"
+        '
+        'lb_number
+        '
+        Me.lb_number.AutoSize = True
+        Me.lb_number.ForeColor = System.Drawing.Color.DimGray
+        Me.lb_number.Location = New System.Drawing.Point(580, 232)
+        Me.lb_number.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lb_number.Name = "lb_number"
+        Me.lb_number.Size = New System.Drawing.Size(53, 13)
+        Me.lb_number.TabIndex = 57
+        Me.lb_number.Text = "·2 chiffres"
+        '
+        'lb_carac
+        '
+        Me.lb_carac.AutoSize = True
+        Me.lb_carac.ForeColor = System.Drawing.Color.DimGray
+        Me.lb_carac.Location = New System.Drawing.Point(580, 185)
+        Me.lb_carac.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lb_carac.Name = "lb_carac"
+        Me.lb_carac.Size = New System.Drawing.Size(69, 13)
+        Me.lb_carac.TabIndex = 35
+        Me.lb_carac.Text = "·8 caractères"
+        '
+        'lb_minus
+        '
+        Me.lb_minus.AutoSize = True
+        Me.lb_minus.ForeColor = System.Drawing.Color.DimGray
+        Me.lb_minus.Location = New System.Drawing.Point(580, 205)
+        Me.lb_minus.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lb_minus.Name = "lb_minus"
+        Me.lb_minus.Size = New System.Drawing.Size(74, 13)
+        Me.lb_minus.TabIndex = 60
+        Me.lb_minus.Text = "·2 minuscules "
+        '
+        'ColumnId
+        '
+        Me.ColumnId.Text = "N°"
+        Me.ColumnId.Width = 44
         '
         'Form_resetMDP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(344, 307)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
+        Me.ClientSize = New System.Drawing.Size(516, 359)
+        Me.Controls.Add(Me.lb_minus)
+        Me.Controls.Add(Me.lb_upper)
+        Me.Controls.Add(Me.lb_symbols)
+        Me.Controls.Add(Me.lb_number)
+        Me.Controls.Add(Me.lb_infosUser)
+        Me.Controls.Add(Me.bt_Select)
+        Me.Controls.Add(Me.lstV_visiteur)
+        Me.Controls.Add(Me.lb_carac)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.tb_confirmMdp)
         Me.Controls.Add(Me.cbx_showhide)
         Me.Controls.Add(Me.lbl_Mdp)
         Me.Controls.Add(Me.btn_Default)
@@ -200,12 +276,20 @@ Partial Class Form_resetMDP
     Friend WithEvents btn_Valider As System.Windows.Forms.Button
     Friend WithEvents lbl_InfoMdp As System.Windows.Forms.Label
     Friend WithEvents tb_mdpchange As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents tb_confirmMdp As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents progressBar_Mdp As System.Windows.Forms.ProgressBar
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents lstV_visiteur As System.Windows.Forms.ListView
+    Friend WithEvents ColumnNom As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnPrenom As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnDateEmbauche As System.Windows.Forms.ColumnHeader
+    Friend WithEvents bt_Select As System.Windows.Forms.Button
+    Friend WithEvents lb_infosUser As System.Windows.Forms.Label
+    Friend WithEvents lb_upper As System.Windows.Forms.Label
+    Friend WithEvents lb_symbols As System.Windows.Forms.Label
+    Friend WithEvents lb_number As System.Windows.Forms.Label
+    Friend WithEvents lb_carac As System.Windows.Forms.Label
+    Friend WithEvents lb_minus As System.Windows.Forms.Label
+    Friend WithEvents ColumnId As System.Windows.Forms.ColumnHeader
 End Class
