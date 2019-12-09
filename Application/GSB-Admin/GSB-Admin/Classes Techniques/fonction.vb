@@ -6,7 +6,7 @@ Module fonction
     Public Database As New Dictionary(Of String, String)
     Private tabVigene As New Dictionary(Of String, ArrayList)
     Private key As String = "GSB-Admin"
-
+    Dim fileConfig As String = "CryptFile/configGrant.ini"
 
     '--------------------------------------------------------------------------------------------------------------------------------------------------------------
     'DEBUT DES FONCTIONS PERMETTANT D'EFFECTUER DES EXPRESSIONS REGULIERES
@@ -64,12 +64,40 @@ Module fonction
     'FONCTION PERMETTANT DE LIRE DES FICHIERS 
 
 
-   'Fonction permettant de récupérer les informations dans le fichier .ini et décrypte les valeurs 
+    'Fonction permettant de modifier les informations contenues dans le fichier .ini de configuration de l'application
+    Public Sub modificationFichier(login As String, mdp As String, serveur As String, bdd As String, idBDD As String, mdpBDD As String)
+
+        'On supprime d'abord le fichier
+        My.Computer.FileSystem.DeleteFile(fileConfig)
+
+
+        'On récupére le fichier pour pouvoir y écrire
+        Dim writeFile As StreamWriter = New StreamWriter(fileConfig)
+
+        'On ajoute les lignes permettant la connexion à l'application
+        writeFile.WriteLine("[Auth]")
+        writeFile.WriteLine("login=" + doubleCryptage(login))
+        writeFile.WriteLine("motdepasse=" + doubleCryptage(mdp))
+
+        'On rajoute les lignes de conenxion à la BDD
+        writeFile.WriteLine("[Database]")
+        writeFile.WriteLine("serveur=" + doubleCryptage(serveur))
+        writeFile.WriteLine("baseDeDonnees=" + doubleCryptage(bdd))
+        writeFile.WriteLine("user=" + doubleCryptage(idBDD))
+        writeFile.WriteLine("mdpUser=" + doubleCryptage(mdpBDD))
+
+        'On ferme le stream du fichier
+        writeFile.Close()
+    End Sub
+
+
+
+    'Fonction permettant de récupérer les informations dans le fichier .ini et décrypte les valeurs 
     Public Sub lectureFichier()
         'Récupération du fichier de configuration au format .ini (LOCAL)
         ' Dim Lignes() As String = File.ReadAllLines("CryptFile/local.ini")
         'Récupération du fichier (PPE)
-        Dim Lignes() As String = File.ReadAllLines("CryptFile/configGrant.ini")
+        Dim Lignes() As String = File.ReadAllLines(fileConfig)
         Dim paragraphe As String = ""
 
 
@@ -92,7 +120,7 @@ Module fonction
                 Dim value As String = Lignes(stepLine).Substring(Lignes(stepLine).IndexOf("=") + 1)
 
                 'On fait appel à notre méthode de décryptage
-                value = deryptValue(value)
+                value = doubleDecryptage(value)
 
                 ' Ajoute dans le tableau la valeur
                 If paragraphe = "Auth" Then
@@ -552,7 +580,7 @@ Module fonction
             unUser = trouverComptable(id) 'Ici on récupére le comptable
         End If
         'FIN DU TRAITEMENT ET RECUPERATION DES INFORMATIONS
-'**********************************************************************************************************************************************
+        '**********************************************************************************************************************************************
 
 
         '**********************************************************************************************************************************************
@@ -584,7 +612,7 @@ Module fonction
 
         'Label TITRE
         Dim lbTitre As New Label
-        lbTitre.BackColor = Color.Wheat
+        lbTitre.BackColor = color.Wheat
         lbTitre.Location = New Point(5, 10)
         lbTitre.Font = New Font("arial", 12, FontStyle.Bold)
         lbTitre.Width = 450

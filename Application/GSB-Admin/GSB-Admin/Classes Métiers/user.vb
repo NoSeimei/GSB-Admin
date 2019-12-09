@@ -60,7 +60,7 @@
             Return m_login
         End Get
         Set(value)
-
+            m_login = value
         End Set
     End Property
 
@@ -69,7 +69,7 @@
             Return m_mdp
         End Get
         Set(value)
-
+            m_mdp = value
         End Set
     End Property
 

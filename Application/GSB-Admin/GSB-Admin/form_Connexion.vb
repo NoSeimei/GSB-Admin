@@ -13,17 +13,36 @@ Public Class form_Connexion
 
     'Bouton de connexion
     Private Sub btn_Submit_Click_1(sender As Object, e As EventArgs) Handles btn_Submit.Click
+
         'Appel de la fonction qui charge nos Dictyonnary (connexion à la base de donées ainsi qu'à l'application)
         lectureFichier()
 
-        'On vérifie ici les informations qui ont été rentrer par la personne
-        If Auth.Item("login") = txtB_Login.Text And Auth.Item("motdepasse") = txtB_MDP.Text Then
-            form_MDIContainer.Show()
-            Me.Hide()
+        'On vérifie que l'administrateur ne veux pas modifier ses identifiants de connexion
+        If checkbox_Update.Checked = True Then
+
+            'On vérifie tout d'abord que les informations sont les bonnes
+            If Auth.Item("login") = txtB_Login.Text And Auth.Item("motdepasse") = txtB_MDP.Text Then
+                'Ouverture du formulaire
+                form_updateIdentifiant.Show()
+                Me.Hide()
+            Else
+                txtB_MDP.Text = ""
+                lbl_Error.Text = " Login ou mot de passe incorrects..."
+            End If
+
         Else
-            txtB_MDP.Text = ""
-            lbl_Error.Text = " Login ou mot de passe incorrects..."
+
+            'On vérifie ici les informations qui ont été rentrer par la personne
+            If Auth.Item("login") = txtB_Login.Text And Auth.Item("motdepasse") = txtB_MDP.Text Then
+                form_MDIContainer.Show()
+                Me.Hide()
+            Else
+                txtB_MDP.Text = ""
+                lbl_Error.Text = " Login ou mot de passe incorrects..."
+            End If
+
         End If
+
     End Sub
 
     '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

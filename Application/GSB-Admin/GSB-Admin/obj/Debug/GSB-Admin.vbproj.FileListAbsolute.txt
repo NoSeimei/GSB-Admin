@@ -218,3 +218,23 @@ C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_ListeUse
 C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
 C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
 C:\Users\treportel\Desktop\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache
+C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_modifUser.resources
+C:\Users\treportel\Documents\Visual Studio 2013\Projects\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_updateIdentifiant.resources
+C:\Users\trepo\OneDrive\Bureau\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe.config
+C:\Users\trepo\OneDrive\Bureau\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.exe
+C:\Users\trepo\OneDrive\Bureau\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.xml
+C:\Users\trepo\OneDrive\Bureau\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.pdb
+C:\Users\trepo\OneDrive\Bureau\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.exe
+C:\Users\trepo\OneDrive\Bureau\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.pdb
+C:\Users\trepo\OneDrive\Bureau\GSB-Admin\GSB-Admin\bin\Debug\GSB-Admin.xml
+C:\Users\trepo\OneDrive\Bureau\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbprojResolveAssemblyReference.cache
+C:\Users\trepo\OneDrive\Bureau\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_aProposDe.resources
+C:\Users\trepo\OneDrive\Bureau\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_Connexion.resources
+C:\Users\trepo\OneDrive\Bureau\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_modifUser.resources
+C:\Users\trepo\OneDrive\Bureau\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Form_resetMDP.resources
+C:\Users\trepo\OneDrive\Bureau\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_CreateUser.resources
+C:\Users\trepo\OneDrive\Bureau\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_ListeUsers.resources
+C:\Users\trepo\OneDrive\Bureau\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_MDIContainer.resources
+C:\Users\trepo\OneDrive\Bureau\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.form_updateIdentifiant.resources
+C:\Users\trepo\OneDrive\Bureau\GSB-Admin\GSB-Admin\obj\Debug\GSB_Admin.Resources.resources
+C:\Users\trepo\OneDrive\Bureau\GSB-Admin\GSB-Admin\obj\Debug\GSB-Admin.vbproj.GenerateResource.Cache

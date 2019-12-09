@@ -24,6 +24,7 @@ Partial Class form_Connexion
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(form_Connexion))
         Me.ElegantThemeContainer1 = New GSB_Admin.ElegantThemeContainer()
+        Me.checkbox_Update = New System.Windows.Forms.CheckBox()
         Me.lbl_Error = New GSB_Admin.ElegantThemeLabel()
         Me.btn_Quitte = New GSB_Admin.ElegantThemeButton()
         Me.btn_Submit = New GSB_Admin.ElegantThemeButton()
@@ -45,6 +46,7 @@ Partial Class form_Connexion
         Me.ElegantThemeContainer1.ControlBaseColour = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(249, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.ElegantThemeContainer1.ControlBoxButtonSplitColour = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(210, Byte), Integer))
         Me.ElegantThemeContainer1.ControlBoxColour = System.Drawing.Color.FromArgb(CType(CType(123, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.ElegantThemeContainer1.Controls.Add(Me.checkbox_Update)
         Me.ElegantThemeContainer1.Controls.Add(Me.lbl_Error)
         Me.ElegantThemeContainer1.Controls.Add(Me.btn_Quitte)
         Me.ElegantThemeContainer1.Controls.Add(Me.btn_Submit)
@@ -60,6 +62,16 @@ Partial Class form_Connexion
         Me.ElegantThemeContainer1.Text = "Connexion à l'application GSB-Admin"
         Me.ElegantThemeContainer1.TopStripBorderColour = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.ElegantThemeContainer1.TopStripColour = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(241, Byte), Integer))
+        '
+        'checkbox_Update
+        '
+        Me.checkbox_Update.AutoSize = True
+        Me.checkbox_Update.Location = New System.Drawing.Point(258, 197)
+        Me.checkbox_Update.Name = "checkbox_Update"
+        Me.checkbox_Update.Size = New System.Drawing.Size(201, 17)
+        Me.checkbox_Update.TabIndex = 9
+        Me.checkbox_Update.Text = "Modifier les paramètres de connexion"
+        Me.checkbox_Update.UseVisualStyleBackColor = True
         '
         'lbl_Error
         '
@@ -91,7 +103,7 @@ Partial Class form_Connexion
         Me.btn_Submit.BackColor = System.Drawing.Color.Transparent
         Me.btn_Submit.BaseColour = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(245, Byte), Integer))
         Me.btn_Submit.BorderColour = System.Drawing.Color.FromArgb(CType(CType(163, Byte), Integer), CType(CType(190, Byte), Integer), CType(CType(146, Byte), Integer))
-        Me.btn_Submit.Location = New System.Drawing.Point(297, 208)
+        Me.btn_Submit.Location = New System.Drawing.Point(302, 220)
         Me.btn_Submit.Name = "btn_Submit"
         Me.btn_Submit.PressedTextColour = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.btn_Submit.Size = New System.Drawing.Size(91, 31)
@@ -171,4 +183,5 @@ Partial Class form_Connexion
     Friend WithEvents txtB_Login As GSB_Admin.ElegantThemeTextBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents lbl_Error As GSB_Admin.ElegantThemeLabel
+    Friend WithEvents checkbox_Update As System.Windows.Forms.CheckBox
 End Class
